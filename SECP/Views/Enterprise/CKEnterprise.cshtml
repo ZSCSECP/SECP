@@ -1,0 +1,66 @@
+﻿@model IEnumerable<SECP.Models.Enterprise>
+@{
+    ViewBag.Title = "CKEnterprise";
+    Layout = "~/Views/Enterprise.cshtml";
+}
+<link href="~/css/CKenterprise-dis.css" rel="stylesheet" />
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/enterpriseShow.css" rel="stylesheet" />
+@foreach (SECP.Models.Enterprise k in Model)
+{
+    <div class="CK-main">
+        <div class="enterpriseRe-tips">
+        </div>
+        <div class="CK-main-table">
+            <div class="CK-table">
+                <div class="CK-table-tittle">
+                    @k.Enterprise_Name
+                </div>
+                <table>
+                    <tr class="CK-table-info">
+                        <td class="info-topic">企业名称</td>
+                        <td class="info-content">@k.Enterprise_Name</td>
+                        <td class="info-tittle">类型</td>
+                        <td class="info-content">@k.Enterprise_Type</td>
+                        <td class="info-tittle">规模</td>
+                        <td class="info-content">@k.Enterprise_Scale</td>
+                    </tr>
+                    <tr class="CK-table-info">
+                        <td class="info-topic">行业</td>
+                        <td class="info-content">@k.Enterprise_Industry</td>
+                        <td class="info-tittle">地点</td>
+                        <td class="info-content">@k.Enterprise_Place</td>
+                        <td class="info-tittle">邮政编码</td>
+                        <td class="info-content">@k.Enterprise_Postcode</td>
+                    </tr>
+                    <tr class="CK-table-info">
+                        <td class="info-topic">联系人</td>
+                        <td class="info-content">@k.Enterprise_Contact</td>
+                        <td class="info-tittle">邮箱</td>
+                        <td class="info-content">@k.Enterprise_Email</td>
+                        <td class="info-tittle">电话</td>
+                        <td class="info-content">@k.Enterprise_Tel</td>
+                    </tr>
+                </table>
+                <div class="deta-info">
+                    <div class="PI-deta-pj">
+                        <span>企业文化</span>
+                        <p>@k.Enterprise_Culture</p>
+                    </div>
+                    <div class="PI-deta-px">
+                        <span>业务范围</span>
+                        <p>@k.Enterprise_Business</p>
+                    </div>
+ 
+                    <div class="but">
+                        <div class="but-back">
+                            <a onclick="javascript:window.history.go(-1);">返回</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+}

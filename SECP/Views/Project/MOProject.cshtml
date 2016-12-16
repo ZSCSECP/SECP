@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>项目平台</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="~/css/settings.css" media="screen"/>
+    <link href="~/css/skeleton.css" rel="stylesheet" />
+    <link href="~/css/style1.css" rel="stylesheet" />
+    <script src="~/js/jquery-1.8.2.min.js" type="text/javascript"></script> <!-- jQuery -->
+	<script src="~/js/jquery.easing.1.3.js" type="text/javascript"></script> <!-- jQuery easing -->
+	<script src="~/js/modernizr.custom.js" type="text/javascript"></script> <!-- Modernizr -->
+    <script src="~/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script> <!-- tabs, toggles, accordion -->
+    <script src="~/js/custom.js" type="text/javascript"></script> <!-- jQuery initialization -->
+  
+    <script src="~/js/jquery.meanmenu.js"></script> 
+    <script>
+        jQuery(document).ready(function () {
+            jQuery('header nav').meanmenu();
+        });
+    </script>
+	
+	<script src="~/js/jquery.themepunch.plugins.min.js"></script>
+	<script src="~/js/jquery.themepunch.revolution.min.js"></script>
+	<script src="~/js/revolution-slider-options.js"></script>
+	
+	<script src="~/js/jquery.prettyPhoto.js"></script>
+	<script>
+	    $(document).ready(function () {
+	        $("a[data-gal^='prettyPhoto']").prettyPhoto();
+	    });
+	</script>
+
+	<!-- Tooltip -->
+    <script src="~/js/tooltip.js"></script>
+	
+	<!-- Flexisel -->
+    <script type="text/javascript" src="~/js/jquery.flexisel.js"></script>
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="~/images/favicon.ico">
+	<link rel="apple-touch-icon" href="~/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="~/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="~/images/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+    <header class="header">
+<div class= "a">
+
+<!--<h1 class="logo"><a href="index.html"><img src="images/logo.png"/></a></h1>-->
+<div style="width:132px;float:left;margin-top: 23px;margin-bottom: 20px;padding-left:70px"><a href="~/Home.html"><img src="~/images/Pj_logo.png" width="132" style="float:left"/> </a> </div>
+<div style="width:100%">
+<nav class="main_menu">
+
+<ul>
+<li class="@ViewData["H"]">
+<a href="ProjectHome">
+首页
+<div class="sub">
+Home Page
+</div>
+</a>
+</li>
+<li class="@ViewData["Q"]">
+<a href="CEProject">
+企业项目
+<div class="sub">
+Enterprise project
+</div>
+</a>
+<ul>
+<li><a href="CEProject">查看项目</a></li>
+<li><a href="PEProject">发布项目</a></li>
+</ul>
+</li>
+
+<li class="@ViewData["S"]">
+<a href="CSProject">
+师生项目
+<div class="sub">
+School project
+</div>
+</a>
+<ul>
+<li><a href="CSProject">查看项目</a></li>
+<li><a href="PSProject">发布项目</a></li>
+</ul>
+</li>
+
+<li class="@ViewData["Z"]">
+<a href="CCProject">
+合作项目
+<div class="sub">
+Cooperative project
+</div>
+</a>
+<ul>
+<li><a href="CCProject">查看项目</a></li>
+<li><a href="PCProject">发布项目</a></li>
+</ul>
+</li>
+
+<li class="@ViewData["W"]" >
+<a href="COProject">
+外包项目
+<div class="sub">
+Outsourcing project
+</div>
+</a>
+<ul>
+<li><a href="COProject">查看项目</a></li>
+<li><a href="POProject">发布项目</a></li>
+</ul>
+</li>
+
+<li class="@ViewData["X"]" >
+<a href="MOProject">
+我的项目
+<div class="sub">
+My project
+</div>
+</a>
+</li>
+<li>
+<a href="/Login/Login">
+@ViewData["State"]
+<div class="sub">
+@ViewData["YState"]
+</div>
+</a>
+</li>
+<li>
+    <a href="../PersonalInformation/PIstudent">
+        @ViewData["UserName"]
+        <div class="sub">
+            @ViewData["TimeNow"]
+        </div>
+    </a>
+</li>
+</ul> 
+</nav><!-- navigation -->
+</div>
+<div class="clearfix"></div>
+</div>
+</header><!-- header -->
+    <div>
+@model IEnumerable<SECP.Models.Project>
+<link href="~/css/pjShow.css" rel="stylesheet" />
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/dis.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/jquery.js"></script>
+<div class="dis-main">
+    <div class="gundong_bg_search">
+        <div class="bm_m_search">
+            <div class="search_div_box">
+                <div class="search_div_bg2"></div>
+                <div class="search_div_bg">
+                    <form action="CCProject" method="post" autocomplete="off">
+                        <span class="search_div_bg_btn" id="wesitesearch"></span>
+                        <input type="text" class="search_div_bg_input" name="search" @*placeholder="@ViewData["x"]"*@ autocomplete="off" placeholder="请输入项目关键词">
+                    </form>
+                </div>
+            </div>
+            <div class="hot_search">
+                <span class="hot_search_name">热门搜索：</span>
+                <div class="hot_search_text">
+                    <a href="CEProject">企业</a><a href="CSProject">师生</a><a href="CCProject">合作</a><a href="COProject">外包</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="servicesPop">
+        <form id="_form" method="post">
+        <div id="serFocus">
+            <div class="fr" style="position:relative;"><a href="javascript:void(0)" class="close" onclick="closeSerPop()">&nbsp;</a></div>
+            <div class="box" id="flash1">
+                <div class="yidongL" style="width:360px"></div>
+                <div class="servicesTxt" style="padding-left:85px;">
+                    <div class="serTit" style="padding-top:15px;">
+                        <div class="acceptProject">
+                            <div class="table-tittle">
+                                <h2>已接受项目</h2>
+                                <p>共 @ViewData["JS"] 个项目</p>
+                            </div>
+                            <div class="table">
+                                
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Id</th>
+                                            <th>Title</th>
+                                            <th>Date</th>
+                                            <th>Limit(Day)</th>
+                                            <th>Money</th>
+                                            <th>Publisher</th>
+                                            <th>QQ</th>
+                                            <th>Cancel</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="td-tittle"></td>
+                                           <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td ></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box" id="flash2">
+                <div class="servicesTxt" style="padding-left:85px;">
+                    <div class="serTit" style="padding-top:15px;">
+                        <div class="releaseProject">
+                            <div class="table-tittle">
+                                <h2>已发布项目</h2>
+                                <p>共 @ViewData["FB"] 个项目</p>
+                            </div>
+                            <div class="table">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Id</th>
+                                            <th>Title</th>
+                                            <th>Date</th>
+                                            <th>Limit(Day)</th>
+                                            <th>Money</th>
+                                            <th>Recipient</th>
+                                            <th>QQ</th>
+                                            <th>more</th>
+                                            <th>delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td>a</td>
+                                            <td class ="td-tittle">a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                            <td>a</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         </form>
+    </div>
+    <div id="servicesBox">
+
+        <div id="serBox1" class="serBox" onclick="serFocus(1)">
+            <div class="serBoxOn"></div>
+            <div class="pic1 mypng"><img src="~/images/ser_box2.png" /></div>
+            <div class="pic2 mypng"><img src="~/images/ser_box2b.png" /></div>
+            <div class="txt1"><span class="tit">已接受项目</span></div>
+            <div class="txt2"><span class="tit">已接受项目</span></div>
+        </div>
+
+        <div class="fgH20"></div>
+
+        <div id="serBox2" class="serBox" onclick="serFocus(2)">
+            <div class="serBoxOn"></div>
+            <div class="pic1 mypng"><img src="~/images/ser_box3.png" /></div>
+            <div class="pic2 mypng"><img src="~/images/ser_box3b.png" /></div>
+            <div class="txt1"><span class="tit">已发布项目</span></div>
+            <div class="txt2"><span class="tit">已发布项目</span></div>
+        </div>
+
+    </div>
+    <footer class="footer" style="position: fixed; bottom: 0px;width:100%">
+        <div class="container">
+            <div class="footer-bottom clearfix" style="color:white">
+                Copyright &copy; 2015 12软件开发B班 17黄雅聪 26黎泯生 电子科技大学中山学院
+            </div><!-- footer-bottom -->
+        </div>
+    </footer><!-- footer -->
+</div>
+
+<script src="~/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(".serBox").hover(function () {
+            $(this).children().stop(false, true);
+            $(this).children(".serBoxOn").fadeIn("slow");
+            $(this).children(".pic1").animate({ right: -110 }, 600);
+            $(this).children(".pic2").animate({ left: 105 }, 600);
+            $(this).children(".txt1").animate({ left: -240 }, 600);
+            $(this).children(".txt2").animate({ right: 40 }, 600);
+        }, function () {
+            $(this).children().stop(false, true);
+            $(this).children(".serBoxOn").fadeOut("slow");
+            $(this).children(".pic1").animate({ right: 105 }, 600);
+            $(this).children(".pic2").animate({ left: -110 }, 600);
+            $(this).children(".txt1").animate({ left: 40 }, 600);
+            $(this).children(".txt2").animate({ right: -240 }, 600);
+        });
+
+    });
+
+    function serFocus(i) {
+        $(".servicesPop").slideDown("normal");
+        changeflash(i);
+    }
+    function closeSerPop() {
+        $(".servicesPop").slideUp("fast");
+    }
+
+    var currentindex = 1;
+    function changeflash(i) {
+        currentindex = i;
+        for (j = 1; j <= 6; j++) {
+            if (j == i) {
+                $("#flash" + j).fadeIn("normal");
+                $("#flash" + j).css("display", "block");
+                $("#f" + j).removeClass();
+                $("#f" + j).addClass("dq");
+            } else {
+                $("#flash" + j).css("display", "none");
+                $("#f" + j).removeClass();
+                $("#f" + j).addClass("no");
+            }
+        }
+    }
+</script>
+<script type="text/javascript">
+    $("#serBox1").click(function () {
+        $.getJSON("/Project/Get_Json",
+         function (data) {
+             /*遍历*/
+             $("#flash1 tbody").html("");
+             $.each(data,
+             function (index, p) {
+                 var html = "<tr><td></td><td>" + p.Id + "</td>" + "<td>" + "<a href='CKProject?Id=" + p.Id + "'>" + p.Title + "</a>" + "</td>" + "<td>" + p.Date + "</td>" + "<td>" + p.Litmit + "</td>" + "<td>" + p.Money + "</td>" + "<td>" + p.Added_by + "</td>" + "<td>" + "<a target='_blank' href='http://wpa.qq.com/msgrd?v=3&uin=" + p.QQ + "&site=qq&menu=yes'>" + "<img src='../images/QQ.gif'/>" + "</a>" + "</td>" + "<td>" + "<button name='QX' type='submit'style='background: #04bfea; color: #fff; border: 1px solid #04bfea;' value=" + p.Id + "/>" + "</button>" + "</td>" + "</tr>";
+                 $("#flash1 tbody").append(html);
+             })
+         });
+    })
+    $("#serBox2").click(function () {
+        $.getJSON("/Project/Get_Json1",
+         function (data) {
+             /*遍历*/
+             $("#flash2 tbody").html("");
+             $.each(data,
+             function (index, p) {
+                 var html = "<tr><td></td><td>" + p.Id + "</td>" + "<td>" + "<a href='CKProject?Id=" + p.Id + "'>" + p.Title + "</a>" + "</td>" + "<td>" + p.Date + "</td>" + "<td>" + p.Litmit + "</td>" + "<td>" + p.Money + "</td>" + "<td>" + p.Added_by + "</td>" + "<td>" + "<a target='_blank' href='http://wpa.qq.com/msgrd?v=3&uin=" + p.QQ + "&site=qq&menu=yes'>" + "<img src='../images/QQ.gif'/>" + "</a>" + "</td>" + "<td>" + "<a href='ChangeMO?id=" + p.Id + "' style='padding: 8px 10px;'>" + "修改" + "</a>" + "</td>" +"<td>" + "<button name='XQ' type='submit'style='background: #04bfea; color: #fff; border: 1px solid #04bfea;' value=" + p.Id + "/>" + "</button>" + "</td>"+ "</tr>";
+                 $("#flash2 tbody").append(html);
+             })
+         });
+    })
+</script>               
+    </div>
+
+<script type="text/javascript">
+
+    $(window).load(function () {
+        $("#flexiselDemo2").flexisel({
+            visibleItems: 5,
+            animationSpeed: 1000,
+            autoPlay: true,
+            autoPlaySpeed: 3000,
+            pauseOnHover: true,
+            enableResponsiveBreakpoints: true,
+            responsiveBreakpoints: {
+                portrait: {
+                    changePoint: 480,
+                    visibleItems: 1
+                },
+                landscape: {
+                    changePoint: 640,
+                    visibleItems: 2
+                },
+                tablet: {
+                    changePoint: 768,
+                    visibleItems: 3
+                }
+            }
+        });
+
+    });
+</script>
+</body>
+</html>
+
+

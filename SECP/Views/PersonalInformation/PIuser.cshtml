@@ -1,0 +1,31 @@
+﻿@model IEnumerable<SECP.Models.User>
+@{
+    ViewBag.Title = "PIuser";
+    Layout = "~/Views/PersonalInformation.cshtml";
+}
+
+<link href="~/css/TalentRelease.css" rel="stylesheet" />
+<link href="~/css/PITalent-user.css" rel="stylesheet" />
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<div class="PI-main">
+    <hr class="hr1" /><hr class="hr2" /><hr class="hr3" /><hr class="hr4" />
+    @foreach (SECP.Models.User k in Model)
+    {
+        <div class="PI-username">
+            <div class="PI-username-left">
+                <span>@k.User_UserName</span>
+                <nobr>(客户)</nobr>
+                <div class="PI-personal">
+                    <span>QQ</span>
+                    <nobr>@k.User_QQ</nobr>
+                    <a class="PI-personal-change" href="ChangePIuser">更改>></a>
+                </div>
+            </div>
+        </div>
+        <div class="PI-user-info">
+            <span>-----------------欢迎</span>
+            <nobr>使用-----------------</nobr>
+        </div>
+    }
+
+</div>

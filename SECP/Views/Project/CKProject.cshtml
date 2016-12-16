@@ -1,0 +1,93 @@
+﻿@model IEnumerable<SECP.Models.Project>  
+@{
+    ViewBag.Title = "CKProject";
+    Layout = "~/Views/Project.cshtml";
+}
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/CK.css" rel="stylesheet" />
+
+<link href="~/css/pjShow.css" rel="stylesheet" />
+<div class="body_a">
+    <div class="gundong_bg_search">
+        <div class="bm_m_search">
+            <div class="search_div_box">
+                <div class="search_div_bg2"></div>
+                <div class="search_div_bg">
+                    <form action="CCProject" method="post" autocomplete="off">
+                        <span class="search_div_bg_btn" id="wesitesearch"></span>
+                        <input type="text" class="search_div_bg_input" name="search" placeholder="请输入项目关键词" autocomplete="off">
+                    </form>
+                </div>
+            </div>
+            <div class="hot_search">
+                <span class="hot_search_name">热门搜索：</span>
+                <div class="hot_search_text">
+                    <a href="CEProject">企业</a><a href="CSProject">师生</a><a href="CCProject">合作</a><a href="COProject">外包</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@foreach (SECP.Models.Project k in Model)
+{
+<div class="CK-main">
+    <div class="CK-table">
+        <div class="CK-table-tittle">
+            @k.Project_Name
+            </div>
+            <table>
+                @*<tr class="CK-table-tittle">
+                    <td></td>
+                </tr>*@
+                <tr class="CK-table-info">
+                    <td class="info-topic">项目编号:</td>
+                    <td class="info-content">@k.Project_Id</td>
+                    <td class="info-tittle">项目类型:</td>
+                    <td class="info-content">@k.Project_Type</td>
+                    <td class="info-tittle">发布时间:</td>
+                    <td class="info-content">@k.Project_STime</td>
+                </tr>
+                <tr class="CK-table-info">
+                    <td class="info-topic">要求经验:</td>
+                    <td class="info-content">@k.Project_Requirement</td>
+                    <td class="info-tittle">项目报酬:</td>
+                    <td class="info-content">@k.Project_Money</td>
+                    <td class="info-tittle">项目状况:</td>
+                    <td class="info-content">@k.Project_State</td>
+                </tr>
+                <tr class="CK-table-info">
+                    <td class="info-topic">发布人:</td>
+                    <td class="info-content">@k.Project_Publisher</td>
+                    <td class="info-tittle">发布人所属:</td>
+                    <td class="info-content">@k.Project_PubilsherType</td>
+                    <td class="info-tittle">联系电话:</td>
+                    <td class="info-content">@k.Project_Contact
+                </tr>
+                <tr class="CK-table-info">
+                    <td class="info-topic">项目工期:</td>
+                    <td class="info-content">xxx天</td>
+                    <td class="info-tittle"></td>
+                    <td class="info-content"></td>
+                    <td class="info-tittle"></td>
+                    <td class="info-content"></td>
+                </tr>
+            </table>
+            <div class="deta-info">
+                <span>详细说明:</span>
+                <p>@k.Project_Content</p>
+                <div class="but">
+                    <div class="but-back">
+                        <a onclick="javascript:window.history.go(-1);">返回</a>
+                    </div>
+                    <form id="_form" method="post">
+                        <div class="but-enter">
+                            <a onclick="document.getElementById('_form').submit();">接受</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<SECP.Models.Train>
+@{
+    ViewBag.Title = "ClassTrain";
+    Layout = "~/Views/Train.cshtml";
+}
+
+<link href="~/css/CKTrain-dis.css" rel="stylesheet" />
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/TrainShow.css" rel="stylesheet" />
+
+<form id="_form" method="post">
+@foreach (SECP.Models.Train k in Model)
+{
+    <div class="CK-main">
+        <div class="trainRe-tips">
+        </div>
+        <div class="CK-main-table">
+            <div class="CK-table">
+                <div class="CK-table-tittle">
+                 <input type="text" name="Train_Name" value="@k.Train_Name" />
+                </div>
+                <table>
+                    <tr class="CK-table-info">
+                        <td class="info-topic">编号:</td>
+                        <td class="info-content">@k.Train_Id</td>
+                        <td class="info-tittle">类型:</td>
+                        <td class="info-content">@k.Train_Type</td>
+                        <td class="info-tittle">相关专业:</td>
+                        <td class="info-content"><input type="text" name="Train_Major" value="@k.Train_Major" /></td>
+                    </tr>
+                    <tr class="CK-table-info">
+                        <td class="info-topic">目标:</td>
+                        <td class="info-content"><input type="text" name="Train_Objective" value="@k.Train_Objective" /></td>
+                        <td class="info-tittle">发布状况:</td>
+                        <td class="info-content">@k.Train_State</td>
+                        <td class="info-tittle">发布时间:</td>
+                        <td class="info-content">@k.Train_Time</td>
+                    </tr>
+                    <tr class="CK-table-info">
+                        <td class="info-topic">发布人:</td>
+                        <td class="info-content">@k.Train_Publisher</td>
+                        <td class="info-tittle">开始时间:</td>
+                        <td class="info-content" colspan="3">@k.Train_Date</td>
+                    </tr>
+                    <tr class="CK-table-info">
+                        <td class="info-topic">地址:</td>
+                        <td class="info-content" colspan="5">@k.Train_Place</td>
+                    </tr>
+                </table>
+                <div class="deta-info">
+                    <span>详细说明:</span>
+                    <textarea  name="Train_Content"> @k.Train_Content</textarea>
+                    <div class="but">
+                        <div class="but-back">
+                            <a onclick="javascript:window.history.go(-1);">返回</a>
+                        </div>
+                        <div class="but-enter">
+                            <a onclick="document.getElementById('_form').submit();">修改</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        }
+    </div>
+}
+</form>

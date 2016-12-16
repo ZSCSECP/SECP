@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SECP.Models.Talent>
+@{
+    ViewBag.Title = "MOTalentRelease";
+    Layout = "~/Views/Talent.cshtml";
+}
+
+
+<link href="~/css/TalentMo.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/jquery.js"></script>
+@using(Html.BeginForm())
+{
+<div class="MOTalent-main2">
+    <div class="TalentRe-tips">
+    </div>
+    <div class="releaseProject">
+        <div class="table-tittle">
+            <h2>已发布资源</h2>
+            <p>共 @ViewData["Q"]个</p>
+        </div>
+        <div class="table">
+          
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>编号</th>
+                        <th>主题</th>
+                        <th>类型</th>
+                        <th>发布日期</th>
+                        <th>状态</th>
+                        <th>修改<th>
+                        <th>取消</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                      @foreach (SECP.Models.Talent k in Model)
+                 {
+                    <tr>
+                        <td></td>
+                        <td>@k.Talent_Id</td>
+                        <td class="td-tittle"><a href="CKTalent?Id=@k.Talent_Id">@k.Talent_Name</a></td>
+                        <td>@k.Talent_Type</td>
+                        <td>@k.Talent_Time</td>
+                        <td>@k.Talent_State</td>
+                        <td><a href="MKTalent?Id=@k.Talent_Id">修改</a></td>
+                        <td><button name='QX' type='submit' value="@k.Talent_Id"></button></td>
+                    </tr>    
+                 }     
+                </tfoot>
+            </table>   
+            <div class="paging">
+                     @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Talent>)))
+                </div>
+        </div>
+    </div>
+</div>
+}

@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "MOAchievements";
+    Layout = "~/Views/Achievements.cshtml";
+}
+
+<link href="~/css/AchievementsRelease.css" rel="stylesheet" />
+<link href="~/css/AchievementsMo.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/jquery.js"></script>
+<div class="MOAchievements-main">
+    <div class="AchievementsRe-tips">
+    </div>
+    <div id="servicesBox">
+
+        <a href="MOpoper">
+            <div id="serBox1" class="serBox">
+                <div class="serBoxOn"></div>
+                <div class="pic1 mypng"><img src="~/images/ser_box3.png" /></div>
+                <div class="pic2 mypng"><img src="~/images/ser_box3b.png" /></div>
+                <div class="txt1"><span class="tit">已发布论文</span></div>
+                <div class="txt2"><span class="tit">已发布论文</span></div>
+            </div>
+
+            <div class="fgH20"></div>
+        </a>
+        <a href="MOproject">
+            <div id="serBox2" class="serBox" onclick="serFocus(2)">
+                <div class="serBoxOn"></div>
+                <div class="pic1 mypng"><img src="~/images/ser_box3.png" /></div>
+                <div class="pic2 mypng"><img src="~/images/ser_box3b.png" /></div>
+                <div class="txt1"><span class="tit">已发布产品</span></div>
+                <div class="txt2"><span class="tit">已发布产品</span></div>
+            </div>
+        </a>
+
+    </div>
+</div>
+<script src="~/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(".serBox").hover(function () {
+            $(this).children().stop(false, true);
+            $(this).children(".serBoxOn").fadeIn("slow");
+            $(this).children(".pic1").animate({ right: -110 }, 600);
+            $(this).children(".pic2").animate({ left: 105 }, 600);
+            $(this).children(".txt1").animate({ left: -240 }, 600);
+            $(this).children(".txt2").animate({ right: 40 }, 600);
+        }, function () {
+            $(this).children().stop(false, true);
+            $(this).children(".serBoxOn").fadeOut("slow");
+            $(this).children(".pic1").animate({ right: 105 }, 600);
+            $(this).children(".pic2").animate({ left: -110 }, 600);
+            $(this).children(".txt1").animate({ left: 40 }, 600);
+            $(this).children(".txt2").animate({ right: -240 }, 600);
+        });
+
+    });
+
+    function serFocus(i) {
+        $(".servicesPop").slideDown("normal");
+        changeflash(i);
+    }
+    function closeSerPop() {
+        $(".servicesPop").slideUp("fast");
+    }
+
+    var currentindex = 1;
+    function changeflash(i) {
+        currentindex = i;
+        for (j = 1; j <= 6; j++) {
+            if (j == i) {
+                $("#flash" + j).fadeIn("normal");
+                $("#flash" + j).css("display", "block");
+                $("#f" + j).removeClass();
+                $("#f" + j).addClass("dq");
+            } else {
+                $("#flash" + j).css("display", "none");
+                $("#f" + j).removeClass();
+                $("#f" + j).addClass("no");
+            }
+        }
+    }
+</script>

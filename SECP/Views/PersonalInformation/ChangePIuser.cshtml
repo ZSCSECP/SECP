@@ -1,0 +1,35 @@
+﻿@model IEnumerable<SECP.Models.User>
+@{
+    ViewBag.Title = "ChangePIstudent";
+    Layout = "~/Views/PersonalInformation.cshtml";
+}
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/ChangePI-user.css" rel="stylesheet" />
+@foreach (SECP.Models.User k in Model)
+{
+    using (Html.BeginForm())
+    {
+        <div class="Change-PI-main">
+
+            <div class="Change-PI-table">
+                <div class="Change-PI-tittle">
+                    <span>
+                        <img src="~/images/favicon.ico" />用户名
+                    </span>
+                    <nobr>的基本信息</nobr>
+                </div>
+                <table>
+                    <tr>
+                        <td class="Change-PI-table-tittle">QQ:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="User_QQ" value="@k.User_QQ" /></td>
+                    </tr>
+
+                </table>
+                <hr class="hr1" />
+                <div class="Change-PI-button">
+                    <input type="submit" name="TK" class="button-3d button-primary button-rounded" value="     保存      " style="background: #077ace; color: #fff; border: 1px solid #077ace; " />
+                </div>
+            </div>
+        </div>
+    }
+}

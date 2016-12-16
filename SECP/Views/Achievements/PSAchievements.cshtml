@@ -1,0 +1,96 @@
+﻿@model IEnumerable<SECP.Models.Teacher>
+@{
+    ViewBag.Title = "PSAchievements";
+    Layout = "~/Views/Achievements.cshtml";
+}
+
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/Achievements-student-dis.css" rel="stylesheet" />
+
+
+@foreach (SECP.Models.Teacher k in Model)
+{
+
+    <div class="CK-main">
+        <div class="achievementsRe-tips">
+        </div>
+        <div class="CK-main-table">
+            <div class="CKT-table">
+                <table>
+                    <tr>
+                        <td class="CKT-topic" colspan="7"><span>@k.teacher_UserName</span>的简历</td>
+                    </tr>
+
+                    <tr>
+                        <td class="CKT-tittle">姓名</td>
+                        <td class="CKT-content">@k.teacher_RealName</td>
+                        <td class="CKT-tittle">性别</td>
+                        <td class="CKT-content">@k.teacher_Sex</td>
+                        <td class="CKT-tittle">出生年月</td>
+                        <td class="CKT-content-end">@k.teacher_BornDate</td>
+                        
+
+                    </tr>
+                    <tr>
+                        <td class="CKT-tittle">学历<span></span></td>
+                        <td class="CKT-content">@k.teacher_Edu</td>
+                        <td class="CKT-tittle">毕业学校<span></span></td>
+                        <td class="CKT-content">@k.teacher_GradSchool</td>
+                        <td class="CKT-tittle">当前学校<span></span></td>
+                        <td class="CKT-content-end">@k.teacher_AtSchool</td>
+
+                    </tr>
+                    <tr>
+                        <td class="CKT-tittle">所教课程<span></span></td>
+                        <td class="CKT-content">@k.teacher_TeachClass</td>
+                        <td class="CKT-tittle">教师职位<span></span></td>
+                        <td class="CKT-content">@k.teacher_Position</td>
+                        <td class="CKT-tittle">个人荣誉<span></span></td>
+                        <td class="CKT-content-end">@k.teacher_Glory</td>
+
+                    </tr>
+                    <tr>
+                        <td class="CKT-tittle">QQ<span></span></td>
+                        <td class="CKT-content">@k.teacher_QQ<span></span></td>
+                        <td class="CKT-tittle">电话<span></span></td>
+                        <td class="CKT-content">@k.teacher_Tel</td>
+                        <td class="CKT-tittle">邮箱<span></span></td>
+                        <td class="CKT-content-end">@k.teacher_Email</td>
+
+                    </tr>
+                    <tr>
+                        <td class="CKT-tittle">通信地址<span></span></td>
+                        <td class="CKT-detail-content" colspan="6">@k.teacher_Address</td>
+                    </tr>
+                    <tr>
+                        <td class="CKT-topic" colspan="7">个人履历</td>
+                    </tr>
+                    <tr>
+                        <td class="CKT-tittle">代表论文<span></span></td>
+                        <td class="CKT-detail-content" colspan="6">@k.teacher_RepThesis</td>
+                    </tr>
+                    <tr>
+                        <td class="CKT-tittle">代表著作<span></span></td>
+                        <td class="CKT-detail-content" colspan="6">@k.teacher_RepPro</td>
+                    </tr>
+                    <tr>
+                        <td class="CKT-tittle">代表项目<span></span></td>
+                        <td class="CKT-detail-content" colspan="6">@k.teacher_RepProject</td>
+                    </tr>
+                    <tr>
+                        <td class="CKT-tittle">个人介绍<span></span></td>
+                        <td class="CKT-detail-content" colspan="6">@k.teacher_Introduce</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="CKT-button">
+                <a onclick="javascript:window.history.go(-1)" class="button button-glow button-border button-rounded button-primary">返回</a>
+                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=@k.teacher_QQ&site=qq&menu=yes" class="button button-glow button-border button-rounded button-primary">联系</a>
+            </div>
+
+
+
+        </div>
+    </div>
+}
+

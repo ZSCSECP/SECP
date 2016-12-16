@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Access3";
+}
+
+<head>
+<title>注册</title>
+    <link href="~/css/Access3.css" rel="stylesheet" />
+    <script src="~/js/jquery-2.1.0.min.js"></script>
+    <script src="~/js/easyfrom.js"></script>
+
+</head>
+
+<body>
+    <div class="head">
+        <div class="HomeLogo">
+            <a href="~/Home.html">
+                <img src="~/images/accesslogo.png" draggable="false" />
+            </a>
+        </div>
+        <div class="BackLogin" draggable="false">
+            已有帐号？<a href="~/Login/Login">
+                <div class="Back-arrow">
+                    <img src="~/images/back-arrow.png" />
+                </div>
+            </a>
+        </div>
+
+    </div>
+<div class="form-div">
+    <form id="reg-form" method="post">
+
+<ul id="tabs">
+    <li><a href="#" title="tab4">客户注册</a></li>    
+</ul>
+
+<div id="content"> 
+    <div id="tab4">
+        <h2>请认真填写您的相关信息！</h2>      
+        <table>
+             <tr>
+                <td>用户名</td>
+                <td><input name="User_Name" type="text" id="User_Name" easyform="length:4-16;char-normal;real-time;" message="用户名必须为4—16位的英文字母或数字" easytip="disappear:lost-focus;theme:blue;" ajax-message="用户名已存在!"/>
+                </td>        
+                </tr>
+             <tr>
+                <td>密码</td>
+                <td><input name="user_psw1" type="password" id="user_psw1" easyform="length:6-16;" message="密码必须为6—16位" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>
+            <tr>
+                <td>确认密码</td>
+                <td><input name="user_psw2" type="password" id="user_psw2" easyform="length:6-16;equal:#user_psw1;real-time" message="两次密码输入要一致" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>
+            <tr>
+                <td>QQ</td>
+                <td><input name="QQ" type="text" id="QQ" easyform="length:5-30;real-time;" message="请输入QQ" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>    
+            </table>
+         <input value="客户注册" type="submit" style="margin-right:20px; margin-top:20px;margin-left:160px" name="Access">
+			<input value="我有账号，我要登录" type="button" style="margin-right:45px; margin-top:20px;" onclick="window.open('Login')">
+    </div>
+</div>
+</form>
+</div>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#content div").hide(); // Initially hide all content
+            $("#tabs li:first").attr("id", "current"); // Activate first tab
+            $("#content div:first").fadeIn(); // Show first tab content
+
+            $('#tabs a').click(function (e) {
+                e.preventDefault();
+                $("#content div").hide(); //Hide all content
+                $("#tabs li").attr("id", ""); //Reset id's
+                $(this).parent().attr("id", "current"); // Activate this
+                $('#' + $(this).attr('title')).fadeIn(); // Show content for current tab
+            });
+        })();
+</script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#reg-form').easyform();
+        });
+</script>
+</body>

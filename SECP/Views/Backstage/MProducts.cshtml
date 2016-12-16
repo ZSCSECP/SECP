@@ -1,0 +1,65 @@
+﻿@model IEnumerable<SECP.Models.Products>  
+@{
+    ViewBag.Title = "MProducts";
+    Layout = "~/Views/Backstage.cshtml";
+}
+
+@using(Html.BeginForm())
+{
+<div class="header">
+            <h1 class="page-title">产品信息平台</h1>
+        </div>
+        
+                <ul class="breadcrumb">
+            <li><a href="#">产品平台</a> <span class="divider">/</span></li>
+            <li class="active">详细信息</li>
+ </ul>
+<div class="well">
+    <table class="table">
+        <thead>
+            <tr><td colspan="4" style="font-size:16px">详细信息</td></tr>
+        </thead>
+        @foreach (SECP.Models.Products k in Model)
+       {
+        <tbody>
+        <tr>
+            <td>产品Id：</td>
+            <td>@k.Products_Id</td>
+            <td>产品类型：</td>
+            <td>@k.Products_Type</td>
+        </tr>
+        <tr>
+            <td>产品主题：</td>
+            <td>@k.Products_Theme</td>
+            <td>发布时间：</td>
+            <td>@k.Products_Time</td>
+        </tr>
+        <tr>
+            <td>发布人：</td>
+            <td>@k.Products_Publisher</td>
+            <td>联系方式：</td>
+            <td>@k.Products_contact</td>
+        </tr>
+        <tr>
+            <td>专利号：</td>
+            <td>@k.Products_Number</td>
+            <td>产品价格：</td>
+            <td>@k.Products_Money</td>
+        </tr>
+         <tr>
+            <td>产品信息审核：</td>
+            <td>@k.Products_Checks</td>
+        </tr>
+        </tbody>
+        }
+        <tr>
+            <td colspan="4">
+                <div style="text-align:center">
+                    <input type="submit" name="TK" class="btn" value="该信息无错！审核通过！" />
+                    <input type="submit" name="TK" class="btn" value="该信息有错！审核不通过！" />
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+}

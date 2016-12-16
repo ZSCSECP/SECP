@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "TrainHome";
+    Layout = "~/Views/Train.cshtml";
+}
+
+<!--Silder-->
+<script type="text/javascript" src="~/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="~/js/responsiveslides.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // Slideshow
+        $("#slider").responsiveSlides({
+            auto: true,
+            pager: false,
+            nav: true,
+            speed: 500,
+            timeout: 4000,
+            pager: true,
+            pauseControls: true,
+            namespace: "callbacks"
+        });
+    });
+</script>
+<script type="text/javascript">
+    function aa() {
+        window.location.hash = "#talent-state";
+    }
+</script>
+
+<div class="callbacks_container">
+    <ul class="rslides" id="slider">
+        <li><a href="#"><img src="~/images/train/001.jpg" alt=""></a></li>
+        <li><a href="#"><img src="~/images/train/002.jpg" alt=""></a></li>
+        <li><a href="#"><img src="~/images/train/003.jpg" alt=""></a></li>
+        <li><a href="#"><img src="~/images/train/004.jpg" alt=""></a></li>
+    </ul>
+</div>
+<!--Silder-->
+<div class="Train-welcome" onload="aa()">
+    <h3>
+        什么是实训基地平台？
+    </h3>
+    <p>
+        高校及企业利用平台为学生或其他用户提供人才培养、培训和展示的实训基地平台。<br />
+        <span>You can collecting, processing, training and release of train information on this platform.</span>
+    </p>
+
+</div>
+<div class="Train-state" id="talent-state">
+
+
+    <div class="state-top">
+        <div class="state" draggable="false">
+            <a href="ENTrain"><img src="~/images/train/train-state.png" /><br />企业实训</a>
+            <br /><span>企业或政府向学生提供实习锻炼，给学生磨练就业技能的机会</span>
+        </div>
+        <div class="state" draggable="false">
+            <a href="SCTrain"><img src="~/images/train/train-state1.png" /><br />学校实训</a>
+            <br /><span>高校或师生向学生提供实习锻炼，为学生将来打下基础</span>
+        </div>
+
+    </div>
+
+    <div class="state-bottom">
+        <div class="state" draggable="false">
+            <a href="CLTalent"><img src="~/images/train/train-state2.png" /><br />实训培训班</a>
+            <br /><span>企业政府提供就职机会，为学生获取更多机遇</span>
+        </div>
+    </div>
+</div>

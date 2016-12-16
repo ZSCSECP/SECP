@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SECP.Models.Talent>  
+@{
+    ViewBag.Title = "BSTalent";
+    Layout = "~/Views/Backstage.cshtml";
+}
+
+@using(Html.BeginForm())
+{
+<div class="header">
+            <h1 class="page-title">人才信息平台</h1>
+        </div>
+        
+                <ul class="breadcrumb">
+            <li><a href="#">人才平台</a> <span class="divider">/</span></li>
+            <li class="active">列表信息</li>
+ </ul>
+ <div style="margin:30px 0px 5px 70px">
+        @*<button class="btn" name="te">升序</button>
+        <button class="btn" name="te">降序</button>*@
+     <input class="btn" name="te" value="升序" type="submit" />
+     <input class="btn" name="te" value="降序" type="submit" />
+    </div>
+<div class="well">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>招聘序号</th>
+          <th>招聘名称</th>
+          <th>发布人</th>
+          <th>当前状态</th>
+          <th style="width: 34px;">修改</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (SECP.Models.Talent k in Model)
+        {
+        <tr>
+          <td>@k.Talent_Id</td>
+          <td>@k.Talent_Name</td>
+          <td>@k.Talent_Publisher</td>
+          <td>@k.Talent_Checks</td>
+          <td>
+              <a href="MTalent?Ta=@k.Talent_Id"><i class="icon-pencil"></i></a>
+          </td>
+            </tr>
+            }
+          <tr>
+           <td colspan="5">
+               <div style="text-align:center;width:100%">
+                   @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Talent>)))
+               </div></td>
+           </tr>
+      </tbody>
+
+    </table>
+</div>
+}

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<SECP.Models.SimpleInfo>
+@{
+    ViewBag.Title = "地方政策";
+    Layout = "~/Views/Goverment.cshtml";
+}
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-sm-3 blog-sidebar">
+                    <div class="sidebar-wrapper">
+                        <a href="/Goverment/GSTPolicy?type=0"><h4 id="0">地方政策</h4></a>
+                        <a href="/Goverment/GSTPolicy?type=1"><h4 id="1">国家政策</h4></a>
+                        <input type="hidden" value="" id="idtype" />
+                    </div>
+                </div>
+                <!-- End Sidebar -->
+                <div class="col-sm-9">
+                    <div class="blog-post blog-single-post">
+                        <div class="single-post-title">
+                            <h1>@ViewData["zc"]</h1>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li>
+                                <i><img src="/images/icon-home.png" /></i>
+                                <a href="/Goverment/GoveTechPolicy">科技政策</a>
+                                <i>&gt;&gt;</i>
+                            </li>
+                            <li>@ViewData["zc"]</li>
+                        </ul>
+                        <div class="single-post-content">
+                            <h3>地方性法规</h3>
+                            <ul>
+                                @foreach(SECP.Models.SimpleInfo k in Model)
+                                {
+                                    <li><a href="@k.LinkUrl">@k.Title</a></li>
+                                }
+                            </ul>
+                            
+                        </div>
+                        <div class="divHeight">
+                            @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.SimpleInfo>)))
+                        </div>
+                    </div>
+                </div>
+                <!-- End Blog Post -->
+            </div>
+        </div>
+    </div>
+

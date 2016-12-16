@@ -1,0 +1,60 @@
+﻿@model IEnumerable<SECP.Models.Achievements>
+@{
+    ViewBag.Title = "MOAccept";
+    Layout = "~/Views/Achievements.cshtml";
+}
+
+<link href="~/css/AchievementsMo.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/jquery.js"></script>
+@using(Html.BeginForm())
+{
+<div class="MOAchievements-main2">
+    <div class="AchievementsRe-tips">
+    </div>
+    <div class="acceptProject">
+        <div class="table-tittle">
+            <h2>已发布论文</h2>
+            <p>共 @ViewData["Q"]个</p>
+        </div>
+        <div class="table">
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>研发Id</th>
+                        <th>研发类型</th>
+                        <th>研发主题</th>
+                        <th>发布时间</th>
+                        <th>联系方式</th>
+                        <th>研发特长</th>
+                        <th>修改论文</th>
+                        <th>删除论文</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                   @foreach (SECP.Models.Achievements k in Model)
+                 {
+                    <tr>
+                        <td></td>
+                        <td>@k.Achievements_Id</td>
+                        <td>@k.Achievements_Type</td>     
+                        <td><a href="CKAchievements?Id=@k.Achievements_Id">@k.Achievements_Theme</a></td>
+                        <td>@k.Achievements_Time</td>
+                        <td>@k.Achievemetns_contact</td>
+                        <td>@k.Achievements_Specialty</td>
+                        <td><a href="MIAchievements?Id=@k.Achievements_Id">修改</a></td>
+                        <td><button  class="cancelbutton"name='QX' type='submit' value="@k.Achievements_Id"></button></td>
+                    </tr>
+                  }
+                </tfoot>
+            </table>  
+            <div class="paging">
+                     @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Achievements>)))
+                </div>
+        </div>
+    </div>
+</div>
+}
+

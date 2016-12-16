@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "AchievementsHome";
+    Layout = "~/Views/Achievements.cshtml";
+}
+
+<!--Silder-->
+<script type="text/javascript" src="~/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="~/js/responsiveslides.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // Slideshow
+        $("#slider").responsiveSlides({
+            auto: true,
+            pager: false,
+            nav: true,
+            speed: 500,
+            timeout: 4000,
+            pager: true,
+            pauseControls: true,
+            namespace: "callbacks"
+        });
+    });
+</script>
+<script type="text/javascript">
+    function aa() {
+        window.location.hash = "#achievements-state";
+    }
+</script>
+
+<div class="callbacks_container">
+    <ul class="rslides" id="slider">
+        <li><a href="#"><img src="~/images/achievements/001.jpg" alt=""></a></li>
+        <li><a href="#"><img src="~/images/achievements/002.jpg" alt=""></a></li>
+        <li><a href="#"><img src="~/images/achievements/003.jpg" alt=""></a></li>
+        <li><a href="#"><img src="~/images/achievements/004.jpg" alt=""></a></li>
+    </ul>
+</div>
+<!--Silder-->
+<div class="achievements-welcome" onload="aa()">
+    <h3>
+        什么是研发成果平台？
+    </h3>
+    <p>
+        高校及企业利用平台为学生或其他用户提供人才培养、培训和展示的实训基地平台。<br />
+        <span>You can collecting, processing, achievementsing and release of achievements information on this platform.</span>
+    </p>
+
+</div>
+<div class="achievements-state" id="achievements-state">
+
+    <div class="state-bottom">
+        <div class="state" draggable="false">
+            <a href="TAchievements"><img src="~/images/achievements/achievements-state1.png" /><br />教师简历</a>
+            <br /><span>高校向企业政府和学生提供教师个人信息，为研发提供保障</span>
+        </div>
+    </div>
+    <div class="state-top">
+        <div class="state" draggable="false">
+            <a href="CIAchievements"><img src="~/images/achievements/achievements-state2.png" /><br />论文信息</a>
+            <br /><span>向高校师生或企业资深人员提供论文上传展示或下载参考</span>
+        </div>
+        <div class="state" draggable="false">
+            <a href="CCAchievements"><img src="~/images/achievements/achievements-state3.png" /><br />产品信息</a>
+            <br /><span>向高校师生或企业资深人员提供自己研发产品上传展示或下载参考</span>
+        </div>
+
+    </div>
+
+
+</div>

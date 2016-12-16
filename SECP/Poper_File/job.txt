@@ -1,0 +1,22 @@
+192.168.1.63   metabus/metabus  
+依赖的jar包在这里
+ tmp_1/spark-1.5.0-bin-hadoop2.6b
+svn://202.105.179.25:4480/Hadoop   hadoop/hadoop
+
+INSERT INTO 表名称 VALUES (值1, 值2,....)
+UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值
+DELETE FROM 表名称 WHERE 列名称 = 值
+
+orcle: orcle10 a123
+mysql:  root  没密码
+admin mm
+
+Enterprise Manager Database Control URL - (orcle10) :
+http://CN-20160309FWBP:1158/em
+
+数据库配置文件已经安装到 E:,同时其他选定的安装组件也已经安装到 E:\O10。
+iSQL*Plus URL 为:
+http://CN-20160309FWBP:5560/isqlplus
+
+iSQL*Plus DBA URL 为:
+http://CN-20160309FWBP:5560/isqlplus/dba

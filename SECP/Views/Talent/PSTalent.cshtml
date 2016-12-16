@@ -1,0 +1,103 @@
+﻿@model IEnumerable<SECP.Models.Student>
+@{
+    ViewBag.Title = "PSTalent";
+    Layout = "~/Views/Talent.cshtml";
+}
+
+<link href="~/css/TalentRelease-resume.css" rel="stylesheet" />
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+@*<link href="~/css/CK.css" rel="stylesheet" />*@
+<link href="~/css/Talent-student-dis.css" rel="stylesheet" />
+<link href="~/css/SRTalent.css" rel="stylesheet" />
+
+@foreach (SECP.Models.Student k in Model)
+{
+    <link href="~/css/CKTalent-dis.css" rel="stylesheet" />
+    <div class="CK-main">
+        <div class="TalentRe-tips">
+        </div>
+        <div class="CK-main-table">
+            <div class="CKT-table">
+                <table>
+                    <tr>
+                        <td class="CKT-topic" colspan="7"><span>@k.student_UserName</span>的简历</td>
+                    </tr>
+
+                    <tr>
+                        <td class="CKT-tittle">姓名</td>
+                        <td class="CKT-content">@k.student_RealName</td>
+                        <td class="CKT-tittle">性别</td>
+                        <td class="CKT-content">@k.student_Sex</td>
+                        <td class="CKT-tittle">出生年月</td>
+                        <td class="CKT-content">@k.student_BornDate</td>
+                        <td class="CKT-img"rowspan="4" style="background-image:url(@ViewData["src"]);height:200px;width:133px"> </td>
+
+                    </tr>
+                    <tr>
+                        <td class="CKT-tittle">学历<span></span></td>
+                        <td class="CKT-content">@k.student_Edu</td>
+                        <td class="CKT-tittle">毕业学校<span></span></td>
+                        <td class="CKT-content">@k.student_GradSchool</td>
+                        <td class="CKT-tittle">专业<span></span></td>
+                        <td class="CKT-content">@k.student_Major</td>
+
+                    </tr>
+                    <tr>
+                        <td class="CKT-tittle">兴趣爱好<span></span></td>
+                        <td class="CKT-content">@k.student_Hobby</td>
+                        <td class="CKT-tittle">专业技能<span></span></td>
+                        <td class="CKT-content">@k.student_SKill</td>
+                        <td class="CKT-tittle">个人荣誉<span></span></td>
+                        <td class="CKT-content">@k.student_Glory</td>
+
+                    </tr>
+                    <tr>
+                        <td class="CKT-tittle">QQ<span></span></td>
+                        <td class="CKT-content">@k.student_QQ<span></span></td>
+                        <td class="CKT-tittle">电话<span></span></td>
+                        <td class="CKT-content">@k.student_Tel</td>
+                        <td class="CKT-tittle">邮箱<span></span></td>
+                        <td class="CKT-content">@k.student_Email</td>
+
+                    </tr>
+                    <tr>
+                        <td class="CKT-tittle">通信地址<span></span></td>
+                        <td class="CKT-detail-content" colspan="6">@k.student_Address</td>
+                    </tr>
+                    <tr>
+                        <td class="CKT-topic" colspan="7">个人履历</td>
+                    </tr>
+                    <tr>
+                        <td class="CKT-tittle">培训经历<span></span></td>
+                        <td class="CKT-detail-content" colspan="6">@k.student_Train</td>
+                    </tr>
+                    <tr>
+                        <td class="CKT-tittle">项目经历<span></span></td>
+                        <td class="CKT-detail-content" colspan="6">@k.student_Practic</td>
+                    </tr>
+                    <tr>
+                        <td class="CKT-topic" colspan="7">求职意向</td>
+                    </tr>
+                    <tr>
+                        <td class="CKT-tittle">期望从事职业<span></span></td>
+                        <td class="CKT-content">@k.student_Occupation</td>
+                        <td class="CKT-tittle">期望月薪<span></span></td>
+                        <td class="CKT-content">@k.student_Wage</td>
+                        <td class="CKT-tittle">期望工作地点<span></span></td>
+                        <td class="CKT-content" colspan="2">@k.student_WorkPlace</td>
+
+                    </tr>
+                </table>
+            </div>
+            <div class="CKT-button">
+                <a onclick="javascript:window.history.go(-1)" class="button button-glow button-border button-rounded button-primary">返回</a>
+                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=@k.student_QQ&site=qq&menu=yes" class="button button-glow button-border button-rounded button-primary">联系</a>
+            </div>
+
+
+
+        </div>
+    </div>
+}

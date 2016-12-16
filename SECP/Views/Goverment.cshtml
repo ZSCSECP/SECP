@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.css.map">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
+    <link href="~/css/tech-main.css" rel="stylesheet" />
+    <link href="~/css/TechInfoPublic.css" rel="stylesheet" />
+</head>
+<body>
+    @*导航栏*@
+    <div class="mainmenu-wrapper">
+        <div class="container">
+            <div class="menuextras">
+                <div class="extras">
+                    <ul>
+                        <li><a href="#"><img src="/images/Social_Logo/Github_Logo2.png" /></a></li>
+                        <li><a href="#"><img src="/images/Social_Logo/QQ_Logo2.png" /></a></li>
+                        <li><a href="#"><img src="/images/Social_Logo/Renren_Logo2.png" /></a></li>
+                        <li>
+                            <a href="/Login/Login">
+                                @ViewData["State"]
+                                <div class="sub">
+                                    @ViewData["YState"]
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../PersonalInformation/PIstudent">
+                                @ViewData["UserName"]
+                                <div class="sub">
+                                    @ViewData["TimeNow"]
+                                </div>
+                            </a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav id="colorNav" class="colorNav">
+                <ul>
+                    <li class="logo-wrapper"><a href="TechHome"><img src="/images/mPurpose-logo5.png" alt="HomeLogo" /></a></li>
+                    <li>
+                        <a href="/Goverment/GoveInfoPublic">信息公开</a>
+                        <ul>
+                            <li><a href="/Goverment/GoveInfoPublic">科技规划</a></li>
+                            <li><a href="/Goverment/GoveFundsPublic">资金公开</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/Goverment/GoveTechPolicy">科技政策</a>
+                        <ul>
+                            <li><a href="/Goverment/GoveTechPolicy">地方政策</a></li>
+                            <li><a href="/Goverment/NationalPolicy">国家政策</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/Goverment/ImportantNews">科技计划</a>
+                        <ul>
+                            <li><a href="/Goverment/TechHome">资金申报</a></li>
+                            <li><a href="/Goverment/TechHome">项目申报</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/Goverment/ImportantNews">科技动态</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    @*脚注*@
+    <div class="footer">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footer-copyright">Copyright &copy; 2016.电子科技大学中山学院</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

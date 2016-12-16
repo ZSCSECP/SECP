@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "TrainWait";
+    Layout = "~/Views/Train.cshtml";
+}
+
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/TrainWait.css" rel="stylesheet" />
+@using(Html.BeginForm())
+{
+    <div class="Wait-main">
+        <div class="TrainRe-tips">
+        </div>
+        <div class="Wait-schedule">
+
+        </div>
+        <div class="Wait-left">
+            <img src="~/images/train/trainwait-left.png" draggable="false" />
+        </div>
+        <div class="Wait-right">
+            <img src="~/images/train/trainwait-right.png" draggable="false" />
+        </div>
+        <div class="Wait-message">
+            <div class="Wait-img">
+                <img src="~/images/success.png" />
+            </div>
+            <div class="Wait-tips">
+                <h2>发布申请提交成功！</h2>
+                <p>我们将在7个工作日内完成审核，请耐心等待！</p>
+                <hr />
+                <input type="submit" name="TK" class="button button-3d button-action button-pill" value="完成" />
+            </div>
+        </div>
+
+    </div>
+}

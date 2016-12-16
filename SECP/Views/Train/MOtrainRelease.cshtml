@@ -1,0 +1,62 @@
+﻿@model IEnumerable<SECP.Models.Train>
+@{
+    ViewBag.Title = "MOtrainRelease";
+    Layout = "~/Views/Train.cshtml";
+}
+
+<link href="~/css/TrainMo.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/jquery.js"></script>
+@using(Html.BeginForm())
+{
+<div class="MOtrain-main2">
+    <div class="trainRe-tips">
+    </div>
+    <div class="acceptProject">
+        <div class="table-tittle">
+            <h2>已发布实训</h2>
+            <p>共 @ViewData["Q"]个</p>
+        </div>
+        <div class="table">
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>实训id</th>
+                        <th>实训类型</th>
+                        <th>实训主题</th>
+                        <th>实训日期</th>
+                        <th>发布时间</th>
+                        <th>实训地点</th>
+                        <th>相关专业</th>
+                        <th>修改</th>
+                        <th>取消</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    @foreach (SECP.Models.Train k in Model)
+                        {
+                    <tr>
+                        <td></td>
+                        <td>@k.Train_Id</td>
+                        <td>@k.Train_Type</td>
+                        <td><a href="CKTrain?Id=@k.Train_Id">@k.Train_Name</a></td>
+                        <td>@k.Train_Date</td>
+                        <td>@k.Train_Time</td>
+                        <td>@k.Train_Place</td>
+                        <td>@k.Train_Major</td>
+                        <td><a href="MKTrain?Id=@k.Train_Id">修改</a></td>
+                        <td><button name='QX' type='submit' value="@k.Train_Id"></button></td>
+                    </tr>
+                    }
+                </tfoot>
+            </table>
+            <div class="paging">
+                     @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Train>)))
+                </div>
+        </div>
+
+    </div>
+</div>
+}

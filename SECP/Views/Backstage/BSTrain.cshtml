@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SECP.Models.Train>  
+@{
+    ViewBag.Title = "BSTrain";
+    Layout = "~/Views/Backstage.cshtml";
+}
+
+@using(Html.BeginForm())
+{
+<div class="header">
+            <h1 class="page-title">实训信息平台</h1>
+        </div>
+        
+                <ul class="breadcrumb">
+            <li><a href="#">实训平台</a> <span class="divider">/</span></li>
+            <li class="active">列表信息</li>
+ </ul>
+ <div style="margin:30px 0px 5px 70px">
+     <input class="btn" name="te" value="升序" type="submit" />
+     <input class="btn" name="te" value="降序" type="submit" />
+    </div>
+<div class="well">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>实训序号</th>
+          <th>实训名称</th>
+          <th>发布人</th>
+          <th>审核状态</th>
+          <th style="width: 34px;">修改</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (SECP.Models.Train k in Model)
+        {
+        <tr>
+          <td>@k.Train_Id</td>
+          <td>@k.Train_Name</td>
+          <td>@k.Train_Publisher</td>
+          <td>@k.Train_Checks</td>
+          <td>
+              <a href="MTrain?Tr=@k.Train_Id"><i class="icon-pencil"></i></a>
+          </td>
+            </tr>
+            }
+          <tr>
+           <td colspan="5">
+               <div style="text-align:center;width:100%">
+                   @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Train>)))
+               </div></td>
+           </tr>
+      </tbody>
+
+    </table>
+</div>
+}

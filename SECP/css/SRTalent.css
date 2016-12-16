@@ -1,0 +1,282 @@
+﻿.main {
+    height: 630px;
+}
+/*搜索栏*/
+
+input, button, textarea, select {
+    font-size: 100%;
+    outline: 0;
+    vertical-align: middle;
+}
+
+.search_div {
+    height: 46px;
+    width: 125px;
+    float: left;
+    background: url(../Images/Search/search_icon01.png) no-repeat;
+    line-height: 46px;
+
+}
+
+
+
+.gundong_bg_search {
+    height: 125px;
+    width: 100%;
+    background: url(../images/talent/SRsearch.png);
+    background-size: 100% 100%;
+    position: relative;
+    float: left;
+
+}
+
+/*.bm_bg_search{
+	height:500px;
+	width:100%;
+	min-width:980px;
+	background:url(../Images/Search/search_shouyeBg.jpg) no-repeat center;
+}*/
+
+.bm_m_search {
+    width: 980px;
+    height: 125px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    margin-left: -480px;
+    top: 25px;
+}
+
+
+/*搜索栏框*/
+.search_div_bg2 {
+    height: 50px;
+    width: 680px;
+    position: absolute;
+    margin-left:125px;
+    background: #0026ff;
+    filter: alpha(opacity=30);
+    -moz-opacity: .3;
+    opacity: .3;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+}
+
+
+
+/*搜索栏提示信息*/
+.search_div_bg_input {
+    height: 46px;
+    width: 615px;
+    border: 1px solid #6ea9f5;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    position: relative;
+    font-size: 16px;
+    color: #000000;
+    padding: 2px 44px 0 20px;
+    background-color: rgba(0,0,0,.0);
+    z-index: 8;
+    font-weight:bolder;
+    margin-left:125px;
+
+}
+
+/*.search_div_bg_btn{
+	height: 30px;
+	width: 30px;
+	display: block;
+	background: url(../Images/Search/search_icon03.png) no-repeat;
+	float: left;
+	margin: 8px 0 0 8px;
+	cursor: pointer;
+}*/
+/*搜索图标*/
+.search_div_bg_btn {
+    height: 30px;
+    width: 30px;
+    display: block;
+    background: url(../images/icon/search_icon03.png) no-repeat;
+    float: left;
+    cursor: pointer;
+    position: absolute;
+    /*right: 10px;*/
+    left:755px;
+    top: 10px;
+    z-index: 88;
+}
+/*热门字查询*/
+.hot_search {
+    line-height: 22px;
+    font-size: 14px;
+    color: #fff;
+    max-height: 80px;
+    padding-top: 10px;
+}
+
+.hot_search_name {
+    height: 100%;
+    width: 90px;
+    display: block;
+    text-align: right;
+    float: left;
+}
+
+.hot_search_text {
+    width: 880px;
+    float: left;
+    position: relative;
+    height: 63px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.hot_search_text a {
+        color: #fff;
+        margin-right: 18px;
+        float: left;
+    }
+
+
+/*表格*/
+.talent_table {
+    width: 790px;
+    background: #fff;
+    background-size: 100% 100%;
+    position: relative;
+    float: left;
+    margin-left: 20%;
+
+    margin-top: 10px;
+    border: 2px solid #e0e0e0;
+}
+
+.talent_table_main {
+    float: left;
+    width: 790px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-tittle {
+    margin-top: 5px;
+    margin-left: 10px;
+    padding: 0px;
+}
+
+.table-tittle h2 {
+        font-size: 14px;
+        font-weight: bolder;
+        float:left;
+    }
+    .table-tittle p {
+        font-size: 10px;
+        line-height: 10px;
+        float: right;
+        padding-top:5px;
+        padding-right:10px;
+    }
+.table-line {
+    border-top: 1px dotted #e0e0e0;
+}
+
+.paging{
+   margin-top:5px;
+    text-align:center;
+}
+
+.table th {
+    background: #fffdfa url(images/th.gif) repeat-x 0 0;
+    color: #818181;
+    text-align: left;
+    padding: 3px 10px;
+}
+
+.table td {
+    background: #fbfcfc;
+    border-bottom: solid 1px #e0e0e0;
+    padding: 8px 10px;
+}
+
+.table tr.odd td {
+    background: #f8f8f8;
+}
+
+.table tr:hover td {
+    background: #fff9e1;
+}
+.td-tittle{
+    width:280px;
+}
+
+/*分类*/
+.left {
+    float: left;
+    width: 200px;
+    margin-left: 200px;
+    margin-top: 10px;
+}
+
+.border {
+    border: 2px solid #e0e0e0;
+}
+
+.border h2 {
+        height: 30px;
+        margin-top: 10px;
+        font-size: 20px;
+        padding-left: 10px;
+        padding-bottom: 0px;
+    }
+
+.border-box-tittle {
+    color: #04bfea;
+    font-weight: bolder;
+    padding-left: 5px;
+    font-size: 12px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.border-box-item {
+    padding-left: 5px;
+    /*border-bottom: 1px solid #e0e0e0;*/
+}
+
+.border-box {
+    /*position: relative;*/
+    cursor:pointer;
+}
+
+.seled {
+    color: #6ea9f5;
+}
+.border-box-item a{
+    margin-left:2px;
+}
+.border-box-item a:hover {
+    color: #6ea9f5;
+}
+/*广告*/
+.gg{
+    float: left;
+    width: 198px;
+    border: 2px solid #e0e0e0;
+    margin-top:5px;
+    height: 180px;
+    margin-left:-2px;
+}
+.gg1{
+    width:198px;
+    float:left;
+    height:89px;
+    border-bottom:1px dotted #e0e0e0;
+}
+.gg2{
+    float:left;
+    height:88px;
+}
+dl{clear:left;}
+dt,dd{float:left;}
+h3 {
+    clear:left;
+}

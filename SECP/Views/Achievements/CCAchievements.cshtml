@@ -1,0 +1,101 @@
+﻿@model IEnumerable<SECP.Models.Achievements>
+@{
+    ViewBag.Title = "CCAchievements";
+    Layout = "~/Views/Achievements.cshtml";
+}
+
+<link href="~/css/AchievementsShow.css" rel="stylesheet" />
+
+<div class="body_a">
+    <div class="gundong_bg_search">
+        <div class="bm_m_search">
+            <div class="search_div_box">
+                <div class="search_div_bg2"></div>
+                <div class="search_div_bg">
+                    <form action="CCAchievements" method="post" autocomplete="off">
+                        <span class="search_div_bg_btn" id="wesitesearch"></span>
+                        <input type="text" class="search_div_bg_input" name="search" placeholder="请输入主题关键词" autocomplete="off">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="main">
+    
+    <div class="achievements_table">
+        <div class="achievements_table_main">
+            <div class="table-tittle">
+                <h2>招聘查看</h2>
+                <p>共 @ViewData["num"] 个项目</p>
+            </div>
+            <div class="table">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <th>@ViewData["a"]</th>
+                            <th>编号</th>
+                            <th>主题</th>
+                            <th>发布时间</th>
+                            <th>发布人</th>
+                            @*<th>工资</th>
+                            <th>招聘人数</th>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+                         @foreach (SECP.Models.Achievements k in Model)
+                        {
+                            <tr>
+                                <td></td>
+                                <td>@k.Achievements_Id</td>
+                                <td><a href="CKAchievements?Id=@k.Achievements_Id">@k.Achievements_Theme</a></td>
+                                <td>@k.Achievements_Time</td>
+                                <td>@k.Achievements_Publisher</td>
+                                @*<td>@k.achievements_Money</td>
+                                <td>@k.achievements_Num</td>*@
+                            </tr>
+                         }
+                    </tbody>
+                </table>
+                <div class="paging">
+                    @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Achievements>)))
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //为filter下的所有a标签添加单击事件
+        $(".border-box-item a").click(function () {
+            $(this).parents("dl").children("dd").each(function () {
+                //下面三种方式效果相同（第三种写法的内部就是调用了find()函数，所以，第二、三种方法是等价的。）
+                $('a', this).removeClass("seled");
+            });
+            $(this).attr("class", "seled");
+            //window.location="CCProject?"+RetSelecteds();
+        });
+        $(".border-box-tittle a").click(function () {
+            window.location = "COProject?" + RetSelecteds();
+        });
+    });
+    function click() {
+        window.location = "COProject?" + RetSelecteds();
+    }
+    function RetSelecteds() {
+        var result = "";
+        $(".border-box-item a[class='seled']").each(function () {
+            result += this.parentNode.parentNode.id + "=" + this.id + "&";
+        });
+        return result;
+    }
+</script>
+<script type="text/javascript">
+    $('#wesitesearch').click(function () {
+        $(this).parents('form').submit();
+    });
+</script>
+

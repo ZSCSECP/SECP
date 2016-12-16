@@ -1,0 +1,76 @@
+﻿@model IEnumerable<SECP.Models.Enterprise>
+@{
+    ViewBag.Title = "ChangePIstudent";
+    Layout = "~/Views/PersonalInformation.cshtml";
+}
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/ChangePI-enterprise.css" rel="stylesheet" />
+@foreach (SECP.Models.Enterprise k in Model)
+{
+    using (Html.BeginForm())
+    {
+        <div class="Change-PI-main">
+            <div class="Change-PI-tittle">
+                <span>
+                    <img src="~/images/favicon.ico" />@k.Enterprise_UserName
+                </span>
+                <nobr>的基本信息</nobr>
+            </div>
+            <div class="Change-PI-table">
+                <table>
+                    <tr>
+                        <td class="Change-PI-table-tittle">企业名称:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="Enterprise_Name" value="@k.Enterprise_Name" /></td>
+                        <td class="Change-PI-table-tittle">类型:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="Enterprise_Type" value="@k.Enterprise_Type" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">规模:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="Enterprise_Scale" value="@k.Enterprise_Scale" /></td>
+                        <td class="Change-PI-table-tittle">地点:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="Enterprise_Place" value="@k.Enterprise_Place" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">邮政编码:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="Enterprise_Postcode" value="@k.Enterprise_Postcode" /></td>
+                        <td class="Change-PI-table-tittle">行业:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="Enterprise_Industry" value="@k.Enterprise_Industry" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">邮箱:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="Enterprise_Email" value="@k.Enterprise_Email" /></td>
+                        <td class="Change-PI-table-tittle">电话:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="Enterprise_Tel" value="@k.Enterprise_Tel" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">QQ:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="Enterprise_QQ" value="@k.Enterprise_QQ" /></td>
+                        <td class="Change-PI-table-tittle">联系人:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="Enterprise_Contact" value="@k.Enterprise_Contact" /></td>
+                    </tr>
+                    <tr>
+
+                        <td class="Change-PI-table-tittle">信息审核:</td>
+                        <td class="Change-PI-table-content">@k.Enterprise_Checks</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="Change-PI-deta">
+                <span>
+                    <img src="~/images/favicon.ico" />详细信息
+                </span>
+                <div class="Change-PI-deta-main">
+                    <span>企业简介:</span>
+                    <textarea name="Enterprise_Brief">@k.Enterprise_Brief</textarea>
+                    <span>企业文化:</span>
+                    <textarea name="Enterprise_Culture">@k.Enterprise_Culture</textarea>
+                    <span>业务范围:</span>
+                    <textarea name="Enterprise_Business">@k.Enterprise_Business</textarea>
+                </div>
+            </div>
+            <div class="Change-PI-button">
+                <input type="submit" name="TK" class="button-3d button-primary button-rounded" value="     保存      " style="background: #077ace; color: #fff; border: 1px solid #077ace; " />
+            </div>
+        </div>
+    }
+}

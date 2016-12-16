@@ -1,0 +1,163 @@
+﻿@model IEnumerable<SECP.Models.Project>
+@{
+    ViewBag.Title = "CEProject";
+    Layout = "~/Views/Project.cshtml";
+}
+<link href="~/css/pjShow.css" rel="stylesheet" />
+
+<div class="body_a">
+    <div class="gundong_bg_search">
+        <div class="bm_m_search">
+            <div class="search_div_box">
+                <div class="search_div_bg2"></div>
+                <div class="search_div_bg">
+                    <form action="CEProject" method="post" autocomplete="off">
+                        <span class="search_div_bg_btn" id="wesitesearch"></span>
+                        <input type="text" class="search_div_bg_input" name="search" placeholder="请输入项目关键词" autocomplete="off">
+                    </form>
+                </div>
+            </div>
+            <div class="hot_search">
+                <span class="hot_search_name">热门搜索：</span>
+                <div class="hot_search_text">
+                    <a href="CEProject">企业</a><a href="CSProject">师生</a><a href="CCProject">合作</a><a href="COProject">外包</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main">
+    <div class="left">
+        <div class="border">
+            <h2>分类导航</h2>
+            <div class="border-box">
+                <h3 class="border-box-tittle">发布日期</h3>
+                <div class="border-box-item">
+                    <dl id="Ftime">
+                        <dd> <a id="1">3月内</a></dd>
+                        <dd> <a id="2">半年内</a></dd>
+                        <dd> <a id="3">1年内</a></dd>
+                        <dd> <a id="4">1年以上</a></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="border-box">
+                <h3 class="border-box-tittle">经验要求</h3>
+                <div class="border-box-item">
+                    <dl id="Re">
+                        <dd><a id="5">无需经验</a></dd>
+                        <dd><a id="6">半年</a></dd>
+                        <dd> <a id="7">1年</a></dd>
+                        <dd><a id="8">2年及以上</a></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="border-box">
+                <h3 class="border-box-tittle">开发周期</h3>
+                <div class="border-box-item">
+                    <dl id="Ktime">
+                        <dd><a id="9">1个月内</a></dd>
+                        <dd> <a id="10">3个月内</a></dd>
+                        <dd><a id="11">半年内</a></dd>
+                        <dd> <a id="12">半年以上</a></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="border-box">
+                <h3 class="border-box-tittle">酬劳</h3>
+                <div class="border-box-item">
+                    <dl id="Money">
+                        <dd><a id="13">500内</a></dd>
+                        <dd> <a id="14">1000内</a></dd>
+                        <dd><a id="15">5000内</a></dd>
+                        <dd> <a id="16">5000以上</a></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="border-box">
+                <h3 class="border-box-tittle"><a>确定选择</a></h3>
+            </div>
+            <div class="gg">
+                <div class="gg1">
+                    <img src="~/images/001.jpg" />
+                </div>
+                <div class="gg2">
+                    <img src="~/images/002.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pj_table">
+        <div class="pj_table_main">
+            <div class="table-tittle">
+                <h2>项目查看</h2>
+                <p>共 @ViewData["num"] 个项目</p>
+            </div>
+            <div class="table">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <th>@ViewData["a"]</th>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Limit(Day)</th>
+                            <th>Added by</th>
+                            <th>Money</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (SECP.Models.Project k in Model)
+                        {
+                            <tr>
+                                <td></td>
+                                <td>@k.Project_Id</td>
+                                <td><h3><a href="CKProject?Id=@k.Project_Id">@k.Project_Name</a></h3></td>
+                                <td>@k.Project_STime</td>
+                                <td>@k.Project_TimeLimeit</td>
+                                <td>@k.Project_Publisher</td>
+                                <td>@k.Project_Money</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="paging">
+                    @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Project>)))
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //为filter下的所有a标签添加单击事件
+        $(".border-box-item a").click(function () {
+            $(this).parents("dl").children("dd").each(function () {
+                //下面三种方式效果相同（第三种写法的内部就是调用了find()函数，所以，第二、三种方法是等价的。）
+                $('a', this).removeClass("seled");
+            });
+            $(this).attr("class", "seled");
+            //window.location="CCProject?"+RetSelecteds();
+        });
+        $(".border-box-tittle a").click(function () {
+            window.location = "CEProject?" + RetSelecteds();
+        });
+    });
+    function click() {
+        window.location = "CEProject?" + RetSelecteds();
+    }
+    function RetSelecteds() {
+        var result = "";
+        $(".border-box-item a[class='seled']").each(function () {
+            result += this.parentNode.parentNode.id + "=" + this.id + "&";
+        });
+        return result;
+    }
+</script>
+<script type="text/javascript">
+    $('#wesitesearch').click(function () {
+        $(this).parents('form').submit();
+    });
+</script>

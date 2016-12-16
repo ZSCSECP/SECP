@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/css/bootstrap1.css">  
+    <link href="~/css/theme.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome1.css">
+    <link rel="icon"href="../images/Homefavicon.ico"/>
+    <script src="~/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+ <style type="text/css">
+        #line-chart {
+            height:300px;
+            width:800px;
+            margin: 0px auto;
+            margin-top: 1em;
+        }
+        .brand { font-family: georgia, serif; }
+        .brand .first {
+            color: #ccc;
+            font-style: italic;
+        }
+        .brand .second {
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+  <body> 
+  <!--<![endif]-->
+    
+    <div class="navbar">
+        <div class="navbar-inner">
+                <ul class="nav pull-right">
+                    
+                    
+                    <li id="fat-menu" class="dropdown">
+                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-user"></i> @Request.Cookies["UserName"].Value
+                            <i class="icon-caret-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="BSChangePassword">修改密码</a></li>
+                       @*     <li class="divider"></li>
+                            <li><a tabindex="-1" href="#">Logout</a></li>*@
+                        </ul>
+                    </li>
+                    <li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">Time： @ViewData["Time"]</a></li>
+                </ul>
+                <a class="brand" href="~/Home.html"><span class="first">SECP</span> <span class="second">BackStage</span></a>
+        </div>
+    </div>
+    
+
+
+    
+    <div class="sidebar-nav">
+        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>项目平台信息管理<span class="label label-info">+@ViewData["Project"]</span></a>
+        <ul id="dashboard-menu" class="nav nav-list collapse ">
+            <li><a href="BSHome">项目信息审核</a></li>          
+        </ul>
+
+        <a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>研发成果信息管理<span class="label label-info">+@ViewData["Achievements"]</span></a>
+        <ul id="accounts-menu" class="nav nav-list collapse">
+            <li ><a href="BSAchievement">研发信息审核</a></li>
+        </ul>
+
+        <a href="#error-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-exclamation-sign"></i>人才资源信息管理<span class="label label-info">+@ViewData["Talent"]</span></a>
+        <ul id="error-menu" class="nav nav-list collapse">
+            <li ><a href="BSTalent">招聘信息审核</a></li>
+        </ul>
+
+        <a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>实训基地信息管理<span class="label label-info">+@ViewData["Train"]</span></a>
+        <ul id="legal-menu" class="nav nav-list collapse">
+            <li ><a href="BSTrain">实训信息审核</a></li>
+        </ul>
+
+        <a href="#Con-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>企业信息管理<span class="label label-info">+@ViewData["Enterprise"]</span></a>
+        <ul id="Con-menu" class="nav nav-list collapse">
+            <li ><a href="BSEnterprise">企业信息审核</a></li>
+        </ul>
+        <a href="#Con1-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>产品信息管理<span class="label label-info">+@ViewData["Enterprise"]</span></a>
+        <ul id="Con1-menu" class="nav nav-list collapse">
+            <li ><a href="BSProducts">产品信息审核</a></li>
+        </ul>
+        <a href="#S-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>素材信息管理</a>
+        <ul id="S-menu" class="nav nav-list collapse">
+            <li ><a href="PicChange?Id=1">项目平台素材</a></li>
+            <li ><a href="PicChange?Id-4">研发平台素材</a></li>
+            <li ><a href="PicChange?Id=3">人才平台素材</a></li>
+            <li ><a href="PicChange?Id=2">实训平台素材</a></li>
+            <li ><a href="PicChange?Id=5">企业平台素材</a></li>
+        </ul>
+    </div>
+    
+
+    
+    <div class="content">
+        @RenderBody()
+      </div>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        $("[rel=tooltip]").tooltip();
+        $(function () {
+            $('.demo-cancel-click').click(function () { return false; });
+        });
+    </script>
+    
+  </body>
+</html>

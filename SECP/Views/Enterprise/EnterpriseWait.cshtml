@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "EnterpriseWait";
+    Layout = "~/Views/Enterprise.cshtml";
+}
+
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/PWait.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    <div class="Wait-main">
+        <div class="TalentRe-tips">
+        </div>
+        <div class="Wait-schedule">
+
+        </div>
+        <div class="Wait-left">
+            <img src="~/images/wait-left.png" draggable="false" />
+        </div>
+        <div class="Wait-right">
+            <img src="~/images/wait-right.png" draggable="false" />
+        </div>
+        <div class="Wait-message">
+            <div class="Wait-img">
+                <img src="~/images/success.png" />
+            </div>
+            <div class="Wait-tips">
+                <h2>发布申请提交成功！</h2>
+                <p>我们将在7个工作日内完成审核，请耐心等待！</p>
+                <hr />
+                <input type="submit" name="TK" class="button-3d button-primary button-rounded" value="完成" style="background: #077ace; color: #fff; border: 1px solid #077ace; " />
+            </div>
+        </div>
+
+    </div>
+}

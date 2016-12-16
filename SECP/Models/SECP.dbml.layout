@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.25, 14.125" name="SECP">
+  <DataContextMoniker Name="/SECPDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b62c5683-5c16-488d-b250-214e81c9adfa" absoluteBounds="0.5, 7.25, 2, 2.6460697428385416">
+      <DataClassMoniker Name="/SECPDataContext/Achievements" />
+      <nestedChildShapes>
+        <elementListCompartment Id="abcd8a7b-f66c-43f6-a532-860b941d9deb" absoluteBounds="0.51499999999999968, 7.71, 1.9700000000000002, 2.0860697428385415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c47d1095-5bd8-4c87-afb0-59cfcca1f4aa" absoluteBounds="3.875, 10.25, 2, 1.3525109863281255">
+      <DataClassMoniker Name="/SECPDataContext/Admin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="01e4d317-16c5-4f74-8b0f-1fe578a5f772" absoluteBounds="3.89, 10.71, 1.9700000000000002, 0.792510986328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e1f1549d-5cb6-4046-a41c-93dd7679621d" absoluteBounds="5.875, 9.875, 2, 3.9396284993489576">
+      <DataClassMoniker Name="/SECPDataContext/Enterprise" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47767e94-e392-45f4-bd6f-5ca0e2ddd773" absoluteBounds="5.8900000000000006, 10.335, 1.9700000000000002, 3.379628499348958" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="be1b971f-5e44-4266-b7f3-fbc483cc3074" absoluteBounds="9.875, 9.75, 2, 2.4612756347656255">
+      <DataClassMoniker Name="/SECPDataContext/Products" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8dcddb4-7740-4e4d-bb2d-c054838dca53" absoluteBounds="9.89, 10.21, 1.9700000000000002, 1.901275634765625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="88947b91-8c5d-4232-a189-39d0d30f037a" absoluteBounds="2.5, 4.5, 2, 3.7548343912760416">
+      <DataClassMoniker Name="/SECPDataContext/Project" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b7b330f0-19ce-475d-b380-53bdc2eaccea" absoluteBounds="2.515, 4.96, 1.9700000000000002, 3.1948343912760415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2be53e50-a065-4cfe-a551-be2f0bfa4e7d" absoluteBounds="7.875, 9.625, 2, 2.0916874186197916">
+      <DataClassMoniker Name="/SECPDataContext/Resume" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7cb8750f-5920-48fb-b05e-6bbc6fab9e50" absoluteBounds="7.8900000000000006, 10.085, 1.9700000000000002, 1.5316874186197915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b4aba045-0407-496e-857d-65e9641a68d6" absoluteBounds="5, 3.875, 2, 5.0483931477864576">
+      <DataClassMoniker Name="/SECPDataContext/Student" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ffa494a3-1ddd-4108-ab86-5bdfd6363e6f" absoluteBounds="5.0150000000000006, 4.335, 1.9700000000000002, 4.488393147786458" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b5311a2a-4c49-46ac-ba99-3a546b4d6fc2" absoluteBounds="7, 4, 2, 3.0156579589843755">
+      <DataClassMoniker Name="/SECPDataContext/Talent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45fbbff6-4d90-4baa-b1fd-baffa1606dcf" absoluteBounds="7.015, 4.46, 1.9700000000000002, 2.455657958984375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bee5796d-8986-4125-8814-9f1bbe960a56" absoluteBounds="11, 5.25, 2, 4.4940108235677076">
+      <DataClassMoniker Name="/SECPDataContext/Teacher" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ea122e8-491d-4f21-a1a0-5a5130c8a743" absoluteBounds="11.015, 5.71, 1.9700000000000002, 3.934010823567708" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df1af223-3c84-421e-855c-fd97f82c1ce4" absoluteBounds="9, 5.5, 2, 3.0156579589843755">
+      <DataClassMoniker Name="/SECPDataContext/Train" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4511d860-65b9-4250-9019-70d719a6af41" absoluteBounds="9.015, 5.96, 1.9700000000000002, 2.455657958984375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f392172e-8d5b-4386-a327-3ddc0f1770a9" absoluteBounds="0.5, 5.25, 2, 1.5373050944010416">
+      <DataClassMoniker Name="/SECPDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1fc1f8f6-35b0-4131-8c68-672c6a2d8096" absoluteBounds="0.51500000000000012, 5.71, 1.9700000000000002, 0.97730509440104163" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="da94e698-1a93-4056-94d9-207f91c2d82d" absoluteBounds="7, 7.25, 2, 2.2764815266927085">
+      <DataClassMoniker Name="/SECPDataContext/SimpleInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d8f8fd0b-af47-4c89-8dc5-5992cb32970c" absoluteBounds="7.0150000000000006, 7.7100000000000009, 1.9700000000000002, 1.7164815266927085" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

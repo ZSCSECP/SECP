@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "MProject";
+    Layout = "~/Views/Backstage.cshtml";
+}
+
+
+@using(Html.BeginForm())
+{
+<div class="header">
+            <h1 class="page-title">项目信息平台</h1>
+        </div>
+        
+                <ul class="breadcrumb">
+            <li><a href="#">项目平台</a> <span class="divider">/</span></li>
+            <li class="active">项目信息</li>
+ </ul>
+<div class="well">
+    <table class="table">
+        <thead>
+            <tr><td colspan="4" style="font-size:16px">项目信息</td></tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>项目Id：</td>
+            <td>@ViewData["Id"]</td>
+            <td>项目类型：</td>
+            <td>@ViewData["Type"]</td>
+        </tr>
+        <tr>
+            <td>项目标题：</td>
+            <td>@ViewData["Name"]</td>
+            <td>项目下单时间：</td>
+            <td>@ViewData["STime"]</td>
+        </tr>
+        <tr>
+            <td>项目目前状态：</td>
+            <td>@ViewData["State"]</td>
+            <td>项目金额：</td>
+            <td>@ViewData["Money"]</td>
+        </tr>
+        <tr>
+            <td>项目工期：</td>
+            <td>@ViewData["TimeLimit"]</td>
+            <td>项目要求：</td>
+            <td>@ViewData["Requirement"]</td>
+        </tr>
+        <tr>
+            <td>项目内容：</td>
+            <td>@ViewData["Content"]</td>
+            <td>项目联系方式：</td>
+            <td>@ViewData["contact"]</td>
+        </tr>
+        <tr>
+            <td>项目发布人：</td>
+            <td>@ViewData["Publisher"]</td>
+            <td>项目发布人所属：</td>
+            <td>@ViewData["PublisherType"]</td>
+        </tr>
+        <tr>
+            <td>项目评价：</td>
+            <td>@ViewData["Evaluation"]</td>
+            <td>项目接受人：</td>
+            <td>@ViewData["Sendee"]</td>
+        </tr>
+        <tr>
+            <td>项目接收人所属：</td>
+            <td>@ViewData["SendeeType"]</td>
+            <td>项目信息审核：</td>
+            <td>@ViewData["Checks"]</td>
+        </tr>
+        </tbody>
+        <tr>
+            <td colspan="4">
+                <div style="text-align:center">
+                    <input type="submit" name="TK" class="btn" value="该信息无错！审核通过！" />
+                    <input type="submit" name="TK" class="btn" value="该信息有错！审核不通过！" />
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+}

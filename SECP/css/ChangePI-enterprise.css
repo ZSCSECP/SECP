@@ -1,0 +1,88 @@
+﻿.Change-PI-main{
+    width:900px;
+    height:870px;
+    border:3px solid #e9e8e8;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:10px;
+    margin-bottom:5px;
+    margin-top:5px;
+}
+.Change-PI-tittle{
+    width:890px;
+    height:40px;
+    float:left;
+    line-height:40px;
+    padding-left:10px;
+    font-weight:bolder;
+    border-bottom:3px dashed #04bfea;
+}
+.Change-PI-tittle span{
+    color:#148cca;
+    font-size:25px;
+}
+.Change-PI-tittle nobr{
+    color:#aaa7a7;
+    font-size:20px;
+}
+.Change-PI-table{
+    width:895px;
+    height:420px;
+    border-bottom:3px dashed #aaa7a7;
+}
+.Change-PI-table-tittle{
+    font-size:14px;
+    font-weight:bolder;
+    color:#aaa7a7;
+    padding-top:25px;
+    padding-left:120px;
+}
+.Change-PI-table-content{
+    height:40px;
+    color:#04bfea;
+    margin-left:40px;
+    padding-left:30px;
+    font-weight:bolder;
+    padding-top:25px;
+}
+
+.Change-PI-deta{
+    width:895px;
+    height:40px;
+    float:left;
+    line-height:40px;
+    padding-left:10px;
+    font-weight:bolder;
+    border-bottom:3px dashed #04bfea;
+}
+.Change-PI-deta span{
+    color:#148cca;
+    font-size:20px;
+}
+.Change-PI-deta-main{
+    width:885px;
+    height:355px;
+    border-bottom:3px dashed #aaa7a7;
+
+}
+.Change-PI-deta-main span{
+    font-size:16px;
+    padding-left:50px;
+    float:left;
+    margin-top:15px;
+    color:#aaa7a7;
+}
+.Change-PI-deta-main textarea{
+    width:700px;
+    height:80px;
+    margin-top:20px;
+    margin-left:30px;
+    resize: none;
+}
+.Change-PI-button{
+    width:100px;
+    float:left;
+    margin-left:390px;
+    margin-top:365px;
+    
+}

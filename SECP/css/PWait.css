@@ -1,0 +1,120 @@
+﻿.Wait-main{
+    width:100%;
+    height:525px;
+    background-color:#fff;
+
+}
+.hr1{
+    width:250px;
+    position:absolute;
+    z-index:70;
+    top:112px;
+    border:1px solid #04bfea;
+}
+.hr2{
+    width:260px;
+    position:absolute;
+    z-index:70;
+    top:112px;
+    border:1px solid #aaa7a7;
+    margin-left:80.5%;
+}
+.Wait-schedule{
+    height:60px;
+    width: 890px;
+    /*border:2px solid #04bfea;*/
+    /*border-radius:2px;*/
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10px;
+   z-index:80;
+   position:relative
+}
+.Wait-left{
+    float:left;
+    width:300px;
+    height:320px;
+  
+    margin-left:5%;
+    margin-top:20px;
+}
+.Wait-right{
+    float:right;
+    width:300px;
+    height:320px;
+
+     margin-right:5%;
+    margin-top:20px;
+}
+.Wait-message {
+    width: 500px;
+    height: 250px;
+    padding-top:80px;
+    background-color: #04bfea;
+    border-radius:10px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:100px;
+    margin-top:20px;
+}  
+.Wait-img{
+    height:50px;
+    width:50px;
+    float:left;
+}
+.Wait-tips{
+    width:250px;
+    height:250px;
+    float:left;
+}
+.Wait-tips h2{
+    color:#fff;
+    font-weight:bolder;
+    padding-left:2px;
+    padding-top:5px;
+}
+.Wait-tips p{
+    width:300px;
+    font-weight:bolder;
+    padding-left:2px;
+   
+}
+.Wait-tips hr{
+    border:3px dashed #fff;
+    width:380px;
+    font-weight:bolder;
+    margin-left:-60px;
+    margin-top:50px;
+}
+.Wait-tips input{
+    margin-right:80px;
+    width:100px;
+    text-align:center;
+}
+    input[type="submit"] 
+    {background: #077ace;
+      color: #fff; 
+      border: 1px solid #077ace;
+    }
+ .TalentRe-tips {
+    height:120px;
+    width: 100%;
+    background: url(../images/talent/SRsearch.png);
+    background-size: 100% 100%;
+    position:absolute;
+    z-index:90;
+   top:100px;
+   margin-top:-15px;
+}
+ .TraintRe-tips {
+    height:120px;
+    width: 100%;
+    background: url(../images/train/train-welcome.png);
+    background-size: 100% 100%;
+    position:absolute;
+    z-index:90;
+   top:100px;
+}
+ #CKbutton{
+background: #077ace; color: #fff; border: 1px solid #077ace;
+}

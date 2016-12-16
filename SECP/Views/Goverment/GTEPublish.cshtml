@@ -1,0 +1,55 @@
+﻿@model IEnumerable<SECP.Models.SimpleInfo>
+@{
+    ViewBag.Title = "GTEPublish";
+    Layout = "~/Views/Goverment.cshtml";
+}
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-sm-3 blog-sidebar">
+                <div class="sidebar-wrapper">
+                    <a href="/Goverment/GTechnologyPublish" id="0"><h4>科技规划</h4></a>
+                    <a href="/Goverment/GTEPublish" id="1"><h4>财政公开</h4></a>
+                    <input type="hidden" value="" id="idtype" />
+                </div>
+            </div>
+            <!-- End Sidebar -->
+            <div class="col-sm-9">
+                <div class="blog-post blog-single-post">
+                    <div class="single-post-title">
+                        <h1>财政公开</h1>
+                    </div>
+                    <ul class="breadcrumb">
+                        <li>
+                            <i>
+                                <img src="~/images/Footer_Location.png" />
+                            </i>
+
+                            <a href="#">信息公开</a>
+                            <i>&gt;&gt;</i>
+                        </li>
+                        <li>财政公开</li>
+                    </ul>
+                    <div class="single-post-content">
+                        <ul>
+                            @foreach (SECP.Models.SimpleInfo k in Model)
+                            {
+                                <li><a href="@k.LinkUrl">@k.Title</a></li>
+                            }
+
+                        </ul>
+                    </div>
+                    @*分页*@
+                    <div class="divHeight">
+                        <nav>
+                            <ul class="pagination next">
+                                <li> @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.SimpleInfo>)))</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

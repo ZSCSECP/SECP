@@ -1,0 +1,67 @@
+﻿@model IEnumerable<SECP.Models.Products>
+@{
+    ViewBag.Title = "MKproduct";
+    Layout = "~/Views/Enterprise.cshtml";
+}
+<link href="~/css/CKenterprise-dis.css" rel="stylesheet" />
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/enterpriseShow.css" rel="stylesheet" />  
+<form id="_form" method="post">
+@foreach (SECP.Models.Products k in Model)
+{
+    <div class="CK-main">
+        <div class="enterpriseRe-tips">
+        </div>
+        <div class="CK-main-table">
+            <div class="CK-table">
+                <div class="CK-table-tittle">
+                 <input type="text" name="Products_Theme" value="@k.Products_Theme" />  
+                </div>
+                <table>
+                    <tr class="CK-table-info">
+                        <td class="info-topic">编号:</td>
+                        <td class="info-content">@k.Products_Id</td>
+                        <td class="info-tittle">类型:</td>
+                        <td class="info-content"><input type="text" name="Products_Type" value="@k.Products_Type" /></td>
+                        <td class="info-tittle">价格:</td>
+                        <td class="info-content"> <input type="text" name="Products_Money" value="@k.Products_Money" /></td>
+                    </tr>
+                    <tr class="CK-table-info">
+                        <td class="info-topic">专利号:</td>
+                        <td class="info-content"> <input type="text" name="Products_Number" value="@k.Products_Number" /></td>
+                        <td class="info-tittle">发布状况:</td>
+                        <td class="info-content">@k.Products_Checks</td>
+                        <td class="info-tittle">发布时间:</td>
+                        <td class="info-content">@k.Products_Time</td>
+                    </tr>
+                    <tr class="CK-table-info">
+                        <td class="info-topic">发布人:</td>
+                        <td class="info-content">@k.Products_Publisher</td>
+                        <td class="info-tittle">发布人所属:</td>
+                        <td class="info-content">企业</td>
+                        <td class="info-tittle">联系电话:</td>
+                        <td class="info-content">@ViewData["Tel"]</td>
+                    </tr>
+
+                </table>
+                <div class="deta-info">
+                    <span>详细说明:</span>
+                    <input type="text" value="@k.Products_contact" name="Products_contact" />
+                    <div class="but">
+                        <div class="but-back">
+                            <a onclick="javascript:window.history.go(-1);">返回</a>
+                        </div>
+                      
+                            <div class="but-enter">
+                                <a onclick="document.getElementById('_form').submit();">修改</a>
+                            </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        }
+    </div>
+}
+</form>

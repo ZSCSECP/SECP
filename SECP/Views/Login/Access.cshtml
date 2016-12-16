@@ -1,0 +1,162 @@
+﻿@{
+    ViewBag.Title = "Access";
+}
+
+<head>
+<title>注册</title>
+    <link href="~/css/Access.css" rel="stylesheet" />
+    <script src="~/js/jquery-2.1.0.min.js"></script>
+    <script src="~/js/easyfrom.js"></script>
+<style>
+
+</style>
+</head>
+  
+<body>
+    <div class="head">
+        <div class="HomeLogo">
+            <a href="~/Home.html">
+                <img src="~/images/accesslogo.png" draggable="false" />
+            </a>
+        </div>
+        <div class="BackLogin" draggable="false">
+            已有帐号？<a href="~/Login/Login">
+                <div class="Back-arrow">
+                    <img src="~/images/back-arrow.png" />
+                </div>
+            </a>
+        </div>
+            
+        </div>
+   
+<div class="form-div" >
+    <form id="reg-form" method="post">
+       
+<ul id="tabs">
+    <li><a href="#" title="tab1">学生注册</a></li>
+</ul>
+
+<div id="content"> 
+    <div id="tab1">
+        <h2>请认真填写您的简历信息！</h2>
+         <table>
+            <tr>
+                <td>用户名</td>
+                <td><input name="uid" type="text"  id="uid" easyform="length:4-16;char-normal;real-time;" message="用户名必须为4—16位的英文字母或数字" easytip="disappear:lost-focus;theme:blue;" ajax-message="用户名已存在!"/>
+                </td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input name="psw1" type="password" id="psw1" easyform="length:6-16;" message="密码必须为6—16位" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>
+            <tr>
+                <td>确认密码</td>
+                <td><input name="psw2" type="password" id="psw2" easyform="length:6-16;equal:#psw1;real-time;" message="两次密码输入要一致" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td><input name="email" type="text" id="email" easyform="email;real-time;" message="Email格式要正确" easytip="disappear:lost-focus;theme:blue;" ajax-message="这个Email地址已经被注册过，请换一个吧!"/></td>
+            </tr>
+            <tr>
+                <td>昵称</td>
+                <td><input name="nickname" type="text" id="nickname" easyform="length:2-16;real-time;" message="昵称必须为2—16位" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>            
+             <tr>
+                <td>出生日期</td>
+                <td><input name="year" type="text" id="Year" easyform="date;real-time;" message="请输入日期格式为（YYXX-YY-XX）" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td><input name="sex" type="text" id="sex" easyform="length:1real-time;" message="请输入性别" easytip="disappear:lost-focus;theme:blue;" /> </td>
+            </tr>
+            <tr>
+                <td>专业</td>
+                <td><input name="Major" type="text" id="Major" easyform="length:2-16;real-time;" message="请输入专业" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>            
+             <tr>
+                <td>毕业学校</td>
+                <td><input name="school" type="text" id="school" easyform="length:2-16;real-time;" message="请输入毕业学校" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>
+            <tr>
+                <td>学历</td>
+                <td><input name="student_Edu" type="text" id="student_Edu" easyform="length:2-6;real-time;" message="请输入学历" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>
+            <tr>
+                <td>电话</td>
+                <td><input name="student_Tel" type="text" id="student_Tel" easyform="real-time;length:7-19;" message="请输入电话" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr> 
+             <tr>
+                <td>通信地址</td>
+                <td><input name="address" type="text" id="address" easyform="length:2-50;real-time;" message="请输入通信地址" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr> 
+             <tr>
+                <td>个人荣誉</td>
+                <td><input name="Glory" type="text" id="Glory" easyform="length:2-200;real-time;" message="请输入个人荣誉" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr> 
+             <tr>
+                <td>项目经历</td>
+                <td><input name="Practic" type="text" id="Practic" easyform="length:2-200;real-time;" message="请输入项目经历" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>
+             <tr>
+                <td>期待工作地点</td>
+                <td><input name="place" type="text" id="place" easyform="length:2-30;real-time;" message="请输入期待工作地点" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>
+             <tr>
+                <td>期待从事职业</td>
+                <td><input name="Ocp" type="text" id="Ocp" easyform="length:2-16;real-time;" message="请输入期待从事职业" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>
+             <tr>
+                <td>期望月薪</td>
+                <td><input name="Wage" type="text" id="Wage" easyform="length:2-16;real-time;" message="请输入期待月薪" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>  
+             <tr>
+                <td>专业技能</td>
+                <td><input name="SKill" type="text" id="SKill" easyform="length:2-30;real-time;" message="请输入专业技能" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>  
+             <tr>
+                <td>兴趣爱好</td>
+                <td><input name="Hobby" type="text" id="Hobby" easyform="length:2-30;real-time;" message="请输入兴趣爱好" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>   
+             <tr>
+                <td>个人简介</td>
+                <td><input name="Introduce" type="text" id="Introduce" easyform="length:2-300;real-time;" message="请输入个人简介" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr> 
+             <tr>
+                <td>实训经历</td>
+                <td><input name="Train" type="text" id="Train" easyform="length:2-300;real-time;" message="请输入培训经历" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr> 
+              <tr>
+                <td>QQ</td>
+                <td><input name="QQ" type="text" id="QQ" easyform="length:5-30;real-time;" message="请输入QQ" easytip="disappear:lost-focus;theme:blue;"/></td>
+            </tr>      
+        </table>
+			 <input value="学生注册" type="submit" style="margin-right:20px; margin-top:20px;margin-left:160px" name="So" />
+			<input value="我有账号，我要登录" type="button" " style="margin-right:45px; margin-top:20px;"  onclick="window.open('Login')" />
+    </div>
+
+</div>
+        
+</form>
+</div>
+
+    <script>
+        $(document).ready(function () {
+            $("#content div").hide(); // Initially hide all content
+            $("#tabs li:first").attr("id", "current"); // Activate first tab
+            $("#content div:first").fadeIn(); // Show first tab content
+
+            $('#tabs a').click(function (e) {
+                e.preventDefault();
+                $("#content div").hide(); //Hide all content
+                $("#tabs li").attr("id", ""); //Reset id's
+                $(this).parent().attr("id", "current"); // Activate this
+                $('#' + $(this).attr('title')).fadeIn(); // Show content for current tab
+            });
+        })();
+</script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#reg-form').easyform();
+        });
+</script>
+</body>

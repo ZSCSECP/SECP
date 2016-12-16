@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "TalentWait";
+    Layout = "~/Views/Talent.cshtml";
+}
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/PWait.css" rel="stylesheet" />
+@using(Html.BeginForm())
+{
+<div class="Wait-main">
+    @*<div class="TalentRe-tips">
+    </div>*@
+    <div class="Wait-schedule">
+        
+    </div>
+    <div class="Wait-left">
+        <img src="~/images/wait-left.png" draggable="false" />
+    </div>
+    <div class="Wait-right">
+        <img src="~/images/wait-right.png" draggable="false" />
+    </div>
+    <div class="Wait-message">
+        <div class="Wait-img">
+            <img src="~/images/success.png" />
+        </div>
+        <div class="Wait-tips">
+            <h2>发布申请提交成功！</h2>
+            <p>我们将在7个工作日内完成审核，请耐心等待！</p>
+            <hr />
+            <input type="submit" id="CKbutton" name="TK" class="button-3d button-primary button-rounded" value="完成" onclick="javascript:window.history.go(-1);" />
+        </div>
+    </div>
+
+</div>
+}

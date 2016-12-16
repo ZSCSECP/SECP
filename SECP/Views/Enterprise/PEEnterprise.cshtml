@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "PEEnterprise";
+    Layout = "~/Views/Enterprise.cshtml";
+}
+
+<link href="~/css/enterpriseRelease.css" rel="stylesheet" />
+<link href="~/css/bootstrap-enterprise.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    <div class="Release-main">
+        <div class="enterpriseRe-tips">
+        </div>
+        <div class="Pmain">
+
+            <div class="table-tittle">
+                请填写<span>企业产品</span>详细信息
+                <div class="table-back">
+                    <img src="~/images/back-arrow.png" draggable="false" onclick="javascript:window.history.go(-1);" />
+                </div>
+            </div>
+            <div class="enterpriseRe-table">
+                <table>
+                    <tr>
+                        <th class="table-simple-th">主题</th>
+                        <td class="table-simple-td"><input type="text" name="Products_Theme" /></td>
+                        <th class="table-simple-th">类型</th>
+                        <td class="table-simple-td"><input type="text" name="Products_Type" /></td>
+                    </tr>
+                    <tr>
+                        <th class="table-simple-th">价格</th>
+                        <td class="table-simple-td"><input type="text" name="Products_Money" /></td>
+                        <th class="table-simple-th">专利号</th>
+                        <td class="table-simple-td"><input type="text" name="Products_Number" /></td>
+                    </tr>
+
+                </table>
+                <div>
+                    <div class="table-deta-th">详细说明</div>
+                    <div class="table-deta-td">
+                        <textarea class="deta-text" name="Products_contact"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="table-button"><input id="CKbutton"type="submit" name="TK" class="button-3d button-primary button-rounded" value="确认无误，发布成果！"  /></div>
+        </div>
+    </div>
+}

@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "MTrain";
+    Layout = "~/Views/Backstage.cshtml";
+}
+
+
+@using(Html.BeginForm())
+{
+<div class="header">
+            <h1 class="page-title">实训信息平台</h1>
+        </div>
+        
+                <ul class="breadcrumb">
+            <li><a href="#">实训平台</a> <span class="divider">/</span></li>
+            <li class="active">实训信息</li>
+ </ul>
+<div class="well">
+    <table class="table">
+        <thead>
+            <tr><td colspan="4" style="font-size:16px">实训信息</td></tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>实训Id：</td>
+            <td>@ViewData["Id"]</td>
+            <td>实训类型：</td>
+            <td>@ViewData["Type"]</td>
+        </tr>
+        <tr>
+            <td>实训主题：</td>
+            <td>@ViewData["Name"]</td>
+            <td>实训发布时间：</td>
+            <td>@ViewData["Time"]</td>
+        </tr>
+        <tr>
+            <td>实训状态：</td>
+            <td>@ViewData["State"]</td>
+            <td>实训相关专业：</td>
+            <td>@ViewData["Major"]</td>
+        </tr>
+        <tr>
+            <td>实训内容：</td>
+            <td>@ViewData["Content"]</td>
+            <td>实训发布人：</td>
+            <td>@ViewData["Publisher"]</td>
+        </tr>
+        <tr>
+            <td>实训地点：</td>
+            <td>@ViewData["Place"]</td>
+            <td>实训目标：</td>
+            <td>@ViewData["Objective"]</td>
+        </tr>
+        <tr>
+            <td>招聘信息审核：</td>
+            <td>@ViewData["Checks"]</td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+        <tr>
+            <td colspan="4">
+                <div style="text-align:center">
+                    <input type="submit" name="TK" class="btn" value="该信息无错！审核通过！" />
+                    <input type="submit" name="TK" class="btn" value="该信息有错！审核不通过！" />
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+}
+

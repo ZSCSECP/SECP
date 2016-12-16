@@ -1,0 +1,84 @@
+﻿@model IEnumerable<SECP.Models.Teacher>
+@{
+    ViewBag.Title = "ChangePIteacher";
+    Layout = "~/Views/PersonalInformation.cshtml";
+}
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/ChangePI-teacher.css" rel="stylesheet" />
+
+@foreach (SECP.Models.Teacher k in Model)
+{
+    using (Html.BeginForm())
+    {
+        <div class="Change-PI-main">
+            <div class="Change-PI-tittle">
+                <span>
+                    <img src="~/images/favicon.ico" />@k.teacher_UserName
+                </span>
+                <nobr>的基本信息</nobr>
+            </div>
+            <div class="Change-PI-table">
+                <table>
+                    <tr>
+                        <td class="Change-PI-table-tittle">真实姓名:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="teacher_RealName" value="@k.teacher_RealName" /></td>
+                        <td class="Change-PI-table-tittle">出生日期:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="teacher_BornDate" value="@k.teacher_BornDate" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">性别:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="teacher_Sex" value="@k.teacher_Sex" /></td>
+                        <td class="Change-PI-table-tittle">学历:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="teacher_Edu" value="@k.teacher_Edu" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">毕业学校:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="teacher_GradSchool" value="@k.teacher_GradSchool" /></td>
+                        <td class="Change-PI-table-tittle">所在学校:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="teacher_AtSchool" value="@k.teacher_AtSchool" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">职位:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="teacher_Position" value="@k.teacher_Position" /></td>
+                        <td class="Change-PI-table-tittle">所教课程:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="teacher_TeachClass" value="@k.teacher_TeachClass" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">个人荣誉:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="teacher_Glory" value="@k.teacher_Glory" /></td>
+                        <td class="Change-PI-table-tittle">QQ:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="teacher_QQ" value="@k.teacher_QQ" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">邮箱:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="teacher_Email" value="@k.teacher_Email" /></td>
+                        <td class="Change-PI-table-tittle">电话:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="teacher_Tel" value="@k.teacher_Tel" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">通信地址:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="teacher_Address" value="@k.teacher_Address" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="Change-PI-deta">
+                <span>
+                    <img src="~/images/favicon.ico" />详细信息
+                </span>
+                <div class="Change-PI-deta-main">
+                    <span>个人说明:</span>
+                    <textarea name="teacher_Introduce">@k.teacher_Introduce</textarea>
+                    <span>代表论文:</span>
+                    <textarea name="teacher_RepThesis">@k.teacher_RepThesis</textarea>
+                    <span>代表著作:</span>
+                    <textarea name="teacher_RepPro">@k.teacher_RepPro</textarea>
+                    <span>代表项目:</span>
+                    <textarea name="teacher_RepProject">@k.teacher_RepProject</textarea>
+                </div>
+            </div>
+            <div class="Change-PI-button">
+                <input type="submit" name="TK" class="button-3d button-primary button-rounded" value="     保存      " style="background: #077ace; color: #fff; border: 1px solid #077ace; " />
+            </div>
+        </div>
+    }
+}

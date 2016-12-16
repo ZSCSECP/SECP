@@ -1,0 +1,94 @@
+@import url(http://fonts.googleapis.com/css?family=Abel|Allura);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #1a768a;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+    background-color:#fff;
+}
+
+h1, h2, h3 {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+}
+
+p {
+	line-height: 180%;
+}
+
+a {
+	color: #D1551F;
+}
+
+strong {
+	font-weight: 700;
+	color: #2A2A2A;
+}
+
+/* Wrapper */
+
+#wrapper {
+	overflow: hidden;
+	padding: 0px 0px 50px 0px;
+	background: #669999; 
+    background-image: url(../images/InfoPublic/bg-color.png);
+    background-repeat: repeat;
+}
+
+/* Button Style */
+
+.button-style a {
+	display: block;
+	width: 174px;
+	height: 50px;
+	margin-top: 30px;
+	background: #4fb084; 
+	border-radius: 10px;
+	line-height: 50px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+	font-size: 14pt;
+	font-weight: 200;
+	color: #FFFFFF;
+}
+
+
+/** LIST STYLE 1 */
+
+ul.style1 {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+ul.style1 li {
+	padding: 15px 0px 15px 0px;
+	border-bottom: 1px solid #E6E6E6;
+}
+
+ul.style1 li:last-child {
+	border-bottom: 0;
+}
+
+ul.style1 a {
+	display: block;
+	padding: 0px 0px 0px 30px;
+	background: url(../images/InfoPublic/img03.png) no-repeat left top;
+	text-decoration: none;
+	color: #525252;
+}
+
+ul.style1 a:hover {
+	text-decoration: underline;
+}

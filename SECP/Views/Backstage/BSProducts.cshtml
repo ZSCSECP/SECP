@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SECP.Models.Products>  
+@{
+    ViewBag.Title = "BSProducts";
+    Layout = "~/Views/Backstage.cshtml";
+}
+
+@using(Html.BeginForm())
+{
+<div class="header">
+            <h1 class="page-title">产品信息平台</h1>
+        </div>
+        
+                <ul class="breadcrumb">
+            <li><a href="#">产品平台</a> <span class="divider">/</span></li>
+            <li class="active">列表信息</li>
+ </ul>
+ <div style="margin:30px 0px 5px 70px">
+     <input class="btn" name="te" value="升序" type="submit" />
+     <input class="btn" name="te" value="降序" type="submit" />
+    </div>
+<div class="well">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>产品序号</th>
+          <th>产品名称</th>
+          <th>发布人</th>
+          <th>审核状态</th>
+          <th style="width: 34px;">修改</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (SECP.Models.Products k in Model)
+        {
+        <tr>
+          <td>@k.Products_Id</td>
+          <td>@k.Products_Theme</td>
+          <td>@k.Products_Publisher</td>
+          <td>@k.Products_Checks</td>
+          <td>
+              <a href="MProducts?Pr=@k.Products_Id"><i class="icon-pencil"></i></a>
+          </td>
+            </tr>
+            }
+          <tr>
+           <td colspan="5">
+               <div style="text-align:center;width:100%">
+                   @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Products>)))
+               </div></td>
+           </tr>
+      </tbody>
+
+    </table>
+</div>
+}
+

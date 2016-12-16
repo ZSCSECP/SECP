@@ -1,0 +1,91 @@
+﻿@model IEnumerable<SECP.Models.Teacher>
+@{
+    ViewBag.Title = "PIteacher";
+    Layout = "~/Views/PersonalInformation.cshtml";
+}
+<link href="~/css/PITalent.css" rel="stylesheet" />
+<link href="~/css/TalentRelease.css" rel="stylesheet" />
+<link href="~/css/PITalent-teacher.css" rel="stylesheet" />
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<div class="PI-main">
+    <hr class="hr1" /><hr class="hr2" /><hr class="hr3" /><hr class="hr4" />
+    @foreach (SECP.Models.Teacher k in Model)
+    {
+        <div class="PI-username">
+            <div class="PI-username-left">
+                <span>@k.teacher_UserName</span>
+                <nobr>(教师)</nobr>
+                <div class="PI-personal">
+                    <span>个人介绍</span>
+                    <p>@k.teacher_Introduce</p>
+                    <a class="PI-personal-change" href="ChangePIteacher">更改>></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="PI-userinfo">
+            <div class="PI-table">
+                <span>基本</span>
+                <nobr>信息</nobr>
+                <table>
+                    <tr>
+                        <td class="PI-table-tittle">真实姓名</td>
+                        <td class="PI-table-content">@k.teacher_RealName</td>
+                        <td class="PI-table-tittle">出生日期</td>
+                        <td class="PI-table-content">@k.teacher_BornDate</td>
+                        <td class="PI-table-tittle">性别</td>
+                        <td class="PI-table-content">@k.teacher_Sex</td>
+                    </tr>
+                    <tr>
+                        <td class="PI-table-tittle">学历</td>
+                        <td class="PI-table-content">@k.teacher_Edu</td>
+                        <td class="PI-table-tittle">毕业学校</td>
+                        <td class="PI-table-content">@k.teacher_GradSchool</td>
+                        <td class="PI-table-tittle">所在学校</td>
+                        <td class="PI-table-content">@k.teacher_AtSchool</td>
+                    </tr>
+                    <tr>
+                        <td class="PI-table-tittle">职位</td>
+                        <td class="PI-table-content">@k.teacher_Position</td>
+                        <td class="PI-table-tittle">所教课程</td>
+                        <td class="PI-table-content">@k.teacher_TeachClass</td>
+                        <td class="PI-table-tittle">个人荣誉</td>
+                        <td class="PI-table-content">@k.teacher_Glory</td>
+                    </tr>
+                    <tr>
+                        <td class="PI-table-tittle">QQ</td>
+                        <td class="PI-table-content">@k.teacher_QQ</td>
+                        <td class="PI-table-tittle">邮箱</td>
+                        <td class="PI-table-content">@k.teacher_Email</td>
+                        <td class="PI-table-tittle">电话</td>
+                        <td class="PI-table-content">@k.teacher_Tel</td>
+                    </tr>
+                    <tr>
+                        <td class="PI-table-tittle">通信地址</td>
+                        <td class="PI-table-content">@k.teacher_Address</td>
+                    </tr>
+                </table>
+                <div class="PI-deta">
+                    <span>详细</span>
+                    <nobr>信息</nobr>
+                    <div class="PI-deta-pj">
+                        <span>代表论文</span>
+                        <p>@k.teacher_RepThesis</p>
+                    </div>
+                    <div class="PI-deta-px">
+                        <span>代表著作</span>
+                        <p>@k.teacher_RepPro</p>
+                    </div>
+                    <div class="PI-deta-pj">
+                        <span>代表项目</span>
+                        <p>@k.teacher_RepProject</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="PI-left">
+            </div>
+        </div>
+    }
+
+</div>

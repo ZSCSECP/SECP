@@ -1,0 +1,82 @@
+﻿@model IEnumerable<SECP.Models.Student>
+@{
+    ViewBag.Title = "ChangePIstudent";
+    Layout = "~/Views/PersonalInformation.cshtml";
+}
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/ChangePI-student.css" rel="stylesheet" />
+<form enctype="multipart/form-data" method="post">
+@foreach (SECP.Models.Student k in Model)
+{
+        <div class="Change-PI-main">
+            <div class="Change-PI-tittle">
+                <span>
+                    <img src="~/images/favicon.ico" />@k.student_UserName
+                </span>
+                <nobr>的基本信息</nobr>
+            </div>
+            <div class="Change-PI-table">
+                <table>
+                    <tr>
+                        <td class="Change-PI-table-tittle">真实姓名:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="student_RealName" value="@k.student_RealName" /></td>
+                        <td class="Change-PI-table-tittle">出生日期:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="student_BornDate" value="@k.student_BornDate" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">性别:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="student_Sex" value="@k.student_Sex" /></td>
+                        <td class="Change-PI-table-tittle">毕业学校:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="student_GradSchool" value="@k.student_GradSchool" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">学历:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="student_Edu" value="@k.student_Edu" /></td>
+                        <td class="Change-PI-table-tittle">QQ:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="student_QQ" value="@k.student_QQ" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">邮箱:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="student_Email" value="@k.student_Email" /></td>
+                        <td class="Change-PI-table-tittle">电话:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="student_Tel" value="@k.student_Tel" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">期望月薪:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="student_Wage" value="@k.student_Wage" /></td>
+                        <td class="Change-PI-table-tittle">期望从事职业:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="student_Occupation" value="@k.student_Occupation" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">专业技能:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="student_SKill" value="@k.student_SKill" /></td>
+                        <td class="Change-PI-table-tittle">兴趣爱好:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="student_Hobby" value="@k.student_Hobby" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Change-PI-table-tittle">个人荣誉:</td>
+                        <td class="Change-PI-table-content"><input type="text" name="student_Glory" value="@k.student_Glory" /></td>
+                        <td class="Change-PI-table-tittle">图片上传:</td>
+                        <td class="Change-PI-table-content"><input type="file" name="file1" style="width: 190px" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="Change-PI-deta">
+                <span>
+                    <img src="~/images/favicon.ico" />详细信息
+                </span>
+                <div class="Change-PI-deta-main">
+                    <span>个人说明:</span>
+                    <textarea name="stduent_Introduce">@k.stduent_Introduce</textarea>
+                    <span>培训经历:</span>
+                    <textarea name="student_Train">@k.student_Train</textarea>
+                    <span>项目经历:</span>
+                    <textarea name="student_Practic">@k.student_Practic</textarea>
+                </div>
+            </div>
+            <div class="Change-PI-button">
+                <input type="submit" name="TK" class="button-3d button-primary button-rounded" value="     保存      " style="background: #077ace; color: #fff; border: 1px solid #077ace; " />
+            </div>
+        </div>
+    }
+</form>

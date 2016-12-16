@@ -1,0 +1,361 @@
+﻿@model SECP.Models.ShowAll
+@{
+    ViewBag.Title = "GTechInfo";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>科技信息</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="/css/tech-main.css" type="text/css" />
+    <link rel="stylesheet" href="/css/tech-CircleHoverEffect.css" type="text/css" />
+    <link rel="stylesheet" href="/css/tech-Info.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/tech-als_demo.css" />
+</head>
+<body>
+    <!-- Main Menu -->
+    <div class="mainmenu-wrapper">
+        <div class="container">
+            <div class="menuextras">
+                <div class="extras">
+                    <ul>
+                        <li><a href="#"><img src="/images/Social_Logo/Github_Logo2.png" /></a></li>
+                        <li><a href="#"><img src="/images/Social_Logo/QQ_Logo2.png" /></a></li>
+                        <li><a href="#"><img src="/images/Social_Logo/Renren_Logo2.png" /></a></li>
+                        <li>
+                            <a href="/Login/Login">
+                                @ViewData["State"]
+                                <div class="sub">
+                                    @ViewData["YState"]
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../PersonalInformation/PIstudent">
+                                @ViewData["UserName"]
+                                <div class="sub">
+                                    @ViewData["TimeNow"]
+                                </div>
+                            </a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav id="colorNav" class="colorNav">
+                <ul>
+                    <li class="logo-wrapper"><a href="Goverment/TechHome.html"><img src="/images/mPurpose-logo5.png" alt="HomeLogo" /></a></li>
+                    <li>
+                        <a href="#plan">信息公开</a>
+                        <ul>
+                            <li><a href="/Goverment/GTechnologyPublish?type=0">科技规划</a></li>
+                            <li><a href="/Goverment/GTechnologyPublish?type=1">资金公开</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#techPolicy">科技政策</a>
+                        <ul>
+                            <li><a href="/Goverment/GSTPolicy?type=0"><h4 id="0">地方政策</h4></a></li>
+                            <li><a href="/Goverment/GSTPolicy?type=1"><h4 id="1">国家政策</h4></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                    <li>
+                        <a href="/Goverment/GStatic">科技动态</a>
+                        <ul>
+                            <li><a href="/Government/GStatic?type=1"><h4 id="1">要闻</h4></a></li>
+                            <li><a href="/Government/GStatic?type=2"><h4 id="2">图片新闻</h4></a> </li>
+                            <li><a href="/Government/GStatic?type=3"><h4 id="4">科技部工作</h4></a></li>
+                            <li><a href="/Government/GStatic?type=4"><h4 id="3">地方科技工作</h4></a></li>
+                            <li><a href="/Government/GStatic?type=5"><h4 id="5">国内外科技动态</h4></a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#techProgram">科技计划</a>
+                        <ul>
+                            <li><a href="#techProgram">资金申报</a></li>
+                            <li><a href="#techProgram">项目申报</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- End Main Menu -->
+    <!-- News' Title-->
+    <!-- End News' Title-->
+    <!-- Main Body-->
+    <div class="main-body">
+        <!-- Information-->
+        <div class="container">
+            <div class="col-md-12 content-left">
+                <!-- Latest News Marquee-->
+                <div class="move-text">
+                    <div class="breaking_news">
+                        <h2>最新资讯</h2>
+                    </div>
+                    <div class="marquee">
+                        @foreach(SECP.Models.SimpleInfo k in Model.Yw)
+                            {
+                        <div class="marquee1">  
+                                <a class="breaking" href="@k.LinkUrl"> @k.Title</a>                      
+                         </div>
+                        }
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!-- End Latest News Marquee-->
+                <!--轮播图-->
+                <div class="slider">
+                    <div class="callbacks_wrap">
+                        <ul class="rslides" id="slider">
+                            <li>
+                                <img src="/images/News/01.jpg" alt="轮播图1" />
+                                <div class="caption">
+                                    <a href="http://www.mod.gov.cn/topnews/2016-11/12/content_4761891_2.htm" target="_blank">我国成功发射云海一号01星</a>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/images/News/光启.jpg" alt="轮播图2" />
+                                <div class="caption">
+                                    <a href="http://www.chinadaily.com.cn/interface/yidian/1138561/2016-11-11/cd_27341689.html" target="_blank">光启“旅行者”2号飞行器试飞升空</a>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="/images/News/mayun.png" alt="轮播图3" />
+                                <div class="caption">
+                                    <a href="http://www.stdaily.com/index/kejixinwen/2016-11/12/content_324756.shtml" target="_blank">马云:中国市场消费潜力巨大 正在被高科技、互联网以独特的形式打开</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 articles">
+                <!--科技政策-->
+                <header>
+                    <h3 class="title-head" id="techPolicy">科技政策</h3>
+
+                </header>
+                <div class="article">
+                    <div class="article-left">
+                        <a href="http://www.cdst.gov.cn/Readnews.asp?NewsID=17832" target="_blank"><img src="/images/News/economic.jpeg" alt="第一条政策的图片" /></a>
+                    </div>
+                    <div class="article-right">
+                        @foreach (SECP.Models.SimpleInfo k in Model.Kjzc) 
+                        { 
+                        <div class="article-title">
+                            <p>2016-12-10</p>
+                            <a class="title" href="@k.LinkUrl" target="_blank">@k.Title</a>
+                        </div>
+                        <div class="article-text">
+                            <p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@k.BriefInfo
+                            </p>
+                            <a class="reu" href="@k.LinkUrl" target="_blank"><img src="/images/more.png" alt="" /></a>
+                            <div class="clearfix"></div>
+                        </div>
+                        }
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <a href="http://www.baidu.com"><h4 class="title" style="float:right">更多-->></h4></a>
+            </div>
+
+            <div class="col-md-6">
+                <!--科技规划-->
+                <div class="sports-top">
+                    <div class="cricket">
+                        <header>
+                            <h3 class="title-head" id="plan">科技规划</h3>
+                        </header>
+                        <div class="c-sports-main">
+                            <div class="c-image">
+                                <a href="http://education.news.cn/2016-08/08/c_129213939.htm" target="_blank"><img src="/images/News/135JPEG.JPEG" alt="" /></a>
+                            </div>
+
+                            <div class="c-text">
+                                <a class="power" href="http://education.news.cn/2016-08/08/c_129213939.htm" target="_blank">国务院印发《“十三五”国家科技创新规划》</a>
+                                <p class="date">On Nov 14, 2016</p>
+                                <a class="reu" href="http://education.news.cn/2016-08/08/c_129213939.htm" target="_blank"><img src="/images/more.png" alt="" /></a>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        @foreach (SECP.Models.SimpleInfo k in Model.Kjgh)
+                        { 
+                            <div class="s-grid-small">
+                            <div class="sc-text">
+                                <a class="power" href="@k.LinkUrl" target="_blank">@k.Title</a>
+                                <p class="date">On Nov 14, 2016</p>
+                                <a class="reu" href="@k.LinkUrl" target="_blank"><img src="/images/more.png" alt="" /></a>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        }
+
+                        @*<div class="s-grid-small">
+                            <div class="sc-text">
+                                <a class="power" href="single.html" target="_blank">《规划纲要》配套政策实施细则</a>
+                                <p class="date">On Nov 14, 2016</p>
+                                <a class="reu" href="single.html" target="_blank"><img src="/images/more.png" alt="" /></a>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>*@
+                    </div>
+                </div>
+                <a href="http://www.baidu.com"><h4 class="title" style="float:right">更多-->></h4></a>
+            </div>
+
+            <div class="col-md-6">
+                <!--资金公开-->
+                <div class="cricket">
+                    <header>
+                        <h3 class="title-popular" id="financial">资金公开</h3>
+                    </header>
+                    <div class="c-sports-main">
+                        <div class="c-image">
+                            <a href="http://www.mof.gov.cn/zhengwuxinxi/tupianxinwen1/200805/t20080519_20070.html" target="_blank"><img src="/images/News/zijin.jpg" alt="" /></a>
+                        </div>
+                        <div class="c-text">
+                            <a class="power" href="http://www.mof.gov.cn/zhengwuxinxi/tupianxinwen1/200805/t20080519_20070.html" target="_blank">张通部长助理出席全国部分省市预算执行分析座谈会并讲话</a>
+                            <p class="date">On Nov 14, 2016</p>
+                            <a class="reu" href="single.html"><img src="/images/more.png" alt="" /></a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    @foreach (SECP.Models.SimpleInfo k in Model.Zjgk)
+                    {
+                        <div class="s-grid-small">
+                            <div class="sc-text">
+                                <a class="power" href="@k.LinkUrl" target="_blank">@k.Title</a>
+                                <p class="date">On Nov 14, 2016</p>
+                                <a class="reu" href="@k.LinkUrl" target="_blank"><img src="/images/more.png" alt="" /></a>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    }
+                    @*<div class="s-grid-small">
+                        <div class="sc-text">
+                            <a class="power" href="http://www.most.gov.cn/czgk/czyjs/201604/P020160415554388289132.pdf" target="_blank">科学技术部2016年度部门预算(2016-04-15)</a>
+                            <p class="date">On Nov 14, 2016</p>
+                            <a class="reu" href="http://www.most.gov.cn/czgk/czyjs/201604/P020160415554388289132.pdf" target="_blank"><img src="/images/more.png" alt="" /></a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>*@
+                </div>
+                <a href="http://www.baidu.com"><h4 class="title" style="float:right">更多-->></h4></a>
+            </div>
+
+            <div class="col-md-12 articles">
+                <header>
+                    <h3 class="title-head" id="techProgram">科技项目申报</h3>
+                </header>
+                <section class="main">
+                    <ul class="ch-grid">
+                        <li>
+                            <div class="ch1-item ch1-img-1">
+                                <div class="ch1-info">
+                                    <h3><strong>科技计划申报中心</strong></h3>
+                                    <p><a href="http://program.most.gov.cn">中华人名共和国科学技术部科技计划申报中心</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ch1-item ch1-img-2">
+                                <div class="ch1-info">
+                                    <h3><strong>科技计划申报指南</strong></h3>
+                                    <p><a href="http://program.most.gov.cn">中华人名共和国科学技术部科技计划</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ch2-item ch2-img-1">
+                                <div class="ch2-info">
+                                    <h3><strong>科技经费预算申报中心</strong></h3>
+                                    <p><a href="http://finance.most.gov.cn">国家科技经费预算申报管理中心</a></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="ch2-item ch2-img-2">
+                                <div class="ch2-info">
+                                    <h3><strong>科技经费预算申报指南</strong></h3>
+                                    <p><a href="http://finance.most.gov.cn">国家科技经费预算申报指南</a></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="row section-navigation">
+                        <ul>
+                            <li><a href="#"><img src="/images/CircleHover/KT03.png" />科技计划申报中心</a>&nbsp;&nbsp;&gt;&gt;</li>
+                            <li><a href="#"><img src="/images/CircleHover/KT02.png" />科技计划申报指南</a>&nbsp;&nbsp;&gt;&gt;</li>
+                            <li><a href="#"><img src="/images/CircleHover/KT04.png" />科技经费预算申报中心</a>&nbsp;&nbsp;&gt;&gt;</li>
+                            <li><a href="#"><img src="/images/CircleHover/KT05.png" />科技经费预算申报指南</a>&nbsp;&nbsp;&gt;&gt;</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- End Main Body-->
+    <!-- Copyright-->
+    <div class="footer">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footer-copyright">Copyright &copy; 2016.电子科技大学中山学院</div>
+            </div>
+        </div>
+    </div>
+    <!-- End Copyright-->
+
+
+    <a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+    <!-- Javascripts -->
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/responsiveslides.min.js"></script>
+    <script src="/js/move-top.js"></script>
+    <script src="/js/easing.js"></script>
+    <script>
+        $(function () {
+            $("#slider").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                pager: true,
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/main-menu.js"></script>
+    <script src="/js/template.js"></script>
+    <script type="text/javascript" src="/js/jquery.marquee.min.js"></script>
+    <script>
+        $('.marquee').marquee({ pauseOnHover: true });//文字滚动效果插件
+    </script>
+    <script src="js/move-top.js" type="text/javascript"></script>
+
+
+</body>
+</html>

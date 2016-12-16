@@ -1,0 +1,80 @@
+﻿@model IEnumerable<SECP.Models.Enterprise>
+@{
+    ViewBag.Title = "PIenterprise";
+    Layout = "~/Views/PersonalInformation.cshtml";
+}
+<link href="~/css/TalentRelease.css" rel="stylesheet" />
+<link href="~/css/PITalent.css" rel="stylesheet" />
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<div class="PI-main">
+    <hr class="hr1" /><hr class="hr2" /><hr class="hr3" /><hr class="hr4" />
+    @foreach (SECP.Models.Enterprise k in Model)
+    {
+        <div class="PI-username">
+            <div class="PI-username-left">
+                <span>@k.Enterprise_UserName</span>
+                <nobr>(企业)</nobr>
+                <div class="PI-personal">
+                    <span>企业简介</span>
+                    <p>@k.Enterprise_Brief</p>
+                    <a class="PI-personal-change" href="ChangePIenterprise">更改>></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="PI-userinfo">
+            <div class="PI-table">
+                <span>基本</span>
+                <nobr>信息</nobr>
+                <table>
+                    <tr>
+                        <td class="PI-table-tittle">企业名称</td>
+                        <td class="PI-table-content">@k.Enterprise_Name</td>
+                        <td class="PI-table-tittle">类型</td>
+                        <td class="PI-table-content">@k.Enterprise_Type</td>
+                        <td class="PI-table-tittle">规模</td>
+                        <td class="PI-table-content">@k.Enterprise_Scale</td>
+                    </tr>
+                    <tr>
+                        <td class="PI-table-tittle">行业</td>
+                        <td class="PI-table-content">@k.Enterprise_Industry</td>
+                        <td class="PI-table-tittle">地点</td>
+                        <td class="PI-table-content">@k.Enterprise_Place</td>
+                        <td class="PI-table-tittle">邮政编码</td>
+                        <td class="PI-table-content">@k.Enterprise_Postcode</td>
+                    </tr>
+                    <tr>
+                        <td class="PI-table-tittle">联系人</td>
+                        <td class="PI-table-content">@k.Enterprise_Contact</td>
+                        <td class="PI-table-tittle">邮箱</td>
+                        <td class="PI-table-content">@k.Enterprise_Email</td>
+                        <td class="PI-table-tittle">电话</td>
+                        <td class="PI-table-content">@k.Enterprise_Tel</td>
+                    </tr>
+                    <tr>
+                        <td class="PI-table-tittle">信息审核</td>
+                        <td class="PI-table-content">@k.Enterprise_Checks</td>
+
+                    </tr>
+
+                </table>
+                <div class="PI-deta">
+                    <span>详细</span>
+                    <nobr>信息</nobr>
+                    <div class="PI-deta-pj">
+                        <span>企业文化</span>
+                        <p>@k.Enterprise_Culture</p>
+                    </div>
+                    <div class="PI-deta-px">
+                        <span>业务范围</span>
+                        <p>@k.Enterprise_Business</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="PI-left">
+            </div>
+        </div>
+    }
+
+</div>

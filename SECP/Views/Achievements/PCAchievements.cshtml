@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SECP.Models.Achievements>
+@{
+    ViewBag.Title = "PCAchievements";
+    Layout = "~/Views/Achievements.cshtml";
+}
+<link href="~/css/AchievementsRelease.css" rel="stylesheet" />
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<form  enctype="multipart/form-data" method="post">
+<div class="Release-main">
+    <div class="achievementsRe-tips">
+    </div>
+    <div class="Pmain">
+
+        <div class="table-tittle">
+            请填写<span>发布产品</span>详细信息
+            <div class="table-back">
+               <img src="~/images/back-arrow.png" draggable="false" onclick="javascript:window.history.go(-1);" />
+            </div>
+        </div>
+        <div class="achievementsRe-table">
+            <table>
+                <tr>
+                    <th class="table-simple-th">主题</th>
+                    <td class="table-simple-td"><input type="text" name="Achievements_Theme" /></td>
+                    <th class="table-simple-th">类型</th>
+                    <td class="table-simple-td">产品</td>
+                </tr>
+                <tr class="table-simple">
+                    <th class="table-simple-th">发布人</th>
+                    <td class="table-simple-td" >@Request.Cookies["UserName"].Value</td>
+                    <th class="table-simple-th">发布人特长</th>
+                    <td class="table-simple-td">
+                        <input type="text" name="Achievements_Specialty" />
+                    </td>
+
+                </tr>
+                <tr>
+                    <th class="table-simple-th">联系方式</th>
+                    <td class="table-simple-end1" colspan="3"><input type="text" name="Achievemetns_contact" class="table-end1-botton" /></td>
+                </tr>
+            </table>
+            <div>
+                <div class="table-deta-th">产品上传</div>
+                <div class="table-deta-td">
+                   <input type="file" name="file1" style="width: 190px" />
+                </div>
+            </div>
+        </div>
+        <div class="table-button"><input type="submit" id="CKbutton" name="TK" class="button-3d button-primary button-rounded" value="确认无误，发布产品！" /></div>
+    </div>
+</div>
+</form>
+

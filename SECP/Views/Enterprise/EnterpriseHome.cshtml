@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "EnterpriseHome";
+    Layout = "~/Views/Enterprise.cshtml";
+}
+<!--Silder-->
+<script type="text/javascript" src="~/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="~/js/responsiveslides.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // Slideshow
+        $("#slider").responsiveSlides({
+            auto: true,
+            pager: false,
+            nav: true,
+            speed: 500,
+            timeout: 4000,
+            pager: true,
+            pauseControls: true,
+            namespace: "callbacks"
+        });
+    });
+</script>
+<script type="text/javascript">
+    function aa() {
+        window.location.hash = "#enterprise-state";
+    }
+</script>
+
+<div class="callbacks_container">
+    <ul class="rslides" id="slider">
+        <li><a href="#"><img src="~/images/enterprise/001.jpg" alt=""></a></li>
+        <li><a href="#"><img src="~/images/enterprise/002.jpg" alt=""></a></li>
+        <li><a href="#"><img src="~/images/enterprise/003.jpg" alt=""></a></li>
+        <li><a href="#"><img src="~/images/enterprise/004.jpg" alt=""></a></li>
+    </ul>
+</div>
+<!--Silder-->
+<div class="enterprise-welcome" onload="aa()">
+    <h3>
+        什么是企业信息平台？
+    </h3>
+    <p>
+        企业利用平台为高校师生或其他用户提供企业信息和产品的企业信息平台。<br />
+        <span>You can collecting of enterprise information or enterprise product on this platform.</span>
+    </p>
+
+</div>
+<div class="enterprise-state" id="enterprise-state">
+
+
+    <div class="state-top">
+        <div class="state" draggable="false">
+            <a href="INEnterprise"><img src="~/images/enterprise/enterprise-state1.png" /><br />企业信息</a>
+            <br /><span>平台提供企业相关信息，给高校师生或其他用户详细了解企业资历</span>
+        </div>
+        <div class="state" draggable="false">
+            <a href="EPEnterprise"><img src="~/images/enterprise/enterprise-state2.png" /><br />企业产品</a>
+            <br /><span>企业为高校师生或其他用户展示企业专利产品</span>
+        </div>
+
+    </div>
+</div>

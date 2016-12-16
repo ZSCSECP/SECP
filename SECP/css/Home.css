@@ -1,0 +1,66 @@
+.main {background: #f7f7f7;}
+
+.banner {width:100%;height:300px;position:absolute;z-index:9;left:0;overflow:hidden;background-color:#F3F3F3;-webkit-user-select:none;}
+.banner .banner-ul {position:absolute;z-index:10;bottom:5px;left:0;right:0;height:20px;text-align:center;}
+.banner .banner-ul .banner-li{display:inline-block;width:15px;height:15px;background:url('../static/common/image/banner_li.png') no-repeat;margin:0 2px;cursor:pointer;}
+.banner .banner-ul .banner-li-active{background:url('../static/common/image/banner_li_active.png') no-repeat;}
+.banner .banner-img{width:1000px;height:100%;margin:0 auto;}
+.banner .banner-img img{width:100%;height:300px;display:block;}
+
+.SECP{padding-top:300px;}
+.SECP .SECP-item{height:250px;padding:0 0;}
+
+.SECP .sae,.scs, .sem{background:#ffffff;}
+.SECP-inner{width:1000px;margin:0 auto;overflow:hidden;}
+.SECP-inner .SECP-img,.SECP-arrow,.SECP-content{float:left;}
+.SECP-inner .SECP-img{width:400px;text-align:center;padding:60px 0px 0px 0px}
+.SECP-inner .SECP-img img{width:145px;}
+.SECP-inner .SECP-img h2.odd{padding-top:10px;color:#2AAAEC;}
+.SECP-inner .SECP-img h2.even{padding-top:10px;color:#48C887;}
+.SECP-inner .SECP-arrow{width:50px;padding-top:60px;}
+.SECP-inner .SECP-arrow img{width:15px;}
+/*.SECP-inner .SECP-content{width:550px;padding:0 50px;}*/
+.SECP-inner .SECP-content{padding:50px 50px;}
+.SECP-inner .SECP-content p{width:430px;padding:20px 0;}
+.SECP-inner .SECP-content ul{font-size:12px;overflow:hidden;}
+.SECP-inner .SECP-content ul li.left,li.right{float:left;}
+.SECP-inner .SECP-content ul.scm-ul{padding-left:20px;}
+.SECP-inner .SECP-content ul.scm-ul li{list-style-type:disc;line-height:35px;}
+.SECP-inner .SECP-content ul li ul{padding-left:20px;}
+.SECP-inner .SECP-content ul li.left ul li{list-style-type:disc;line-height:35px;}
+.SECP-inner .SECP-content ul li.right ul li{list-style-type:disc;line-height:35px;}
+.SECP-inner .SECP-content a.more{display:block;margin:10px 0;width:140px;}
+.SECP-inner .SECP-content a.more i{display:inline-block;width:120px;height:40px;background:url("../image/more.png") 0 -90px no-repeat;}
+.SECP-inner .SECP-content a.more:hover i{background:url("../image/more.png") 0 3px no-repeat;}
+
+.video-wrap{height:360px;text-align:center;background:#2492cb;}
+.video-wrap .video{height:360px;background:url("../image/video_bg.png") center center no-repeat;}
+.video-wrap .video .v-content .v-title{padding:25px 0 10px 0;font-size:38px;color:#3DF1FC;letter-spacing:2px;}
+/*.video-wrap .video .v-content .v-title{padding:70px 0 40px 0;font-size:20px;color:#fff;letter-spacing:2px;}*/
+.video-wrap .video .v-content .v-op{padding:10px 0px 25px 0;font-size:16px;color:#fff;letter-spacing:2px;}
+.video-wrap .video .v-content img{width:150px;}
+.video-wrap .video .v-content .v-support{padding:15px 0 10px 0;font-size:15px;color:#ff828b;letter-spacing:2px;}
+
+.mask{position:fixed;width:100%;height:100%;top:0;left:0;text-align:center;background-color:rgba(0,0,0,0.7);z-index:1000;}
+.mask .m-video{position:relative;margin:0 auto;}
+.mask video{width:700px;height:auto;margin:100px auto;z-index:1050;}
+.mask a.close-video{position:absolute;top:85px;background-color:#000;color:#fff;padding:5px;text-decoration:none;}
+
+
+
+
+/*.feature{background:#f7f7f7;}*/
+.feature-inner{width:1000px;margin:0 auto;padding:30px 0;overflow:hidden;}
+.feature-inner h4{margin-bottom:20px;padding-left:10px;border-left:5px solid #0A8FD5;}
+.feature-inner ul li{float:left;width:250px;position:relative;text-align:center;}
+.feature-inner p.feature-title{padding-top:5px;font-size:16px;}
+.feature-inner p.feature-content{font-size:12px;text-align:left;padding:25px;}
+.feature-inner .division{width:1px;height:47px;position:absolute;right:3px;top:32px;background:#cacaca;}
+
+/*.typical{background:#f7f7f7;}*/
+.typical-inner{width:1000px;height:350px;margin:0 auto;overflow:hidden;}
+.typical-inner h4{margin-bottom:20px;padding-left:10px;border-left:5px solid #0A8FD5;}
+.typical-inner .typical-image,.typical-intro{width:500px;height:272px;float:left;background:#fff;}
+.typical-inner .typical-intro span.left-quote{display: inline-block;margin-top:40px;background: url('../image/left_quote.png') -7px 13px no-repeat;width: 41px;height: 50px;background-size: 38px;}
+.typical-inner .typical-intro span.right-quote{display: inline-block;background: url('../image/right_quote.png') -8px -4px no-repeat;width: 41px;height: 21px;background-size: 36px;}
+.typical-inner .typical-intro span.typical-content{font-size:18px;line-height:30px;}

@@ -1,0 +1,157 @@
+﻿@{
+    ViewBag.Title = "TechInfoEnter";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>信息录入</title>
+    <!-- Custom Theme files -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/tech-main.css">
+    <link rel="stylesheet" href="/css/tech-InfoEnter.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/tech-als_demo.css" type="text/css" media="screen" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</head>
+
+<body>
+
+    <!-- Main Menu -->
+    <div class="bg-input">
+        <div class="container">
+            <div class="menuextras">
+                <div class="extras">
+                    <ul>
+                        <li><a href="#"><img src="/images/Social_Logo/Github_Logo2.png" /></a></li>
+                        <li><a href="#"><img src="/images/Social_Logo/QQ_Logo2.png" /></a></li>
+                        <li><a href="#"><img src="/images/Social_Logo/Renren_Logo2.png" /></a></li>
+                        <li>
+                            <a href="/Login/Login">
+                                @ViewData["State"]
+                                <div class="sub">
+                                    @ViewData["YState"]
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../PersonalInformation/PIstudent">
+                                @ViewData["UserName"]
+                                <div class="sub">
+                                    @ViewData["TimeNow"] 
+                                </div>
+                            </a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav id="colorNav" class="colorNav">
+                <ul>
+                    <li class="logo-wrapper"><a href="/Home.html"><img src="/images/mPurpose-logo5.png" alt="HomeLogo" /></a></li>
+                    <li class="active">
+                        <a href="/Goverment/TechHome">政府信息平台</a>
+                    </li>
+                    <li>
+                        <a href="/Goverment/TechInfo">信息公开</a>
+                        <ul>
+                            <li><a href="/Goverment/TechInfoPublic">科技规划</a></li>
+                            <li><a href="/Goverment/TechInfoPublic">资金公开</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#techPolicy">科技政策</a>
+                    </li>
+                    <li>
+                    <li><a href="/Goverment/GImportantNews">科技动态</a></li>
+                    <li>
+                        <a href="/Goverment/GTechnologyPlan">科技计划</a>
+                        <ul>
+                            <li><a href="#techProgram">资金申报</a></li>
+                            <li><a href="#techProgram">项目申报</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- End Main Menu -->
+    <!--header start here-->
+    <div class="header agile">
+        <h1>政府信息录入系统</h1>
+        <div class="wrap">
+            <div class="contact">
+                <div class="contact-head">
+                    <h2>表单项</h2>
+                    <!--<div class="cls-con"><img src="/images/cancel.png" alt=""> </div>-->
+                    <div class="clear"> </div>
+                </div>
+                <!--主要表单内容form-->
+                <form action="#" method="post" enctype="multipart/form-data">
+                    <div class="lable">
+                        <!--<p for="Category_1">分类：</p>-->
+                        <select id="category_1" name="category_1" required onchange="change()">
+                            <option value="#">请选择提交类别:</option>
+                            <option value="0">科技政策</option>
+                            <option value="1">信息公开</option>
+                            <option value="2">科技动态</option>
+                        </select>
+                        <select id="category_2" name="category_2" required>
+                            <option value="#">细分下的类别:</option>
+                        </select>
+                        <!--需修改-->
+                        <!--先进行图片上传处理，然后获取上传路径将路径作为string传给控制器并插入表中。-->
+                        <!--添加一个框显示图片（压缩后）-->
+
+
+                        <input type="text"                  name="Title" placeholder="标题" required="">
+                        <textarea                           name="BriefInfo" placeholder="请描述计划的 主要信息"></textarea>
+                        <input type="text"                  name="LinkUrl" placeholder="科技计划链接地址">
+                        <input class="date" id="datepicker" name="PublishDate" type="text" placeholder="mm/dd/yyyy" required="">                       
+                        <input type="file"  name="submitImg" value="请选择图片并上传!">
+                        <input type="text" name="ImageUrl" placeholder="请选择存储位置">
+                        <input type="submit" value="确认无误，添加信息！" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--header end here-->
+    <!-- Footer -->
+    <div class="footer">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footer-copyright">Copyright &copy; 2016.电子科技大学中山学院</div>
+            </div>
+        </div>
+    </div>
+    <!--End Footer-->
+    <!--script实现下拉框联动-->
+    <script>
+        function change() {
+            var x = document.getElementById("category_1");
+            var y = document.getElementById("category_2");
+            y.options.length = 0;
+            if (x.value == 0) {
+                y.options.add(new Option("--------", "0", false, true));//科技政策
+                y.options.add(new Option("地方科技政策", "0"));
+                y.options.add(new Option("国家科技政策", "1"));
+            }
+            else if (x.value == 1) {
+                y.options.add(new Option("--------", "0", false, true));//信息公开
+                y.options.add(new Option("科技规划", "1"));
+                y.options.add(new Option("资金公开", "2"));
+            }
+            else if (x.value == 2) {
+                y.options.add(new Option("--------", "0", false, true));//科技动态
+                y.options.add(new Option("要闻", "1"));
+                y.options.add(new Option("图片新闻", "2"));
+                y.options.add(new Option("地方科技工作", "3"));
+                y.options.add(new Option("科技部工作", "4"));
+                y.options.add(new Option("国外科技工作", "5"));
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SECP.Models.Achievements>
+@{
+    ViewBag.Title = "CKAchievements";
+    Layout = "~/Views/Achievements.cshtml";
+}
+<link href="~/css/CKachievements-dis.css" rel="stylesheet" />
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/AchievementsShow.css" rel="stylesheet" />
+
+@foreach (SECP.Models.Achievements k in Model)
+ {
+<div class="CK-main">
+    <div class="achievementsRe-tips">
+    </div>
+    <div class="CK-main-table">
+        <div class="CK-table">
+            <div class="CK-table-tittle">
+                @k.Achievements_Theme
+            </div>
+            <table>
+                <tr class="CK-table-info">
+                    <td class="info-topic">编号:</td>
+                    <td class="info-content">@k.Achievements_Id</td>
+                    <td class="info-tittle">类型:</td>
+                    <td class="info-content">@k.Achievements_Type</td>
+                    <td class="info-tittle">发布时间:</td>
+                    <td class="info-content">@k.Achievements_Time</td>
+                </tr>
+                <tr class="CK-table-info">
+                    <td class="info-topic">发布人:</td>
+                    <td class="info-content">@k.Achievements_Publisher</td>
+                    <td class="info-tittle">研发特长:</td>
+                    <td class="info-content">@k.Achievements_Specialty</td>
+                    <td class="info-tittle">联系方式:</td>
+                    <td class="info-content">@k.Achievemetns_contact</td>
+                </tr>
+            </table>
+            <div class="deta-info">
+                <span>详细说明:</span>
+                <p>点击右下角的下载按钮可以下载该论文（产品）的附件</p>
+                <div class="but">
+                    <div class="but-back">
+                        <a onclick="javascript:window.history.go(-1);">返回</a>
+                    </div>
+                    <form id="_form" method="post">
+                        <div class="but-enter">
+                            <a onclick="document.getElementById('_form').submit();">下载</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    }
+</div>
+ }

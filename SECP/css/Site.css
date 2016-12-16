@@ -1,0 +1,166 @@
+﻿body {
+    background-image: url( /images/login_bj.png);
+    background-repeat: no-repeat;
+    margin: 0px;
+    width: 100%;
+
+}
+.main{
+    position:relative;
+    width: 580px;
+    height:500px;
+    margin:100px auto 0 auto;
+   
+   
+}
+.adv
+{
+    float:left;
+    width:300px;
+    height:500px;
+    background-image:url(~/images/login-left.png);
+    z-index:1;
+}
+.content{
+    float:left;
+    position:relative;
+    width: 280px;
+    height:151px;
+    transition: all 500ms linear;
+    margin-top:50px;
+    border-radius:10px;
+    box-shadow:inset 0 0px 0 rgb(86,174,251),0 0 10px 3px rgba(74,162,241,0.5);
+}
+.content:hover{
+  text-shadow:0 0 3px rgb(52,119,182);
+ box-shadow:inset 0 0px 0 rgb(86,174,251),0 0 10px 3px rgba(255,255,255,0.5);
+  background-color:    rgba(74,162,241,0.31);
+
+}
+/*姓名，密码label效果*/
+.label{
+    float:left; 
+    height: 28px;
+    width:40px;
+    margin: 0px 0 0 5px;/*上右下左*/
+    font-size:13px;
+    height:25px;   
+    line-height:25px;   
+    font-family: 微软雅黑;
+    font-weight:bold;
+    cursor:pointer;
+    color:rgb(255,255,255);
+    position:relative;
+    text-shadow:0 0 4px rgb(74,162,241);
+  
+     
+}
+/*姓名，密码label变色*/
+.label:hover {
+ text-shadow:0 0 4px rgb(255,255,255);
+ color:rgba(52,119,182,0.5);
+}
+/*输入框效果*/
+.textbox{
+    /*background-color: transparent ;*/
+    border-radius:5px;
+    border:1px solid rgb(255,255,255);
+    display:block; 
+    transition: all 300ms linear;
+    height:20px; 
+    width: 180px;
+    position:relative;
+    margin: 10px 0 0 5px;/*上右下左*/
+    box-shadow:inset 0 0px 0 rgb(86,174,251),0 0 10px 3px rgba(74,162,241,0.5);
+}
+.textbox:hover {
+     box-shadow:inset 0 0px 0 rgb(86,174,251),0 0 10px 3px rgba(255,255,255,0.5);
+    }
+/*按钮效果*/
+.account-control [type="submit"]{
+  color:rgb(255,255,255);
+  font-weight:bold;
+  width:59px;
+  height:27px;
+   position:relative;
+  /*background-color: transparent ;*/
+   box-shadow:inset 0 0px 0 rgb(86,174,251),0 0 10px 3px rgba(74,162,241,0.5);
+  border-radius:5px;border:1px solid rgb(255,255,255);
+  display:block;
+  text-shadow:0 0 1px #232323;
+  transition: all 300ms linear;
+  top:-6px;
+  left:133px;
+ 
+}
+.account-control [type="submit"]:hover,.btn-select:hover {
+   color:rgb(255,255,255);
+  text-shadow:0 0 3px rgb(52,119,182);
+ box-shadow:inset 0 0px 0 rgb(86,174,251),0 0 10px 3px rgba(255,255,255,0.5);
+  background-color:    rgba(74,162,241,0.5);
+}
+.account-control[type="submit"]:active,.btn-select:active {
+     color:rgb(69,153,228);
+    /*background-color:  transparent ;*/
+}
+.btn-select { 
+position: relative; 
+display: inline-block; 
+width: 100px; 
+height: 25px; 
+font: 15px 微软雅黑; 
+text-align:center;   
+color: #fff; 
+} 
+.btn-select  { 
+position:relative;
+left:50px; 
+  /*background-color: transparent ;*/
+  border-radius:5px;border:1px solid rgb(255,255,255);
+  display:block;
+  text-shadow:0 0 3px rgb(52,119,182);
+   box-shadow:inset 0 0px 0 rgb(86,174,251),0 0 10px 3px rgba(74,162,241,0.5);
+  transition: all 300ms linear;
+ text-align:center; 
+} 
+.btn-select:hover  { 
+background-color: rgba(74,162,241,0.5); 
+ box-shadow:inset 0 0px 0 rgb(86,174,251),0 0 10px 3px rgba(255,255,255,0.5);
+} 
+.btn-select select { 
+position: absolute; 
+top: 0; 
+left: 0; 
+width: 100px; 
+height: 25px; 
+opacity: 0; 
+font: 13px 微软雅黑; 
+text-align:center;   
+color: #fff; 
+background-color:rgba(74,162,241,0.5);
+
+} 
+.btn-select select option { 
+text-indent: 10px; 
+/*background-color:transparent;*/
+} 
+.btn-select select option:hover { 
+background-color:rgba(74,162,241,0.5);
+color: rgb(86,174,251); 
+} 
+.not-registered a 
+{
+  margin-left:5px;
+  text-decoration: none;
+  color:rgb(52,119,182);
+  cursor: pointer;
+}
+.foot {
+background-color:#3A3A3A;
+color:white;
+text-align:center;
+height:50px;
+line-height:50px;
+margin-left:0px;
+margin-top:20px;
+}

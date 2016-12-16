@@ -1,0 +1,58 @@
+﻿@model SECP.Models.Login
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<head>
+<link href="~/css/Site.css" rel="stylesheet" />
+<link rel="icon"href="../images/Homefavicon.ico"/>
+<Title>登陆</Title>
+</head>
+<body >
+
+@using (Html.BeginForm())
+{
+
+
+    <div class="main">
+        <div class="adv" draggable="false">
+            <a href="~/Home.html">
+                <img src="~/images/login-left.png" />
+            </a>
+        </div>
+        <div class="content">
+            <div>
+                @Html.LabelFor(m => m.UserName, new { @class = "label", Style = "left:20px;top:20px" })
+                @Html.TextBoxFor(m => m.UserName, new { @class = "textbox", placeholder = "请输入用户名", autocomplete = "on", Style = "left:20px;top:20px" })
+                <br />
+            </div>
+            <div>
+                @Html.LabelFor(m => m.PassWord, new { @class = "label", Style = "left:20px;top:20px" })
+                @Html.PasswordFor(m => m.PassWord, new { @class = "textbox", placeholder = "请输入密码", autocomplete = "on", Style = "left:20px;top:20px" })
+            </div>
+            <br />
+            <div class="btn-select" id="btn_select" style="float:left;margin-left:-10px; height: 24px;  width: 80px;right:-20px ; top:20px">
+                <span class="cur-select" style="height: 24px; width: 80px">Select</span>
+                <select style="height: 24px; width: 80px" name="QX">
+                    <option value='1'>学生</option>
+                    <option value='2'>教师</option>
+                    <option value='3'>企业代表人</option>
+                    <option value='4'>客户</option>
+                    <option value='5'>管理员</option>
+                    <option value='6'>中山科技局</option>
+                </select>
+            </div>
+            <div class="account-control" style="height: 27px; width: 90px">
+                <input type="submit" value="Login" name="Login" />
+            </div>
+            <div class="account-control" style="height: 27px; width: 90px;margin-left:69px;">
+                <input type="submit" value="Access" name="Login" />
+            </div>
+        </div>
+    </div>
+
+}
+<script src="~/js/stect.js"></script>
+
+</body>

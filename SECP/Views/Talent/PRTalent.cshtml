@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SECP.Models.Project>
+@{
+    ViewBag.Title = "PRTalent";
+    Layout = "~/Views/Talent.cshtml";
+}
+
+
+<link href="~/css/TalentRelease.css" rel="stylesheet" />
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+@using(Html.BeginForm())
+{
+<div class="Release-main">
+    <div class="TalentRe-tips">
+    </div>
+    <div class="Pmain">
+
+        <div class="table-tittle">
+            请填写<span>企业招募</span>详细信息
+            <div class="table-back">
+                <img src="~/images/back-arrow.png" draggable="false" onclick="javascript:window.history.go(-1);" />
+        </div>
+        <div class="TalentRe-table">
+            <table>
+                <tr>
+                    <th class="table-simple-th">主题</th>
+                    <td class="table-simple-td"><input type="text" name="Talent_Name" /></td>
+                    <th class="table-simple-th">报酬</th>
+                    <td class="table-simple-td"><input type="text" name="Talent_Money" /></td>
+                </tr>
+                <tr class="table-simple">
+                    <th class="table-simple-th">人数</th>
+                    <td class="table-simple-td"><input type="text" name="Talent_Num" /></td>
+                    <th class="table-simple-th">福利</th>
+                    <td class="table-simple-td">
+                        <input type="text" name="Talent_Welfare" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="table-simple-th">地点</th>
+                    <td class="table-simple-end1" colspan="3"><input type="text" name="Talent_Place" class="table-end1-botton" /></td>
+
+                </tr>
+            </table>
+            <div>
+                <div class="table-deta-th">详细说明</div>
+                <div class="table-deta-td">
+                    <textarea class="deta-text" name="Talent_Content"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="table-button"><input type="submit" id="CKbutton" name="TK" class="button-3d button-primary button-rounded" value="确认无误，发布招募！"  /></div>
+    </div>
+</div>
+}

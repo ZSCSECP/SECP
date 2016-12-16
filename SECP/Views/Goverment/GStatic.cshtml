@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SECP.Models.SimpleInfo>
+@{
+    ViewBag.Title = "要闻";
+    Layout = "~/Views/Goverment.cshtml";
+}
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-sm-3 blog-sidebar">
+                <div class="sidebar-wrapper">
+                    <a href="/Goverment/GStatic?type=1"><h4 id="1">要闻</h4></a>
+                    <a href="/Goverment/GStatic?type=2"><h4 id="2">图片新闻</h4></a>
+                    <a href="/Goverment/GStatic?type=3"><h4 id="4">科技部工作</h4></a>
+                    <a href="/Goverment/GStatic?type=4"><h4 id="3">地方科技工作</h4></a>
+                    <a href="/Goverment/GStatic?type=5"><h4 id="5">国内外科技动态</h4></a>
+                </div>
+            </div>
+            <!-- End Sidebar -->
+            <div class="col-sm-9">
+                <div class="blog-post blog-single-post">
+                    <div class="single-post-title">
+                        <h1>@ViewData["tle"]</h1>
+                    </div>
+                    <ul class="breadcrumb">
+                        <li>
+                            <i>
+                                <img src="~/images/Footer_Location.png" /></i>
+                            
+                            <a href="#">科技动态</a>
+                            <i>&gt;&gt;</i>
+                        </li>
+                        <li>@ViewData["tle"]</li>
+                    </ul>
+                    <div class="single-post-content">
+                        <ul>
+                            @foreach (SECP.Models.SimpleInfo k in Model)
+                            {
+                                <li><a href="@k.LinkUrl">@k.Title</a></li>
+                            }
+                            
+                        </ul>
+                    </div>
+                    @*分页*@
+                    <div class="divHeight">
+                        <nav>
+                            <ul class="pagination next">
+                           <li> @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.SimpleInfo>)))</li>
+                           </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

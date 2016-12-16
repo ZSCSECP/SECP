@@ -1,0 +1,101 @@
+﻿.CK-main{
+    height:700px;
+    width:100%;
+}
+.achievementsRe-tips {
+    height:120px;
+    width: 100%;
+    background: url(../images/achievements/achievements-show.png);
+    background-size: 100% 100%;
+    position:absolute;
+    z-index:90;
+}
+/*项目说明*/
+
+.CK-main-table{
+    height:700px;
+    width:1200px;
+    margin-left:15%;
+    margin-top:50px;
+    position:absolute;
+    z-index:100;
+}
+.CKT-table{
+
+    width:100%;
+   font-weight:bolder;
+   font-size:18px;
+
+}
+.CKT-table tr{
+   word-break: keep-all;
+}
+.CKT-tittle{
+    border-left:1px solid #04bfea;
+    border-bottom:1px solid #04bfea;
+    border-top:1px solid #04bfea;
+    width:133px;
+    height:50px;
+    max-height:50px;
+    line-height:50px;
+    text-align:center;
+   overflow:hidden;
+}
+.CKT-tittle span{
+    display: inline-block;
+}
+.CKT-content{
+    font-size:14px;
+    border:1px solid #04bfea;
+    width:133px;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    border-collapse:collapse;
+   overflow:hidden;
+   white-space:nowrap;
+}
+.CKT-content-end{
+    font-size:14px;
+    border:1px solid #04bfea;
+    width:266px;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    border-collapse:collapse;
+   overflow:hidden;
+   white-space:nowrap;
+}
+
+
+.CKT-topic{
+    border:5px solid #04bfea ;
+    padding-left:10px;
+    font-size:30px;
+    height:50px;
+    line-height:50px;
+            background: #0026ff;
+    filter: alpha(opacity=30);
+    -moz-opacity: .3;
+    opacity: .3;
+    color: #ffffff;
+    z-index: 8;
+    font-weight:bolder;
+}
+.CKT-topic span{
+    font-size:40px;
+    color:#fff30d;
+    font-weight:bolder;
+}
+.CKT-detail-content{
+    border:1px solid #04bfea;
+    width:133px;
+    line-height:50px;
+    padding-left:10px;
+    font-size:14px;
+}
+.CKT-button{
+    margin-top:10px;
+    float:right;
+    margin-right:255px;
+}

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<SECP.Models.Train>
+@{
+    ViewBag.Title = "PETrain";
+    Layout = "~/Views/Train.cshtml";
+}
+<link href="~/css/TrainRelease.css" rel="stylesheet" />
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    <div class="Release-main">
+        <div class="TalentRe-tips">
+        </div>
+        <div class="Pmain">
+
+            <div class="table-tittle">
+                请填写<span>企业实训</span>详细信息
+                <div class="table-back">
+                    <img src="~/images/back-arrow.png" draggable="false" onclick="javascript:window.history.go(-1);" />
+                </div>
+            </div>
+            <div class="TalentRe-table">
+                <table>
+                    <tr>
+                        <th class="table-simple-th">主题</th>
+                        <td class="table-simple-td"><input type="text" name="Train_Name" /></td>
+                        <th class="table-simple-th">相关专业</th>
+                        <td class="table-simple-td"><input type="text" name="Train_Major" /></td>
+                    </tr>
+                    <tr class="table-simple">
+                        <th class="table-simple-th">目标</th>
+                        <td class="table-simple-td"><input type="text" name="Train_Objective" /></td>
+                        <th class="table-simple-th">实训日期</th>
+                        <td class="table-simple-td"><input type="text" name="Train_Date" /></td>
+
+
+
+                    </tr>
+                    <tr>
+                        <th class="table-simple-th">地点</th>
+                        <td class="table-simple-end1" colspan="3"><input type="text" name="Train_Place" class="table-end1-botton" /></td>
+
+                    </tr>
+                </table>
+                <div>
+                    <div class="table-deta-th">详细说明</div>
+                    <div class="table-deta-td">
+                        <textarea class="deta-text" name="Train_Content"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="table-button"><input type="submit" id="CKbutton" name="TK" class="button button-3d button-action button-pill" value="确认无误，发布实训！" /></div>
+        </div>
+    </div>
+}
+

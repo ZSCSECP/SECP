@@ -1,0 +1,128 @@
+﻿.PI-main{
+    width:100%;
+    height:538px;
+}
+.PI-username{
+    width:1000px;
+    height:225px;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:5px;
+    background-image:url(/images/user-bg.png);
+}
+.PI-username-left{
+  display: table;
+  text-shadow: 0 0 4px rgba(0,0,0,0.4);
+  width: 360px;
+  height: 215px;
+  position: relative;
+  background-color:#fff;
+  opacity:0.5;
+  border-radius:5px;
+  padding-top:10px;
+  padding-left:5px;
+ 
+}
+.PI-username-left span{
+    font-size:30px;
+    font-weight:bolder;
+    position: relative;
+}
+.PI-username-left nobr{
+    font-weight:bolder;
+}
+.PI-personal{
+
+     height: 20px; 
+     margin-top:65px;
+     margin-left:100px;
+}
+.PI-personal span{
+    font-size:30px;
+    font-weight:bolder;
+    position: relative;
+
+}
+.PI-personal nobr{
+    font-size:20px;
+    font-weight:bolder;
+    position: relative;
+
+    padding-left:20px;
+    
+}
+.PI-personal-change{
+    font-size:14px;
+    font-weight:bolder;
+    color:#04bfea;
+    float:right;
+    margin-right:5px;
+    margin-top:100px;
+}
+.PI-personal-change:link{
+    color:#04bfea;
+}
+.PI-personal-change:hover{
+    text-decoration:underline;
+}
+.PI-personal-change:active{
+    text-decoration:underline;
+    color:#90c4ea;
+}
+.PI-personal-change:visited{
+    color:#0094ff;
+}
+.PI-user-info{
+    /*width:1000px;
+    height:50px;*/
+    float:left;
+    margin-left:20%;
+
+    margin-top:125px;
+}
+.PI-user-info span{
+    color:#04bfea;
+    font-size:50px;
+    font-weight:bolder;
+}
+.PI-user-info nobr{
+    color:#aaa7a7;
+    font-size:50px;
+    font-weight:bolder;
+}
+.hr1{
+    width:233px;
+    position:absolute;
+    z-index:70;
+    top:320px;
+    border:1px solid #04bfea;
+    margin-left:75px;
+}
+.hr2{
+    width:70%;
+    position:absolute;
+    z-index:70;
+    top:320px;
+    border:1px solid #aaa7a7;
+    margin-left:23%;
+}
+
+.hr3{
+    width:233px;
+    position:absolute;
+    z-index:70;
+    top:550px;
+    border:1px solid #aaa7a7;
+    margin-left:75px;
+}
+.hr4{
+    width:70%;
+    position:absolute;
+    z-index:70;
+    top:550px;
+    border:1px solid #04bfea;
+    margin-left:23%;
+}
+.release-button{
+    margin-top:65px;
+}

@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "MAchievement";
+    Layout = "~/Views/Backstage.cshtml";
+}
+
+@using(Html.BeginForm())
+{
+<div class="header">
+            <h1 class="page-title">研发信息平台</h1>
+        </div>
+        
+                <ul class="breadcrumb">
+            <li><a href="#">研发平台</a> <span class="divider">/</span></li>
+            <li class="active">详细信息</li>
+ </ul>
+<div class="well">
+    <table class="table">
+        <thead>
+            <tr><td colspan="4" style="font-size:16px">详细信息</td></tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>研发成果Id：</td>
+            <td>@ViewData["Id"]</td>
+            <td>研发类型：</td>
+            <td>@ViewData["Type"]</td>
+        </tr>
+        <tr>
+            <td>研发主题：</td>
+            <td>@ViewData["Theme"]</td>
+            <td>发布时间：</td>
+            <td>@ViewData["Time"]</td>
+        </tr>
+        <tr>
+            <td>成果发布人：</td>
+            <td>@ViewData["Publisher"]</td>
+            <td>联系方式：</td>
+            <td>@ViewData["contact"]</td>
+        </tr>
+        <tr>
+            <td>研发特长：</td>
+            <td>@ViewData["Specialty"]</td>
+            <td>研发信息审核：</td>
+            <td>@ViewData["Checks"]</td>
+        </tr>
+        </tbody>
+        <tr>
+            <td colspan="4">
+                <div style="text-align:center">
+                    <input type="submit" name="TK" class="btn" value="该信息无错！审核通过！" />
+                    <input type="submit" name="TK" class="btn" value="该信息有错！审核不通过！" />
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+}

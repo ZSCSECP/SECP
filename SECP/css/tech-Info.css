@@ -1,0 +1,434 @@
+﻿/*-------------------------------------------------------------------------
+    Latest News Slide
+--------------------------------------------------------------------------*/
+.wrap {
+	width:90%;
+	margin:0 auto;	
+}
+.breaking_news {
+    float: left;
+    padding: 0px 20px;
+    background-color: #F3F3F3;
+	position:relative;
+}
+.breaking_news h2 {
+    color: #000;
+    font-size: 1.5em;
+    border-bottom:none;
+}
+.breaking_news:after {
+    content: '';
+    position: absolute;
+    right: -7%;
+    top: 37%;
+    border-left: 10px solid #F9F9F9;
+    border-right: 10px solid #F9F9F9;
+    border-bottom: 14px solid #F3F3F3;
+    transform: rotate(90deg);
+}
+.marquee {
+    width: 80%;
+    margin-left:15%;
+    color: #777;
+    font-size: 1.5em;
+    padding: 35px 0;
+    color: #84754E;
+    overflow: hidden;
+}
+.move-text {
+    background-color: #F9F9F9;
+	margin-bottom:1em;
+}
+.marquee1 {
+    float: left;
+    margin-right: 6em;
+    margin-top:14px;
+}
+.marquee2 {
+    float: right;
+    margin-top:14px;
+}
+a.breaking {
+    color: #84754E;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+/*--------------------------------------------------------------------------
+ 	Latest News Slider
+--------------------------------------------------------------------------*/
+.main-body {
+    padding: 0px 0 5em 0;
+}
+.content-left {
+    padding-left: 0;
+}
+.slider {
+	position: relative;
+}
+
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+  }
+.caption{
+	width: 65%;
+	position: absolute;
+	bottom: 0%;
+	left: 0%;
+	background-color: rgba(0, 0, 0, 0.58);
+	padding: 6px 10px 15px 10px;
+}
+.caption h3{
+	color: #FFF;
+	font-weight: 700;
+	font-size: 1.8em;
+	text-transform: uppercase;
+}
+.caption p{
+	color: #FFF;
+	line-height: 1.5em;
+	font-size: 0.875em;
+	text-align: center;
+	margin:1em 0 1.5em 0;
+}
+a.morebtn{
+	background:#3D3D3D;
+	padding:0.8em 0;
+	display:block;
+	font-size:0.875em;
+	text-transform:uppercase;
+	color:#FFF;
+	width:20%;
+	margin:0 auto;
+	transition:0.5s all ease;
+	-webkit-transition:0.5s all ease;
+	-moz-transition:0.5s all ease;
+	-o-transition:0.5s all ease;
+	-ms-transition:0.5s all ease;
+}
+a.morebtn:hover{
+	background:#585686;
+}
+.callbacks_tabs a:after {
+	content: "\f111";
+	font-size: 0;
+	font-family: FontAwesome;
+	visibility: visible;
+	display: block;
+	height: 12px;
+	width: 12px;
+	display: inline-block;
+	border: 2px solid #747474;
+}
+.callbacks_here a:after{
+	border: 2px solid #FFF;
+}
+.callbacks_tabs a{
+	visibility:hidden;
+}
+.callbacks_tabs li{
+	display:inline-block;
+}
+ul.callbacks_tabs.callbacks1_tabs {
+	position: absolute;
+	bottom: 14px;
+	z-index: 999;
+	left: 13px;
+	display:none;
+}
+.callbacks_nav {
+  position: absolute;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  top: 50%;
+  left: 0;
+  opacity: 0.7;
+  z-index: 3;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  height: 61px;
+  width: 38px;
+  background: transparent url("../images/News/themes.gif") no-repeat left top;
+  margin-top: -45px;
+  }
+.callbacks_nav.next {
+  left: auto;
+  background-position: right top;
+  right: 0;
+ }
+ .caption a {
+    color: #fff;
+    font-size: 1.4em;
+    text-decoration: none;
+}
+.caption a:hover {
+    color: #84754e;
+}
+
+/*--------------------------------------------------------------------------
+ 	TchInfo（科技规划）
+--------------------------------------------------------------------------*/
+#plan{
+    padding:0 0 10px 0;
+    margin:0;
+    font-size:2.5em;
+}
+
+#financial{
+    padding:0 0 10px 0;
+    margin:0;
+    font-size:2.5em;
+}
+
+.sports-top {
+    position:relative;
+	margin:0;
+    padding:0;
+}
+.cricket {
+    margin-top: 0;
+    margin-bottom:2.5em;
+}
+.cricket header {
+    border-bottom: 1px solid #84754e;
+    padding-bottom: 4px;
+	margin-bottom:2em;
+}
+h3.title-head{
+    font-size:2.5em;
+}
+.c-image{
+	float:left;
+	width:48%;
+	margin-right:3%;
+}
+.c-image img {
+	width:100%;
+}
+.c-text {
+	float:left;
+	width:49%;
+}
+.sc-image{
+	float:left;
+	width:30%;
+	margin-right:3%;
+}
+.sc-image img {
+	width:100%;
+}
+.sc-text {
+	float:left;
+	width:100%;
+}
+a.power {
+    display: block;
+    font-size: 1.4em;
+    color: #000;
+	margin-top: 0.5em;
+}
+.sc-text p {
+    color: #B5B3B3;
+    font-size: 0.875em;
+    font-style: italic;
+    margin: 0.5em 0;
+	text-transform: uppercase;
+}
+a.power:hover {
+	color: #84754e;
+}
+.c-text h6 {
+	color:#000;
+	font-size:0.95em;
+	font-weight:300;
+	text-transform:uppercase;
+}
+.c-text p {
+    color: #B5B3B3;
+    font-size: 0.875em;
+    font-style: italic;
+    margin: 0.5em 0;
+}
+.sc-text h6 {
+	color:#000;
+	font-size:0.95em;
+	font-weight:300;
+	text-transform:uppercase;
+}
+a.reu {
+	font-size: 1em;
+    color: #84754e;
+    float: right;
+	text-decoration: underline;
+}
+a.reu:hover {
+    color: #000;
+}
+
+.s-grid-small{
+	margin-top:1.5em;
+}
+/*--------------------------------------------------------------------------
+ 	TchInfo（科技政策）
+--------------------------------------------------------------------------*/
+#techPolicy{
+    padding:0 0 3.5px 0;
+}
+.articles {
+    margin: 0 auto;
+    padding-left:0;
+}
+.articles header {
+    border-bottom: 1px solid #84754e;
+}
+.article {
+	border-bottom: 1px solid #eee;
+    margin-top: 1em;
+    padding-bottom: 3em;
+}
+.article:last-child {
+    border: none;
+}
+.article-left {  
+    width: 50%;
+    float: left;
+	margin-right:3%;
+    margin-top:0.5em;
+}
+.article-right {
+    float: right;
+    width: 47%;
+    margin:0.5em 0;
+}
+
+.article-left img {
+    width: 100%;
+	opacity:0.8;/*设置元素的不透明级别*/
+    transition:0.5s all;/*transition过度属性或者叫 属性渐*/
+	/* -想要兼容的浏览器版本-transition：Css属性（none/all/属性） 持续时间 时间函数 延迟时间
+	ease：逐渐慢下来
+	linear：线性过度
+	ease-in：由慢到快
+	ease-out：由快到慢
+	ease-in-out：由慢到快在到慢
+	cubic-bezier：特定的cubic-bezier曲线,所有值需在[0, 1]区域内，否则无效。*/
+	-webkit-transition:0.5s all;/*Safari and Chrome*/
+	-moz-transition:0.5s all;/*兼容火狐旧版本 Firefox 4*/
+	-o-transition:0.5s all;/*Opera*/
+	-ms-transition:0.5s all;/* */
+	/*此处设置为图片任意属性改变的时候在0.5秒内以动画的效果改变图片的不透明度值 变为0.8*/
+}
+.article-left img:hover {
+	opacity:1;
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+	/*此处设置为鼠标放置于图片上时的时候在0.5秒内以动画的效果改变图片的不透明度值由0.8->1*/
+}
+a.title {
+    font-size: 1.9em;
+    color: #000;
+}
+a.title:hover {
+	color:#84754e;
+}
+.article-title p {
+    color: #B5B3B3;
+    font-size: 0.875em;
+    font-style: italic;
+    margin: 0.5em 0;
+	text-transform: uppercase;
+}
+/*--------------------------------------------------------------------------
+ 	TchInfo（资金公开）
+--------------------------------------------------------------------------*/
+h3.title-popular {
+		font-size: 2.5em;
+        padding-bottom:0;
+	}
+.article-left iframe {
+	min-height:200px;
+}
+.article-text p {
+    color: #777;
+    line-height: 2em;
+    margin: 1em 0 0.8em 0;
+    font-size: 0.95em;
+}
+.article-text a {
+	font-size:1em;
+	color:#000;
+}
+.article-text a {
+    float: right;
+}
+.article-text a:hover {
+	color:#000;
+}
+/*--------------------------------------------------------------------------
+ 	TchInfo（项目申请）
+--------------------------------------------------------------------------*/
+.grid_3 {
+	margin-top: 3em;
+}
+.grid_3 h3 {
+	padding-bottom: .5em;
+	font-size: 2em;
+	color: #FA0000;
+}
+.grid_5 h1, h2, h3, h4, h5, h6 {
+	padding: 12px 0;
+}
+nav a {
+	position: relative;
+	display: inline-block;
+	outline: none;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	font-size: 1.35em;
+}
+nav a:hover,
+nav a:focus {
+	outline: none;
+}
+.dropdown-toggle.btn-primary {
+  border-color: #FFF !important;
+   background-color: #a6192e !important;
+}
+.home{
+	float:left;
+	width:7%;
+	background: rgba(158, 147, 107, 0.51);
+	padding: 2.5em 2em;
+}

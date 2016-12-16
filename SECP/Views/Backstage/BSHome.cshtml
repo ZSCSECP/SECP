@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SECP.Models.Project>  
+@{
+    ViewBag.Title = "BSHome";
+    Layout = "~/Views/Backstage.cshtml";
+}   
+
+@using(Html.BeginForm())
+{
+<div class="header">
+            <h1 class="page-title">项目信息平台</h1>
+        </div>
+                <ul class="breadcrumb">
+            <li><a href="#">项目平台</a> <span class="divider">/</span></li>
+            <li class="active">列表信息</li>
+ </ul>
+ <div style="margin:30px 0px 5px 70px">
+     <input class="btn" name="te" value="升序" type="submit" />
+     <input class="btn" name="te" value="降序" type="submit" />
+    </div>
+<div class="well">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>项目序号</th>
+          <th>项目名称</th>
+          <th>发布人</th>
+          <th>当前状态</th>
+          <th style="width: 34px;">修改</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (SECP.Models.Project k in Model)
+        {
+        <tr>
+          <td>@k.Project_Id</td>
+          <td>@k.Project_Name</td>
+          <td>@k.Project_Publisher</td>
+          <td>@k.Project_Checks</td>
+          <td>
+              <a href="MProject?Pro=@k.Project_Id"><i class="icon-pencil"></i></a>
+          </td>
+            </tr>
+            }
+          <tr>
+           <td colspan="5">
+               <div style="text-align:center;width:100%">
+                   @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Project>)))
+               </div></td><!--显示分页信息 每页多少信息 共多少条 目前处于多少页 共多少页-->>
+           </tr>
+      </tbody>
+    </table>
+</div>
+}

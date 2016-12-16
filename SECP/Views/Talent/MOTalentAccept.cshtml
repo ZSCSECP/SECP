@@ -1,0 +1,59 @@
+﻿@model IEnumerable<SECP.Models.Resume>
+@{
+    ViewBag.Title = "MOTalentAccept";
+    Layout = "~/Views/Talent.cshtml";
+}
+
+
+<link href="~/css/TalentMo.css" rel="stylesheet" />
+<script type="text/javascript" src="~/js/jquery.js"></script>
+@using(Html.BeginForm())
+{
+<div class="MOTalent-main2">
+    <div class="TalentRe-tips">
+    </div>
+    <div class="acceptProject">
+        <div class="table-tittle">
+            <h2>已接受资源</h2>
+            <p>共 @ViewData["Q"]个</p>
+        </div>
+        <div class="table">
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>简历投递Id</th>
+                        <th>企业Id</th>
+                        <th>招聘Id</th>
+                        <th>学生Id</th>
+                        <th>投递简历日期</th>
+                        <th>当前状态</th>
+                        <th>企业回复内容</th>
+                        <th>取消</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                   @foreach (SECP.Models.Resume k in Model)
+                 {
+                    <tr>
+                        <td></td>
+                        <td>@k.Resume_Id</td>
+                        <td>@k.company_Id</td>
+                        <td><a href="CKTalent?Id=@k.Talent_Id">@k.Talent_Id</a></td>
+                        <td><a href="PSTalent?id=@k.sudent_Id">@k.sudent_Id</a></td>
+                        <td>@k.Resume_Time</td>
+                        <td>@k.Resume_State</td>
+                        <td>@k.Resume_reply</td>
+                        <td><button name='QX' type='submit' value="@k.Resume_Id"></button></td>
+                    </tr>
+                  }
+                </tfoot>
+            </table>
+            
+        </div>
+
+    </div>
+</div>
+}

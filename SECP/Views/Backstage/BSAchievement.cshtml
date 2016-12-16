@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SECP.Models.Achievements>  
+@{
+    ViewBag.Title = "BSAchievement";
+    Layout = "~/Views/Backstage.cshtml";
+}
+
+@using(Html.BeginForm())
+{
+<div class="header">
+            <h1 class="page-title">研发信息平台</h1>
+        </div>
+        
+                <ul class="breadcrumb">
+            <li><a href="#">研发平台</a> <span class="divider">/</span></li>
+            <li class="active">列表信息</li>
+ </ul>
+ <div style="margin:30px 0px 5px 70px">
+     <input class="btn" name="te" value="升序" type="submit" />
+     <input class="btn" name="te" value="降序" type="submit" />
+    </div>
+<div class="well">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>研发序号</th>
+          <th>主题名称</th>
+          <th>发布人</th>
+          <th>当前状态</th>
+          <th style="width: 34px;">修改</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (SECP.Models.Achievements k in Model)//dbml中表
+        {
+        <tr>
+          <td>@k.Achievements_Id</td>
+          <td>@k.Achievements_Theme</td>
+          <td>@k.Achievements_Publisher</td>
+          <td>@k.Achievements_Checks</td>
+          <td>
+              <a href="MAchievement?Ach=@k.Achievements_Id"><i class="icon-pencil"></i></a>
+          </td>
+            </tr>
+            }
+          <tr>
+           <td colspan="5">
+               <div style="text-align:center;width:100%">
+                   @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Achievements>)))
+               </div></td>
+           </tr>
+      </tbody>
+
+    </table>
+</div>
+}

@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "POProject";
+    Layout = "~/Views/Project.cshtml";
+}
+@{
+    ViewBag.Title = "PEProject";
+    Layout = "~/Views/Project.cshtml";
+}
+
+@{
+    ViewBag.Title = "CCProjectRelease";
+    Layout = "~/Views/Project.cshtml";
+}
+
+<link href="~/css/PjRelease.css" rel="stylesheet" />
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    <div class="pjRe-tips">
+        <div class="pjRe-tips-img">
+            <img src="~/images/pjre-jiantou.gif" draggable="false" />
+        </div>
+        <div class="pjRe-pj">
+            外包项目发布
+        </div>
+    </div>
+    <div class="Pmain">
+
+        <div class="pjRe-tittle">
+
+            <img src="~/images/pjre-tittle.png" />
+        </div>
+        <div class="table-tittle">
+            请填写项目详细信息
+        </div>
+        <div class="pjRe-table">
+            <table>
+                <tr>
+                    <th class="table-simple-th">项目名称</th>
+                    <td class="table-simple-td"><input type="text" name="Project_Name" /></td>
+                    <th class="table-simple-th">项目报酬</th>
+                    <td class="table-simple-td"><input type="text" name="Project_Money" /></td>
+                </tr>
+                <tr class="table-simple">
+                    <th class="table-simple-th">项目工期</th>
+                    <td class="table-simple-td"><input type="text" name="Project_TimeLimeit" placeholder="按天为单位" /></td>
+                    <th class="table-simple-th">要求经验</th>
+                    <td class="table-simple-td">
+                        <select name="Requirement">
+                            <option value="无需经验">无需经验</option>
+                            <option value="半年">半年</option>
+                            <option value="1年">1年</option>
+                            <option value="2年及以上">2年及以上</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="table-simple-th">联系电话</th>
+                    <td class="table-simple-end1"><input type="text" name="Project_Contact" /></td>
+                    <th class="table-simple-end1"></th>
+                    <td class="table-simple-end2"></td>
+                </tr>
+            </table>
+            <div>
+                <div class="table-deta-th">详细说明</div>
+                <div class="table-deta-td">
+                    <textarea class="deta-text" name="Project_Content"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="table-button"><input type="submit" id="CKbutton" name="TK" class="button-3d button-primary button-rounded" value="确认无误，发布项目！" /></div>
+    </div>
+
+    <!--左悬浮-->
+    <div class="lmain">
+        <div class="lmain2">
+            <a href="javascript:" class="bar"></a>
+            <ul>
+                <li><a href="CEProject">软件算法分析</a></li>
+                <li><a href="CSProject">图书馆馆标Logo征集</a></li>
+                <li><a href="CCProject">用安卓开发一个搜索功能</a></li>
+                <li><a href="COProject">.net开发一个发布图片的网站</a></li>
+
+            </ul>
+        </div>
+    </div>
+}
+<script src="~/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        $('.lmain').css('left', '-262px');
+
+        var expanded = true;
+
+        $('.bar').click(function () {
+            if (expanded) {
+                $('.lmain').animate({ left: '0' }, 500);
+                $('.bar').css('background-position', '-25px 0px');
+            } else {
+                $('.lmain').animate({ left: '-262px' }, 500);
+                $('.bar').css('background-position', '-0px 0px');
+            }
+            expanded = !expanded;
+        });
+
+    });
+</script>
+

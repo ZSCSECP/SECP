@@ -1,0 +1,105 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/css/enterprisestyle.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-enterprise.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="shortcut icon" href="~/images/enterprise/enterprisefavicon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>企业信息平台</title>
+    <script src="~/js/jquery-1.11.1.min.js"></script>
+
+</head>
+<body>
+    <div class="enterprise-main" >
+        <div class="enterprise-tittle">
+            <div class="enterprise-logo">
+                <div class="enterprise-left">
+                    <img src="~/images/Alogo.png">
+                </div>
+                <a href="~/Home.html">企业信息平台<span>enterpriseing base platform</span></a>
+            </div>
+            <div>
+                <nav class="main_menu">
+
+                    <ul>
+                        <li class="@ViewData["H"]">
+
+                            <a href="enterpriseHome">
+                                首页
+                                <div class="sub">
+                                    Home Page
+                                </div>
+                            </a>
+                        </li>
+                        <li class="@ViewData["Q"]">
+                            <a href="INEnterprise">
+                                企业信息
+                                <div class="sub">
+                                    Information
+                                </div>
+                            </a>
+                            <ul>
+                                <li><a href="INEnterprise">查看信息</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="@ViewData["S"]">
+                            <a href="EPEnterprise">
+                                企业产品
+                                <div class="sub">
+                                    Product
+                                </div>
+                            </a>
+                            <ul>
+                                <li><a href="EPEnterprise">查看产品</a></li>
+                                <li><a href="PEEnterprise">发布产品</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="@ViewData["X"]">
+                            <a href="MOEnterprise">
+                                我的企业
+                                <div class="sub">
+                                    My Enterprise
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Login/Login">
+                                @ViewData["State"]
+                                <div class="sub">
+                                    @ViewData["YState"]
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../PersonalInformation/PIstudent">
+                                @ViewData["UserName"]
+                                <div class="sub">
+                                    @ViewData["TimeNow"]
+                                </div>
+                            </a>
+
+                        </li>
+                    </ul>
+                </nav><!-- navigation -->
+            </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom clearfix" style="color:white">
+                Copyright &copy; 14软件开发A班 罗俐萍 魏铮淑 钟碧珍  指导:12软件开发B班 黄雅聪 黎泯生      电子科技大学中山学院
+            </div><!-- footer-bottom -->
+        </div>
+    </footer><!-- footer -->
+
+</body>
+</html>

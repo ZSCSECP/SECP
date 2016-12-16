@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "PicChange";
+    Layout = "~/Views/Backstage.cshtml";
+}
+
+<form  enctype="multipart/form-data" method="post">
+<div class="header">
+            <h1 class="page-title">图片</h1>
+        </div>
+        
+                <ul class="breadcrumb">
+            <li><a href="#">图片修改平台</a> <span class="divider">/</span></li>
+            <li class="active">修改 @ViewData["Pic"]</li>
+ </ul>
+ <div style="margin:30px 0px 5px 70px">
+        @*<button class="btn" name="te">升序</button>
+        <button class="btn" name="te">降序</button>*@
+     @*<input class="btn" name="te" value="升序" type="submit" />
+     <input class="btn" name="te" value="降序" type="submit" />*@
+    </div>
+<div class="well">
+
+    <table class="table">
+        <tr>
+            <td>图片1上传</td>
+            <td><input type="file" name="file1" style="width: 190px" /></td>
+        </tr>
+        <tr>
+            <td>图片2上传</td>
+            <td><input type="file" name="file2" style="width: 190px" /></td>
+        </tr>
+        <tr>
+            <td>图片3上传</td>
+            <td><input type="file" name="file3" style="width: 190px" /></td>
+        </tr>
+        <tr>
+            <td>图片4上传</td>
+            <td><input type="file" name="file4" style="width: 190px" /></td>
+        </tr>
+        <tr>
+          <td><input type="submit" name="TK" class="button-3d button-primary button-rounded" value="确认无误，上传图片！" style="background: #077ace; color: #fff; border: 1px solid #077ace;" />
+        </td></tr>
+    </table>
+</div>
+</form>

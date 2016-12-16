@@ -1,0 +1,73 @@
+﻿@model IEnumerable<SECP.Models.Talent>
+@{
+    ViewBag.Title = "MKTalent";
+    Layout = "~/Views/Talent.cshtml";
+}
+
+<link href="~/css/CKTalent-dis.css" rel="stylesheet" />
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/Talent-student-dis.css" rel="stylesheet" />
+<link href="~/css/SRTalent.css" rel="stylesheet" />
+<link href="~/css/CKTalent.css" rel="stylesheet" />
+
+<form id="_form" method="post">
+ @foreach (SECP.Models.Talent k in Model)
+ {
+<div class="CK-main">
+    <div class="TalentRe-tips">
+    </div>
+    <div class="CK-main-table">
+        <div class="CK-table">
+            <div class="CK-table-tittle">
+               <input type="text" name="Talent_Name" value="@k.Talent_Name" /> 
+            </div>
+            <table>
+                <tr class="CK-table-info">
+                    <td class="info-topic">编号:</td>
+                    <td class="info-content">@k.Talent_Id</td>
+                    <td class="info-tittle">类型:</td>
+                    <td class="info-content">@k.Talent_Type</td>
+                    <td class="info-tittle">报酬:</td>
+                    <td class="info-content"><input type="text" name="Talent_Money" value="@k.Talent_Money" /></td>
+                </tr>
+                <tr class="CK-table-info">
+                    <td class="info-topic">福利:</td>
+                    <td class="info-content"><input type="text" name="Talent_Welfare" value="@k.Talent_Welfare" /></td>
+                    <td class="info-tittle">发布状况:</td>
+                    <td class="info-content">@k.Talent_State</td>
+                    <td class="info-tittle">发布时间:</td>
+                    <td class="info-content">@k.Talent_Time</td>
+                </tr>
+                <tr class="CK-table-info">
+                    <td class="info-topic">发布人:</td>
+                    <td class="info-content">@k.Talent_Publisher</td>
+                    <td class="info-tittle">发布人所属:</td>
+                    <td class="info-content">企业</td>
+                    <td class="info-tittle">联系电话:</td>
+                    <td class="info-content">@ViewData["Tel"]</td>
+                </tr>
+                <tr class="CK-table-info">
+                    <td class="info-topic">地址:</td>
+                    <td class="info-content" colspan="5">@ViewData["Address"]</td>
+                </tr>
+            </table>
+            <div class="deta-info">
+                <span>详细说明:</span>
+                <p><textarea  name="Talent_Content"> @k.Talent_Content</textarea></p>
+                <div class="but">
+                    <div class="but-back">
+                        <a onclick="javascript:window.history.go(-1);">返回</a>
+                    </div>
+                   
+                        <div class="but-enter">
+                            <a onclick="document.getElementById('_form').submit();">修改</a>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    }
+</div>
+ }
+ </form>
