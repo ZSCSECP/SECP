@@ -1,0 +1,49 @@
+﻿@model IEnumerable<SECP.Models.Train>
+@{
+    ViewBag.Title = "JTrain";
+    Layout = "~/Views/Train.cshtml";
+}
+<link href="~/css/TrainRelease.css" rel="stylesheet" />
+<link href="~/css/bootstrap-button.css" rel="stylesheet" />
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/Gmain.css" rel="stylesheet" />
+<link href="~/css/Gstyle.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    foreach(SECP.Models.Train  k in Model)
+    { <div class="Release-main">
+        <div class="TalentRe-tips">
+        </div>
+        <div class="Pmain">
+            <div class="TalentRe-table">
+                <div class="table-tittle">
+                    请填写<span>加入实训</span>详细信息
+                </div>
+                <div class="lable-2">
+                    <input type="text" name="TrainID" value="@k.Train_Id" readonly="readonly">
+                </div>
+                <div class="lable">
+                    <input type="text" name="Title" id="title" value="@k.Train_Name" readonly="readonly">
+                    <input type="text" name="OurName" id="Ourname"/>
+                    <input type="text" name="LeaderName" placeholder="组长姓名" id="LeaderID" value="@ViewData[" user"]" readonly="readonly" />
+                    <input type="text" name="teamNum" placeholder="小组人数" id="teamNum" onclick="AddTextBox" /> 
+                    <input type="text" name="MemberID" placeholder="组员姓名，如有多个用空跟分隔" id="MemberID">
+                </div>
+                <div class="lable-2">
+                    <input type="text" name="type" value="@k.Train_Type" readonly="readonly"/>
+                    <input type="submit" value="提交" />
+                </div>
+            </div>           
+        </div>
+    </div>
+}
+  <script type="text/javascript">
+      var js_MemberID = document.getElementById("MemberID").value;
+      checkform = function () {        
+          if (js_MemberID.value.indexOf(" ") <= -1) {
+              alert("请检查组员姓名是否已用” “分隔");
+              return false;
+          }
+      }
+</script>  
+}

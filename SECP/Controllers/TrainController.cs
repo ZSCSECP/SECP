@@ -125,6 +125,62 @@ namespace SECP.Controllers
             return View(res);
         }
         [HttpGet]
+        public ActionResult JTrain()
+        {
+            string id = Request.QueryString["joinid"];
+            var res = from c in db.Train
+                      where id == c.Train_Id.ToString()
+                      select c;
+            if (Request.Cookies["Type"] == null)
+            {
+                Response.Write("<script type='text/javascript'>alert('请先登陆！');</script >");
+                return Redirect("~/Login/Login");
+            }
+            else
+            {
+                if (int.Parse(Request.Cookies["Type"].Value) != 1)
+                {
+                    Response.Write("<script type='text/javascript'>alert('您没有接受实训的权限！');</script >");
+                    return Redirect("Train/TrainWrong");
+                }
+                else
+                {
+                    var newone = db.Student.Where(x => x.student_UserName == Request.Cookies["UserName"].Value).Select(s => s.student_RealName);
+                    foreach (var k in newone)
+                    {
+                        ViewData["User"] = k.ToString();
+                    }
+                    return View(res);
+                }
+
+            }
+
+        }
+        [HttpPost]
+        public ActionResult JTrain(string s)
+        {
+            Identity();
+            string name = string.Empty;
+            JTrain jt = new JTrain();
+            string id = Request.QueryString["joinid"];
+            var res = from c in db.Train
+                      where id == c.Train_Id.ToString()
+                      select c;
+            jt.Train_Id = int.Parse(Request.Form["TrainID"]);
+            jt.Train_Type = Request.Form["Type"];
+            jt.Train_Name = Request.Form["Title"];
+            jt.Train_OurName = Request.Form["OurName"];
+            jt.Leader_ID = db.Student.Where(x => x.student_UserName == Request.Cookies["UserName"].Value).Select(v => v.student_Id).First();
+            jt.Team_Num = int.Parse(Request.Form["teamNum"]);
+            jt.Join_Time = DateTime.Now;
+            jt.Leader_Name = Request.Form["LeaderName"];
+            jt.Member_Name = Request.Form["MemberID"];
+            db.JTrain.InsertOnSubmit(jt);
+            db.SubmitChanges();
+            return View(res);
+
+        }
+        [HttpGet]
         public ActionResult PCTrain()
         {
             try

@@ -66,6 +66,9 @@ namespace SECP.Models
     partial void InsertSimpleInfo(SimpleInfo instance);
     partial void UpdateSimpleInfo(SimpleInfo instance);
     partial void DeleteSimpleInfo(SimpleInfo instance);
+    partial void InsertJTrain(JTrain instance);
+    partial void UpdateJTrain(JTrain instance);
+    partial void DeleteJTrain(JTrain instance);
     #endregion
 		
 		public SECPDataContext() : 
@@ -191,6 +194,14 @@ namespace SECP.Models
 			get
 			{
 				return this.GetTable<SimpleInfo>();
+			}
+		}
+		
+		public System.Data.Linq.Table<JTrain> JTrain
+		{
+			get
+			{
+				return this.GetTable<JTrain>();
 			}
 		}
 	}
@@ -4010,6 +4021,284 @@ namespace SECP.Models
 					this._Category2 = value;
 					this.SendPropertyChanged("Category2");
 					this.OnCategory2Changed();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.JTrain")]
+	public partial class JTrain : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Train_Id;
+		
+		private string _Train_Type;
+		
+		private string _Train_Name;
+		
+		private string _Train_OurName;
+		
+		private int _Leader_ID;
+		
+		private string _Member_ID;
+		
+		private System.DateTime _Join_Time;
+		
+		private int _Team_Num;
+		
+		private string _Leader_Name;
+		
+		private string _Member_Name;
+		
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTrain_IdChanging(int value);
+    partial void OnTrain_IdChanged();
+    partial void OnTrain_TypeChanging(string value);
+    partial void OnTrain_TypeChanged();
+    partial void OnTrain_NameChanging(string value);
+    partial void OnTrain_NameChanged();
+    partial void OnTrain_OurNameChanging(string value);
+    partial void OnTrain_OurNameChanged();
+    partial void OnLeader_IDChanging(int value);
+    partial void OnLeader_IDChanged();
+    partial void OnMember_IDChanging(string value);
+    partial void OnMember_IDChanged();
+    partial void OnJoin_TimeChanging(System.DateTime value);
+    partial void OnJoin_TimeChanged();
+    partial void OnTeam_NumChanging(int value);
+    partial void OnTeam_NumChanged();
+    partial void OnLeader_NameChanging(string value);
+    partial void OnLeader_NameChanged();
+    partial void OnMember_NameChanging(string value);
+    partial void OnMember_NameChanged();
+    #endregion
+		
+		public JTrain()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Train_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Train_Id
+		{
+			get
+			{
+				return this._Train_Id;
+			}
+			set
+			{
+				if ((this._Train_Id != value))
+				{
+					this.OnTrain_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Train_Id = value;
+					this.SendPropertyChanged("Train_Id");
+					this.OnTrain_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Train_Type", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string Train_Type
+		{
+			get
+			{
+				return this._Train_Type;
+			}
+			set
+			{
+				if ((this._Train_Type != value))
+				{
+					this.OnTrain_TypeChanging(value);
+					this.SendPropertyChanging();
+					this._Train_Type = value;
+					this.SendPropertyChanged("Train_Type");
+					this.OnTrain_TypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Train_Name", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string Train_Name
+		{
+			get
+			{
+				return this._Train_Name;
+			}
+			set
+			{
+				if ((this._Train_Name != value))
+				{
+					this.OnTrain_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Train_Name = value;
+					this.SendPropertyChanged("Train_Name");
+					this.OnTrain_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Train_OurName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Train_OurName
+		{
+			get
+			{
+				return this._Train_OurName;
+			}
+			set
+			{
+				if ((this._Train_OurName != value))
+				{
+					this.OnTrain_OurNameChanging(value);
+					this.SendPropertyChanging();
+					this._Train_OurName = value;
+					this.SendPropertyChanged("Train_OurName");
+					this.OnTrain_OurNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Leader_ID", DbType="Int NOT NULL")]
+		public int Leader_ID
+		{
+			get
+			{
+				return this._Leader_ID;
+			}
+			set
+			{
+				if ((this._Leader_ID != value))
+				{
+					this.OnLeader_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Leader_ID = value;
+					this.SendPropertyChanged("Leader_ID");
+					this.OnLeader_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Member_ID", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Member_ID
+		{
+			get
+			{
+				return this._Member_ID;
+			}
+			set
+			{
+				if ((this._Member_ID != value))
+				{
+					this.OnMember_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Member_ID = value;
+					this.SendPropertyChanged("Member_ID");
+					this.OnMember_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Join_Time", DbType="Date NOT NULL")]
+		public System.DateTime Join_Time
+		{
+			get
+			{
+				return this._Join_Time;
+			}
+			set
+			{
+				if ((this._Join_Time != value))
+				{
+					this.OnJoin_TimeChanging(value);
+					this.SendPropertyChanging();
+					this._Join_Time = value;
+					this.SendPropertyChanged("Join_Time");
+					this.OnJoin_TimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Team_Num", DbType="Int NOT NULL")]
+		public int Team_Num
+		{
+			get
+			{
+				return this._Team_Num;
+			}
+			set
+			{
+				if ((this._Team_Num != value))
+				{
+					this.OnTeam_NumChanging(value);
+					this.SendPropertyChanging();
+					this._Team_Num = value;
+					this.SendPropertyChanged("Team_Num");
+					this.OnTeam_NumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Leader_Name", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string Leader_Name
+		{
+			get
+			{
+				return this._Leader_Name;
+			}
+			set
+			{
+				if ((this._Leader_Name != value))
+				{
+					this.OnLeader_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Leader_Name = value;
+					this.SendPropertyChanged("Leader_Name");
+					this.OnLeader_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Member_Name", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string Member_Name
+		{
+			get
+			{
+				return this._Member_Name;
+			}
+			set
+			{
+				if ((this._Member_Name != value))
+				{
+					this.OnMember_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Member_Name = value;
+					this.SendPropertyChanged("Member_Name");
+					this.OnMember_NameChanged();
 				}
 			}
 		}

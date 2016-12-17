@@ -653,7 +653,33 @@
     <Content Include="Views\Goverment\GWrong.cshtml" />
     <Content Include="Views\Goverment\GTEPublish.cshtml" />
     <Content Include="Views\Train\MJoinJob.cshtml" />
-    <Content Include="Views\Train\SECP终版12-6.zip" />
+    <Content Include="Views\Train.cshtml" />
+    <Content Include="Views\Train\CKTrain.cshtml" />
+    <Content Include="Views\Train\CLTrain.cshtml" />
+    <Content Include="Views\Train\ENTrain.cshtml" />
+    <Content Include="Views\Train\JTrain.cshtml" />
+    <Content Include="Views\Train\PCTrain.cshtml" />
+    <Content Include="Views\Train\PETrain.cshtml" />
+    <Content Include="Views\Train\PSTrain.cshtml" />
+    <Content Include="Views\Train\SCTrain.cshtml" />
+    <Content Include="Views\Train\TrainHome.cshtml" />
+    <Content Include="Views\Train\TrainWait.cshtml" />
+    <Content Include="Views\Train\TrainWrong.cshtml" />
+    <Content Include="Views\Project\CKTrain.cshtml" />
+    <Content Include="Views\Project\CLTrain.cshtml" />
+    <Content Include="Views\Project\ENTrain.cshtml" />
+    <Content Include="Views\Project\MJoinJob.cshtml" />
+    <Content Include="Views\Project\MKTrain.cshtml" />
+    <Content Include="Views\Project\MOTrain.cshtml" />
+    <Content Include="Views\Project\MOtrainRelease.cshtml" />
+    <Content Include="Views\Project\PCTrain.cshtml" />
+    <Content Include="Views\Project\PETrain.cshtml" />
+    <Content Include="Views\Project\PSTrain.cshtml" />
+    <Content Include="Views\Project\SCTrain.cshtml" />
+    <Content Include="Views\Project\TrainHome.cshtml" />
+    <Content Include="Views\Project\TrainWait.cshtml" />
+    <Content Include="Views\Project\TrainWrong.cshtml" />
+    <Content Include="Views\Backstage\PicChange.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
