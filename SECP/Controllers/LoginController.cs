@@ -100,6 +100,10 @@ namespace SECP.Controllers
                                     Response.Cookies["UserName"].Value = a1.student_UserName;
                                     Response.Cookies["Type"].Value = "1"; //1代表学生
                                 }
+                                //if(Request.UrlReferrer!=null)
+                                //{
+                                //    return Redirect(Request.UrlReferrer.ToString());
+                                //}
                                 return Redirect("~/Home.html");
                             }
                             else
