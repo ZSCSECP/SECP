@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "MEnterprise";
+    Layout = "~/Views/GBS.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    <div class="header">
+        <h1 class="page-title">企业信息平台</h1>
+    </div>
+
+    <ul class="breadcrumb">
+        <li><a href="#">企业平台</a> <span class="divider">/</span></li>
+        <li class="active">企业信息</li>
+    </ul>
+    <div class="well">
+        <table class="table">
+            <thead>
+                <tr><td colspan="4" style="font-size:16px">详细信息</td></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>企业Id：</td>
+                    <td>@ViewData["Id"]</td>
+                    <td>企业用户名：</td>
+                    <td>@ViewData["UserName"]</td>
+                </tr>
+                <tr>
+                    <td>企业名称：</td>
+                    <td>@ViewData["Name"]</td>
+                    <td>企业类型：</td>
+                    <td>@ViewData["Type"]</td>
+                </tr>
+                <tr>
+                    <td>企业规模：</td>
+                    <td>@ViewData["Scale"]</td>
+                    <td>企业简介：</td>
+                    <td>@ViewData["Brief"]</td>
+                </tr>
+                <tr>
+                    <td>企业地点：</td>
+                    <td>@ViewData["Place"]</td>
+                    <td>企业行业：</td>
+                    <td>@ViewData["Industry"]</td>
+                </tr>
+                <tr>
+                    <td>企业邮政编码：</td>
+                    <td>@ViewData["Postcode"]</td>
+                    <td>企业联系人：</td>
+                    <td>@ViewData["Contact"]</td>
+                </tr>
+                <tr>
+                    <td>企业业务范围：</td>
+                    <td>@ViewData["Business"]</td>
+                    <td>企业文化：</td>
+                    <td>@ViewData["Culture"]</td>
+                </tr>
+                <tr>
+                    <td>企业邮箱：</td>
+                    <td>@ViewData["EMail"]</td>
+                    <td>企业电话：</td>
+                    <td>@ViewData["Telephone"]</td>
+                </tr>
+                <tr>
+                    <td>企业QQ：</td>
+                    <td>@ViewData["QQ"]</td>
+                    <td>企业信息审核：</td>
+                    <td>@ViewData["Checks"]</td>
+                </tr>
+            </tbody>
+            <tr>
+                <td colspan="4">
+                    <div style="text-align:center">
+                        <input type="submit" name="TK" class="btn" value="该信息无错！审核通过！" />
+                        <input type="submit" name="TK" class="btn" value="该信息有错！审核不通过！" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+}

@@ -209,7 +209,7 @@ namespace SECP.Controllers
                                     Response.Cookies["UserName"].Value = a1.admin_UserName;
                                     Response.Cookies["Type"].Value = "6"; //6代表中山科技局
                                 }
-                                return Redirect("~/Goverment/TechHome");
+                                return Redirect("~/Goverment/BSEnterprise");
                             }
                             else
                             {

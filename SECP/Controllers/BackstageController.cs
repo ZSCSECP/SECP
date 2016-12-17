@@ -182,45 +182,6 @@ namespace SECP.Controllers
         /// </summary>
         /// <param name="pageIndex"></param>
         /// <returns></returns>
-        [HttpGet]
-        public ActionResult BSEnterprise(int? pageIndex)
-        {
-            Mains();
-            int pagesize = 7;
-            var En = from c in db.Enterprise
-                     select c;
-            PagedList<Enterprise> _En = En.ToPagedList(pageIndex, pagesize);
-            return View(_En);
-        }
-        /// <summary>
-        /// 企业平台信息升降序
-        /// </summary>
-        /// <param name="pageIndex"></param>
-        /// <param name="a"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public ActionResult BSEnterprise(int? pageIndex, string a)
-        {
-            Mains();
-            int pagesize = 7;
-            string ts = Request.Form["te"];
-            if (ts == "升序")
-            {
-                var p = from c in db.Enterprise
-                        orderby c.Enterprise_Id ascending
-                        select c;
-                PagedList<Enterprise> _pro = p.ToPagedList(pageIndex, pagesize);
-                return View(_pro);
-            }
-            else
-            {
-                var p = from c in db.Enterprise
-                        orderby c.Enterprise_Id descending
-                        select c;
-                PagedList<Enterprise> _pro = p.ToPagedList(pageIndex, pagesize);
-                return View(_pro);
-            }
-        }
         /// <summary>
         /// 实训基地信息
         /// </summary>
@@ -427,63 +388,6 @@ namespace SECP.Controllers
                 db.SubmitChanges();
             }
             return Redirect("BSTrain");
-        }
-        /// <summary>
-        /// 企业信息页
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public ActionResult MEnterprise()
-        {
-            Mains();
-            string num = Request.QueryString["En"];
-            var res = from c in db.Enterprise
-                      where c.Enterprise_Id == int.Parse(num)
-                      select c;
-            foreach (var k in res)
-            {
-                ViewData["Id"] = k.Enterprise_Id;
-                ViewData["UserName"] = k.Enterprise_UserName;
-                ViewData["Name"] = k.Enterprise_Name;
-                ViewData["Type"] = k.Enterprise_Type;
-                ViewData["Scale"] = k.Enterprise_Scale;
-                ViewData["Brief"] = k.Enterprise_Brief;
-                ViewData["Place"] = k.Enterprise_Place;
-                ViewData["Industry"] = k.Enterprise_Industry;
-                ViewData["Postcode"] = k.Enterprise_Postcode;
-                ViewData["Contact"] = k.Enterprise_Contact;
-                ViewData["Business"] = k.Enterprise_Business;
-                ViewData["Culture"] = k.Enterprise_Culture;
-                ViewData["EMail"] = k.Enterprise_Email;
-                ViewData["Telephone"] = k.Enterprise_Tel;
-                ViewData["Checks"] = k.Enterprise_Checks;
-                ViewData["QQ"] = k.Enterprise_QQ;
-            }
-            return View();
-        }
-        /// <summary>
-        /// 审核企业信息
-        /// </summary>
-        /// <param name="a"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public ActionResult MEnterprise(string a)
-        {
-            Mains();
-            string num = Request.QueryString["En"];
-            string t = Request.Form["TK"];
-            var res = from c in db.Enterprise
-                      where c.Enterprise_Id == int.Parse(num)
-                      select c;
-            foreach (var b in res)
-            {
-                if (t == "该信息无错！审核通过！")
-                    b.Enterprise_Checks = "已通过";
-                else
-                    b.Enterprise_Checks = "不通过";
-                db.SubmitChanges();
-            }
-            return Redirect("BSEnterprise");
         }
         /// <summary>
         /// 研发信息页

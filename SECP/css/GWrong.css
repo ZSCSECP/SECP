@@ -1,6 +1,7 @@
 ﻿.Pmain{
     width:100%;
     height:590px;
+    background-color:aliceblue;
 }
 .P-pirture{
     width:400px;
@@ -11,7 +12,7 @@
 }
 .P-tips{
     width:600px;
-   color:#fff;
+    color:chocolate;
     margin-left:37%;
     padding-top:30px;
     font-weight:bolder;

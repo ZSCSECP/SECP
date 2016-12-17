@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<SECP.Models.SimpleInfo>
 @{
-    ViewBag.Title = "地方政策";
+    ViewBag.Title = @ViewData["zc"];
     Layout = "~/Views/Goverment.cshtml";
 }
     <div class="section">
@@ -29,7 +29,7 @@
                             <li>@ViewData["zc"]</li>
                         </ul>
                         <div class="single-post-content">
-                            <h3>地方性法规</h3>
+                            <h3>法规</h3>
                             <ul>
                                 @foreach(SECP.Models.SimpleInfo k in Model)
                                 {

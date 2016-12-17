@@ -680,6 +680,8 @@
     <Content Include="Views\Project\TrainWait.cshtml" />
     <Content Include="Views\Project\TrainWrong.cshtml" />
     <Content Include="Views\Backstage\PicChange.cshtml" />
+    <Content Include="Views\GBS.cshtml" />
+    <Content Include="Views\Goverment\AdminView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -872,12 +874,12 @@
     <Content Include="Views\Backstage\BSHome.cshtml" />
     <Content Include="Views\Backstage\BSAchievement.cshtml" />
     <Content Include="Views\Backstage\BSTalent.cshtml" />
-    <Content Include="Views\Backstage\BSEnterprise.cshtml" />
+    <Content Include="Views\Goverment\BSEnterprise.cshtml" />
     <Content Include="Views\Backstage\BSTrain.cshtml" />
     <Content Include="Views\Backstage\MProject.cshtml" />
     <Content Include="Views\Backstage\MTalent.cshtml" />
     <Content Include="Views\Backstage\MTrain.cshtml" />
-    <Content Include="Views\Backstage\MEnterprise.cshtml" />
+    <Content Include="Views\Goverment\MEnterprise.cshtml" />
     <Content Include="Views\Backstage\MAchievement.cshtml" />
     <Content Include="Views\Project\Wrong.cshtml" />
     <Content Include="Views\Project\Wait.cshtml" />
