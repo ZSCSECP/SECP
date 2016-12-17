@@ -4062,8 +4062,6 @@ namespace SECP.Models
 		
 		private int _Leader_ID;
 		
-		private string _Member_ID;
-		
 		private System.DateTime _Join_Time;
 		
 		private int _Team_Num;
@@ -4086,8 +4084,6 @@ namespace SECP.Models
     partial void OnTrain_OurNameChanged();
     partial void OnLeader_IDChanging(int value);
     partial void OnLeader_IDChanged();
-    partial void OnMember_IDChanging(string value);
-    partial void OnMember_IDChanged();
     partial void OnJoin_TimeChanging(System.DateTime value);
     partial void OnJoin_TimeChanged();
     partial void OnTeam_NumChanging(int value);
@@ -4199,26 +4195,6 @@ namespace SECP.Models
 					this._Leader_ID = value;
 					this.SendPropertyChanged("Leader_ID");
 					this.OnLeader_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Member_ID", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Member_ID
-		{
-			get
-			{
-				return this._Member_ID;
-			}
-			set
-			{
-				if ((this._Member_ID != value))
-				{
-					this.OnMember_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Member_ID = value;
-					this.SendPropertyChanged("Member_ID");
-					this.OnMember_IDChanged();
 				}
 			}
 		}

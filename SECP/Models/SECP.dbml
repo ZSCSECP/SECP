@@ -196,7 +196,6 @@
       <Column Name="Train_Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Train_OurName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Leader_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Member_ID" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Join_Time" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="Team_Num" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Leader_Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
