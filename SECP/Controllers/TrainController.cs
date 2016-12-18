@@ -186,9 +186,20 @@ namespace SECP.Controllers
             jt.Join_Time = DateTime.Now;
             jt.Leader_Name = Request.Form["LeaderName"];
             jt.Member_Name = Request.Form["MemberID"];
+            var test = db.JTrain.Where(x => x.Train_Id == int.Parse(Request.Form["TrainID"]) && x.Leader_ID == jt.Leader_ID).Select(v => v);
+            int i = test.Count();
+            if (i > 0)
+            {
+                Response.Write("<script type='text/javascript'>alert('您已经接受该实训！');</script >");
+                return View(res);
+            }
+            else
+            {
             db.JTrain.InsertOnSubmit(jt);
             db.SubmitChanges();
             return View(res);
+            }
+
 
         }
         [HttpGet]

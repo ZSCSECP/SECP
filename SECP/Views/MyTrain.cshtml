@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/joinTrain/style1.css" rel="stylesheet" />
+    <title>实训基地平台</title>
+</head>
+<body>
+        @*/*导航栏*/*@
+        <div class="mainmenu-wrapper" style="background-image: url('../images/TrainImg/divbg.PNG');">
+            <div class="container">
+
+                @*logo样式*@
+                <div class="col-sm-1 logo-wrapper">
+                    <a href="~/Home.html"><img src="/images/newLogo.png" alt="HomeLogo" /></a>
+                </div>
+                @*登陆栏样式*@
+                <div class="col-sm-11 menuextras">
+                    <div class="extras">
+                        <ul>
+                            <li>
+                                <a href="/Login/Login">
+                                    @ViewData["State"]
+                                    <div class="sub">
+                                        @ViewData["YState"]
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../PersonalInformation/PIstudent">
+                                    @ViewData["UserName"]
+                                    <div class="sub">
+                                        @ViewData["TimeNow"]
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a href="#"><img src="/images/Social_Logo/Github_Logo2.png" /></a></li>
+                            <li><a href="#"><img src="/images/Social_Logo/QQ_Logo2.png" /></a></li>
+                            <li><a href="#"><img src="/images/Social_Logo/Renren_Logo2.png" /></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <nav id="colorNav" class="col-sm-11 colorNav">
+                    <ul>
+                        <li class="active">
+                            <a href="TrainHome">实训基地平台</a>
+
+                        </li>
+                        <li>
+                            <a href="ENTrain">
+                                企业实训
+
+                            </a>
+                            <ul>
+                                <li><a href="ENTrain">查看实训</a></li>
+                                <li><a href="PETrain">发布实训</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="SCTrain">
+                                学校实训
+
+                            </a>
+                            <ul>
+                                <li><a href="SCTrain">查看实训</a></li>
+                                <li><a href="Join">加入实训</a></li>
+                                <li><a href="PSTrain">发布实训</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="CLTrain">
+                                企业培训班
+
+                            </a>
+                            <ul>
+                                <li><a href="CLTrain">查看培训班</a></li>
+                                <li><a href="PCTrain">发布培训班</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="MOtrainRelease">
+                                我的实训
+
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        @RenderBody()
+
+        <!--脚注 -->
+        <div class="footer">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-copyright" style="text-align:center">Copyright &copy; 2016.电子科技大学中山学院</div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
