@@ -4070,6 +4070,8 @@ namespace SECP.Models
 		
 		private string _Member_Name;
 		
+		private int _id;
+		
     #region 可扩展性方法定义
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -4092,6 +4094,8 @@ namespace SECP.Models
     partial void OnLeader_NameChanged();
     partial void OnMember_NameChanging(string value);
     partial void OnMember_NameChanged();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
     #endregion
 		
 		public JTrain()
@@ -4099,7 +4103,7 @@ namespace SECP.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Train_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Train_Id", DbType="Int NOT NULL")]
 		public int Train_Id
 		{
 			get
@@ -4275,6 +4279,26 @@ namespace SECP.Models
 					this._Member_Name = value;
 					this.SendPropertyChanged("Member_Name");
 					this.OnMember_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}

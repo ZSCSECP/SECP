@@ -191,7 +191,7 @@
   </Table>
   <Table Name="dbo.JTrain" Member="JTrain">
     <Type Name="JTrain">
-      <Column Name="Train_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Train_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Train_Type" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Train_Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Train_OurName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
@@ -200,6 +200,7 @@
       <Column Name="Team_Num" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Leader_Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Member_Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
     </Type>
   </Table>
 </Database>
