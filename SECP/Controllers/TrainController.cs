@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using SECP.Models;
 using System.Data.Linq.SqlClient;
+using System.Text;
 namespace SECP.Controllers
 {
     public class TrainController : Controller
@@ -122,6 +123,16 @@ namespace SECP.Controllers
             var res = from c in db.Train
                       where id == c.Train_Id.ToString()
                       select c;
+            StringBuilder ad = new StringBuilder();
+            if (db.Train.Where(s=>s.Train_Id==int.Parse(id)).Select(s=>s.Train_State).First().ToString()!="未开始")
+            {
+                        //                <div class="but-enter">
+                        //    <a href="~/Train/JTrain?joinid=@k.Train_Id">加入</a>
+                        //</div>
+                ad.Append("<div class='but-enter'>");
+                ad.Append("<a href='~/Train/JTrain?joinid=@k.Train_Id'>加入</a>");
+                ad.Append("</div>");
+            }
             return View(res);
         }
         [HttpGet]
