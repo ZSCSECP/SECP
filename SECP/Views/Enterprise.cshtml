@@ -4,6 +4,7 @@
 <html>
 <head>
     <link href="~/css/enterprisestyle.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/css/bootstrap-enterprise.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="shortcut icon" href="~/images/enterprise/enterprisefavicon.ico">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -13,61 +14,15 @@
 
 </head>
 <body>
-    <div class="enterprise-main" >
-        <div class="enterprise-tittle">
-            <div class="enterprise-logo">
-                <div class="enterprise-left">
-                    <img src="~/images/Alogo.png">
-                </div>
-                <a href="~/Home.html">企业信息平台<span>enterpriseing base platform</span></a>
+
+    <div class="mainmenu-wrapper">
+        <div class="container">
+            <div class="col-sm-1 logo-wrapper">
+                <a href="~/Home.html"><img src="/images/newLogo.png" alt="HomeLogo" /></a>
             </div>
-            <div>
-                <nav class="main_menu">
-
+            <div class="col-sm-11 menuextras">
+                <div class="extras">
                     <ul>
-                        <li class="@ViewData["H"]">
-
-                            <a href="enterpriseHome">
-                                首页
-                                <div class="sub">
-                                    Home Page
-                                </div>
-                            </a>
-                        </li>
-                        <li class="@ViewData["Q"]">
-                            <a href="INEnterprise">
-                                企业信息
-                                <div class="sub">
-                                    Information
-                                </div>
-                            </a>
-                            <ul>
-                                <li><a href="INEnterprise">查看信息</a></li>
-
-                            </ul>
-                        </li>
-
-                        <li class="@ViewData["S"]">
-                            <a href="EPEnterprise">
-                                企业产品
-                                <div class="sub">
-                                    Product
-                                </div>
-                            </a>
-                            <ul>
-                                <li><a href="EPEnterprise">查看产品</a></li>
-                                <li><a href="PEEnterprise">发布产品</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="@ViewData["X"]">
-                            <a href="MOEnterprise">
-                                我的企业
-                                <div class="sub">
-                                    My Enterprise
-                                </div>
-                            </a>
-                        </li>
                         <li>
                             <a href="/Login/Login">
                                 @ViewData["State"]
@@ -83,23 +38,129 @@
                                     @ViewData["TimeNow"]
                                 </div>
                             </a>
-
                         </li>
+                        <li><a href="#"><img src="/images/Social_Logo/Github_Logo2.png" /></a></li>
+                        <li><a href="#"><img src="/images/Social_Logo/QQ_Logo2.png" /></a></li>
+                        <li><a href="#"><img src="/images/Social_Logo/Renren_Logo2.png" /></a></li>
+
                     </ul>
-                </nav><!-- navigation -->
+                </div>
             </div>
+            <nav id="colorNav" class="col-sm-11 colorNav">
+                <ul>
+                    <li class="active">
+                        <a href="enterpriseHome">企业信息平台</a>
+                    </li>
+                    <li>
+                        <a href="INEnterprise">企业信息</a>
+                        <ul>
+                            <li><a href="INEnterprise">查看信息</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="EPEnterprise">企业产品</a>
+                        <ul>
+                            <li><a href="EPEnterprise">查看产品</a></li>
+                            <li><a href="PEEnterprise">发布产品</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="MOEnterprise">我的企业</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
+
+    @*<div class="enterprise-main" >
+            <div class="enterprise-tittle">
+                <div class="enterprise-logo">
+                    <div class="enterprise-left">
+                        <img src="~/images/Alogo.png">
+                    </div>
+                    <a href="~/Home.html">企业信息平台<span>enterpriseing base platform</span></a>
+                </div>
+                <div>
+                    <nav class="main_menu">
+
+                        <ul>
+                            <li class="@ViewData["H"]">
+
+                                <a href="enterpriseHome">
+                                    首页
+                                    <div class="sub">
+                                        Home Page
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="@ViewData["Q"]">
+                                <a href="INEnterprise">
+                                    企业信息
+                                    <div class="sub">
+                                        Information
+                                    </div>
+                                </a>
+                                <ul>
+                                    <li><a href="INEnterprise">查看信息</a></li>
+
+                                </ul>
+                            </li>
+
+                            <li class="@ViewData["S"]">
+                                <a href="EPEnterprise">
+                                    企业产品
+                                    <div class="sub">
+                                        Product
+                                    </div>
+                                </a>
+                                <ul>
+                                    <li><a href="EPEnterprise">查看产品</a></li>
+                                    <li><a href="PEEnterprise">发布产品</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="@ViewData["X"]">
+                                <a href="MOEnterprise">
+                                    我的企业
+                                    <div class="sub">
+                                        My Enterprise
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Login/Login">
+                                    @ViewData["State"]
+                                    <div class="sub">
+                                        @ViewData["YState"]
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../PersonalInformation/PIstudent">
+                                    @ViewData["UserName"]
+                                    <div class="sub">
+                                        @ViewData["TimeNow"]
+                                    </div>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>*@
     <div>
         @RenderBody()
     </div>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom clearfix" style="color:white">
-                Copyright &copy; 14软件开发A班 罗俐萍 魏铮淑 钟碧珍  指导:12软件开发B班 黄雅聪 黎泯生      电子科技大学中山学院
-            </div><!-- footer-bottom -->
+    <div id="footer" class="footer">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footer-copyright">
+                    Copyright &copy; 14软件开发A班 罗俐萍 魏铮淑 钟碧珍  指导:12软件开发B班 黄雅聪 黎泯生      电子科技大学中山学院
+                </div>
+            </div>
         </div>
-    </footer><!-- footer -->
+    </div><!-- footer -->
 
 </body>
 </html>

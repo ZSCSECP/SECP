@@ -66,7 +66,7 @@ section, footer, nav{
 	-webkit-transition:max-height 0.4s linear;
 	-moz-transition:max-height 0.4s linear;
 	transition:max-height 0.4s linear;
-    z-index:100;
+    z-index:1000;
 }
 
 #colorNav li ul li{

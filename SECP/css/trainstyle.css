@@ -65,7 +65,7 @@ section, footer, nav{
 	-webkit-transition:max-height 0.4s linear;
 	-moz-transition:max-height 0.4s linear;
 	transition:max-height 0.4s linear;
-    z-index:100;
+    z-index:888;
 }
 
 #colorNav li ul li{
@@ -118,7 +118,7 @@ section, footer, nav{
 +	Extras Menu (Cart, Language, Login) Style
 --------------------------------------------------------------------------*/
 .mainmenu-wrapper {
-  background-color: ##0fcf8c;
+  background-color: #0fcf8c;
   padding-bottom:5px;
   padding-top:10px;
   z-index: 4;
@@ -172,7 +172,7 @@ ul, label {
     width: 100%;
     height: 150px;
     background-image: url(../images/train/train-welcome.png);
-
+    background-size:100% 150px;
 }
 
     .Train-welcome h3 {
@@ -208,7 +208,7 @@ ul, label {
 .Train-state {
     width: 900px;
     height: 580px;
-    margin-left: 15%;
+    margin:0 auto;
     margin-top:25px;
 }
 

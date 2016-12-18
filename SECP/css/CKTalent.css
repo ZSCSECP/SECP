@@ -1,5 +1,5 @@
 ﻿.CK-main{
-    height:630px;
+    height:/*630px;*/800px;
     width:100%;
 }
 .TalentRe-tips {
@@ -13,8 +13,8 @@
 /*项目说明*/
 .CK-main-table{
     height:580px;
-    margin-left:25%;   
-    margin-top:30px;
+    margin-left:30%;   
+    margin-top:80px;
         position:absolute;
     z-index:100;
 }

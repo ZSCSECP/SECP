@@ -63,7 +63,7 @@ section, footer, nav{
 	-webkit-transition:max-height 0.4s linear;
 	-moz-transition:max-height 0.4s linear;
 	transition:max-height 0.4s linear;
-    z-index:100;
+    z-index:888;
 }
 
 #colorNav li ul li{
@@ -117,7 +117,7 @@ section, footer, nav{
 --------------------------------------------------------------------------*/
 .mainmenu-wrapper {
   background-color: #04BFEA;
-  background:rgba(4,191,234,0.3);
+  background:rgba(4,191,234,0.5);
   padding-bottom:5px;
   padding-top:10px;
   z-index: 4;

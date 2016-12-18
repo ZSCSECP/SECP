@@ -23,7 +23,7 @@ input, button, textarea, select {
 .gundong_bg_search {
     height: 125px;
     width: 100%;
-    background: url(../images/train/train-show.png);
+    background: url(../images/enterprise/enterprise-welcome.png);
     background-size: 100% 100%;
     position: relative;
     float: left;
@@ -54,7 +54,7 @@ input, button, textarea, select {
     width: 680px;
     position: absolute;
     margin-left:125px;
-    background: #a8d34e;
+    background: #2f4c5a;
     filter: alpha(opacity=30);
     -moz-opacity: .3;
     opacity: .3;
@@ -68,12 +68,12 @@ input, button, textarea, select {
 .search_div_bg_input {
     height: 50px;
     width: 680px;
-    border: 1px solid #a8d34e;
+    border: 1px solid #2f4c5a;
     border-radius: 25px;
     -moz-border-radius: 25px;
     position: relative;
     font-size: 16px;
-    color: #a8d34e;
+    color: #2f4c5a;
     padding: 2px 44px 0 20px;
 
     z-index: 8;
@@ -139,7 +139,7 @@ input, button, textarea, select {
 
 
 /*表格*/
-.train_table {
+.enterprise_table {
     width: 790px;
     background: #fff;
     background-size: 100% 100%;
@@ -148,10 +148,10 @@ input, button, textarea, select {
     margin-left: 20%;
 
     margin-top: 10px;
-    border: 2px solid #a8d34e;
+    border: 2px solid #2f4c5a;
 }
 
-.train_table_main {
+.enterprise_table_main {
     float: left;
     width: 790px;
     margin-left: auto;
