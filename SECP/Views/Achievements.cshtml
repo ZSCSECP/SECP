@@ -3,6 +3,7 @@
 <html>
 <head>
     <link href="~/css/Achievementsstyle.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/css/bootstrap-achievements.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="shortcut icon" href="~/images/achievements/achievementsfavicon.ico">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -16,75 +17,107 @@
 
 </head>
 <body>
-    <div class="achievements-main">
-        <div class="achievements-tittle">
+    @*<div class="achievements-main">
+            <div class="achievements-tittle">
 
-            <!--<h1 class="logo"><a href="index.html"><img src="images/logo.png"/></a></h1>-->
-            <div class="achievements-logo">
-            <div class="achievements-left">
-                <img src="~/images/Alogo.png">
+
+                <div class="achievements-logo">
+                <div class="achievements-left">
+                    <img src="~/images/Alogo.png">
+                    </div>
+                <a href="~/Home.html">研发成果平台<span>R&D Achievements platform</span></a></div>
+                <div>
+                    <nav class="main_menu">
+
+                        <ul>
+                            <li class="@ViewData["H"]">
+
+                                <a href="AchievementsHome">
+                                    首页
+                                    <div class="sub">
+                                        Home Page
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="@ViewData["Q"]">
+                                <a href="TAchievements">
+                                    教师简历
+                                    <div class="sub">
+                                        Teacher Resume
+                                    </div>
+                                </a>
+                                <ul>
+                                    <li><a href="TAchievements">查看简历</a></li>
+
+                                </ul>
+                            </li>
+
+                            <li class="@ViewData["S"]">
+                                <a href="CIAchievements">
+                                    论文信息
+                                    <div class="sub">
+                                        Paper Information
+                                    </div>
+                                </a>
+                                <ul>
+                                    <li><a href="CIAchievements">查看论文</a></li>
+                                    <li><a href="PIAchievements">发布论文</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="@ViewData["Z"]">
+                                <a href="CCAchievements">
+                                    产品信息
+                                    <div class="sub">
+                                        Product Information
+                                    </div>
+                                </a>
+                                <ul>
+                                    <li><a href="CCAchievements">查看产品</a></li>
+                                    <li><a href="PCAchievements">发布产品</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="@ViewData["X"]">
+                                <a href="MOAchievements">
+                                    我的成果
+                                    <div class="sub">
+                                        My achievements
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Login/Login">
+                                    @ViewData["State"]
+                                    <div class="sub">
+                                        @ViewData["YState"]
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../PersonalInformation/PIstudent">
+                                    @ViewData["UserName"]
+                                    <div class="sub">
+                                        @ViewData["TimeNow"]
+                                    </div>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-            <a href="~/Home.html">研发成果平台<span>R&D Achievements platform</span></a></div>
-            <div>
-                <nav class="main_menu">
+            </div>
+        </div>*@
 
+    @*导航栏*@
+    <div class="mainmenu-wrapper">
+        <div class="container">
+            <div class="col-sm-1 logo-wrapper">
+                <a href="~/Home.html"><img src="/images/newLogo.png" alt="HomeLogo" /></a>
+            </div>
+            <div class="col-sm-11 menuextras">
+                <div class="extras">
                     <ul>
-                        <li class="@ViewData["H"]">
-
-                            <a href="AchievementsHome">
-                                首页
-                                <div class="sub">
-                                    Home Page
-                                </div>
-                            </a>
-                        </li>
-                        <li class="@ViewData["Q"]">
-                            <a href="TAchievements">
-                                教师简历
-                                <div class="sub">
-                                    Teacher Resume
-                                </div>
-                            </a>
-                            <ul>
-                                <li><a href="TAchievements">查看简历</a></li>
-                                
-                            </ul>
-                        </li>
-
-                        <li class="@ViewData["S"]">
-                            <a href="CIAchievements">
-                                论文信息
-                                <div class="sub">
-                                    Paper Information
-                                </div>
-                            </a>
-                            <ul>
-                                <li><a href="CIAchievements">查看论文</a></li>
-                                <li><a href="PIAchievements">发布论文</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="@ViewData["Z"]">
-                            <a href="CCAchievements">
-                                产品信息 
-                                <div class="sub">
-                                    Product Information
-                                </div>
-                            </a>
-                            <ul>
-                                <li><a href="CCAchievements">查看产品</a></li>
-                                <li><a href="PCAchievements">发布产品</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="@ViewData["X"]">
-                            <a href="MOAchievements">
-                                我的成果
-                                <div class="sub">
-                                    My achievements
-                                </div>
-                            </a>
-                        </li>
                         <li>
                             <a href="/Login/Login">
                                 @ViewData["State"]
@@ -100,23 +133,59 @@
                                     @ViewData["TimeNow"]
                                 </div>
                             </a>
-
                         </li>
+                        <li><a href="#"><img src="/images/Social_Logo/Github_Logo2.png" /></a></li>
+                        <li><a href="#"><img src="/images/Social_Logo/QQ_Logo2.png" /></a></li>
+                        <li><a href="#"><img src="/images/Social_Logo/Renren_Logo2.png" /></a></li>
+
                     </ul>
-                </nav><!-- navigation -->
+                </div>
             </div>
+            <nav id="colorNav" class="col-sm-11 colorNav">
+                <ul>
+                    <li class="active">
+                        <a href="AchievementsHome">研发成果平台</a>
+                    </li>
+                    <li>
+                        <a href="TAchievements">教师简历</a>
+                        <ul>
+                            <li><a href="TAchievements">查看简历</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="CIAchievements">论文信息</a>
+                        <ul>
+                            <li><a href="CIAchievements">查看论文</a></li>
+                            <li><a href="PIAchievements">发布论文</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="CCAchievements">产品信息</a>
+                        <ul>
+                            <li><a href="CCAchievements">查看产品</a></li>
+                            <li><a href="PCAchievements">发布产品</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="MOAchievements">我的成果</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
+
     <div>
         @RenderBody()
     </div>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom clearfix" style="color:white">
-                Copyright &copy; 14软件开发A班 罗俐萍 魏铮淑 钟碧珍  指导:12软件开发B班 黄雅聪 黎泯生      电子科技大学中山学院
-            </div><!-- footer-bottom -->
+    <div id="footer" class="footer">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footer-copyright">
+                    Copyright &copy; 14软件开发A班 罗俐萍 魏铮淑 钟碧珍  指导:12软件开发B班 黄雅聪 黎泯生      电子科技大学中山学院
+                </div>
+            </div>
         </div>
-    </footer><!-- footer -->
-
+    </div>
 </body>
 </html>
+

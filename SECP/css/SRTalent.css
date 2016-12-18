@@ -66,8 +66,8 @@ input, button, textarea, select {
 
 /*搜索栏提示信息*/
 .search_div_bg_input {
-    height: 46px;
-    width: 615px;
+    height: 50px;
+    width: 680px;
     border: 1px solid #6ea9f5;
     border-radius: 25px;
     -moz-border-radius: 25px;
@@ -82,6 +82,18 @@ input, button, textarea, select {
 
 }
 
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+color: #fff; 
+} 
+input:-moz-placeholder, textarea:-moz-placeholder { 
+color: #fff; 
+} 
+input::-moz-placeholder, textarea::-moz-placeholder { 
+color: #fff; 
+} 
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+color: #fff; 
+} 
 /*.search_div_bg_btn{
 	height: 30px;
 	width: 30px;
@@ -169,12 +181,10 @@ input, button, textarea, select {
         font-weight: bolder;
         float:left;
     }
-    .table-tittle p {
-        font-size: 10px;
-        line-height: 10px;
+     .table-tittle h3 {
+        font-size: 14px;
         float: right;
-        padding-top:5px;
-        padding-right:10px;
+        font-weight: bolder;
     }
 .table-line {
     border-top: 1px dotted #e0e0e0;
@@ -277,6 +287,6 @@ input, button, textarea, select {
 }
 dl{clear:left;}
 dt,dd{float:left;}
-h3 {
+/*h3 {
     clear:left;
-}
+}*/

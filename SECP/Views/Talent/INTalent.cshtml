@@ -23,49 +23,90 @@
         </div>
     </div>
 </div>
-<div class="main">
-    
-    <div class="talent_table">
-        <div class="talent_table_main">
-            <div class="table-tittle">
-                <h2>招聘查看</h2>
-                <p>共 @ViewData["num"] 个项目</p>
-            </div>
-            <div class="table">
-                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <thead>
-                        <tr>
-                            <th>@ViewData["a"]</th>
-                            <th>编号</th>
-                            <th>主题</th>
-                            <th>发布时间</th>
-                            <th>发布人</th>
-                            <th>工资</th>
-                            <th>招聘人数</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                         @foreach (SECP.Models.Talent k in Model)
-                        {
-                            <tr>
-                                <td></td>
-                                <td>@k.Talent_Id</td>
-                                <td><a href="CKTalent?Id=@k.Talent_Id">@k.Talent_Name</a></td>
-                                <td>@k.Talent_Time</td>
-                                <td>@k.Talent_Publisher</td>
-                                <td>@k.Talent_Money</td>
-                                <td>@k.Talent_Num</td>
-                            </tr>
-                         }
-                    </tbody>
-                </table>
-                <div class="paging">
-                    @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Talent>)))
-                </div>
-            </div>
+
+<div class="container">
+    <div class="bs-docs-example">
+        <div class="table-tittle">
+            <h2>招聘查看</h2>
+            <h3>共 @ViewData["num"] 个项目</h3>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>@ViewData["a"]</th>
+                    <th>编号</th>
+                    <th>主题</th>
+                    <th>发布时间</th>
+                    <th>发布人</th>
+                    <th>工资</th>
+                    <th>招聘人数</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (SECP.Models.Talent k in Model)
+                {
+                    <tr>
+                        <td></td>
+                        <td>@k.Talent_Id</td>
+                        <td><a href="CKTalent?Id=@k.Talent_Id">@k.Talent_Name</a></td>
+                        <td>@k.Talent_Time</td>
+                        <td>@k.Talent_Publisher</td>
+                        <td>@k.Talent_Money</td>
+                        <td>@k.Talent_Num</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="paging">
+            @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Talent>)))
         </div>
     </div>
 </div>
+
+
+@*<div class="main">
+
+        <div class="talent_table">
+            <div class="talent_table_main">
+                <div class="table-tittle">
+                    <h2>招聘查看</h2>
+                    <p>共 @ViewData["num"] 个项目</p>
+                </div>
+                <div class="table">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th>@ViewData["a"]</th>
+                                <th>编号</th>
+                                <th>主题</th>
+                                <th>发布时间</th>
+                                <th>发布人</th>
+                                <th>工资</th>
+                                <th>招聘人数</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             @foreach (SECP.Models.Talent k in Model)
+                            {
+                                <tr>
+                                    <td></td>
+                                    <td>@k.Talent_Id</td>
+                                    <td><a href="CKTalent?Id=@k.Talent_Id">@k.Talent_Name</a></td>
+                                    <td>@k.Talent_Time</td>
+                                    <td>@k.Talent_Publisher</td>
+                                    <td>@k.Talent_Money</td>
+                                    <td>@k.Talent_Num</td>
+                                </tr>
+                             }
+                        </tbody>
+                    </table>
+                    <div class="paging">
+                        @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Talent>)))
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
 
 <script src="~/js/jquery-1.8.2.min.js"></script>
 <script type="text/javascript">

@@ -19,54 +19,91 @@
                     </form>
                 </div>
             </div>
-
-            </div>
-        </div>
-    </div>
-
-<div class="main">
-    
-    <div class="achievements_table">
-        <div class="achievements_table_main">
-            <div class="table-tittle">
-                <h2>简历查看</h2>
-                <p>共 @ViewData["num"] 个简历</p>
-            </div>
-            <div class="table">
-                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <thead>
-                        <tr>
-                            <th>@ViewData["a"]</th>
-                            <th>编号</th>
-                            <th>姓名</th>
-                            <th>执教课程</th>
-                            <th>职位</th>
-                            <th>学历</th>
-                            <th>所在学校</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                         @foreach (SECP.Models.Teacher k in Model)
-                        {
-                            <tr>
-                                <td></td>
-                                <td>@k.teacher_Id</td>
-                                <td><a href="PSAchievements?id=@k.teacher_Id">@k.teacher_RealName</a></td>
-                                <td>@k.teacher_TeachClass</td>
-                                <td>@k.teacher_Position</td>
-                                <td>@k.teacher_Edu</td>
-                                <td>@k.teacher_AtSchool</td>
-                            </tr>
-                         }
-                    </tbody>
-                </table>
-                <div class="paging">
-                  @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Teacher>)))
-                </div>
-            </div>
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="bs-docs-example">
+        <div class="table-tittle">
+            <h2>招聘查看</h2>
+            <h3>共 @ViewData["num"] 个简历</h3>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>@ViewData["a"]</th>
+                    <th>编号</th>
+                    <th>姓名</th>
+                    <th>执教课程</th>
+                    <th>职位</th>
+                    <th>学历</th>
+                    <th>所在学校</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (SECP.Models.Teacher k in Model)
+                {
+                    <tr>
+                        <td></td>
+                        <td>@k.teacher_Id</td>
+                        <td><a href="PSAchievements?id=@k.teacher_Id">@k.teacher_RealName</a></td>
+                        <td>@k.teacher_TeachClass</td>
+                        <td>@k.teacher_Position</td>
+                        <td>@k.teacher_Edu</td>
+                        <td>@k.teacher_AtSchool</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="paging">
+            @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Teacher>)))
+        </div>
+    </div>
+</div>
+
+@*<div class="main">
+        <div class="achievements_table">
+            <div class="achievements_table_main">
+                <div class="table-tittle">
+                    <h2>简历查看</h2>
+                    <p>共 @ViewData["num"] 个简历</p>
+                </div>
+                <div class="table">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th>@ViewData["a"]</th>
+                                <th>编号</th>
+                                <th>姓名</th>
+                                <th>执教课程</th>
+                                <th>职位</th>
+                                <th>学历</th>
+                                <th>所在学校</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             @foreach (SECP.Models.Teacher k in Model)
+                            {
+                                <tr>
+                                    <td></td>
+                                    <td>@k.teacher_Id</td>
+                                    <td><a href="PSAchievements?id=@k.teacher_Id">@k.teacher_RealName</a></td>
+                                    <td>@k.teacher_TeachClass</td>
+                                    <td>@k.teacher_Position</td>
+                                    <td>@k.teacher_Edu</td>
+                                    <td>@k.teacher_AtSchool</td>
+                                </tr>
+                             }
+                        </tbody>
+                    </table>
+                    <div class="paging">
+                      @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Teacher>)))
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
 
 <script src="~/js/jquery-1.8.2.min.js"></script>
 <script type="text/javascript">
