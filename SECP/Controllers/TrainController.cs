@@ -136,6 +136,10 @@ namespace SECP.Controllers
             }
             return View(res);
         }
+        /// <summary>
+        /// 新增 加入实训
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult JTrain()
         {
@@ -168,6 +172,11 @@ namespace SECP.Controllers
             }
 
         }
+        /// <summary>
+        /// 新增 加入实训
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult JTrain(string s)
         {
@@ -203,6 +212,10 @@ namespace SECP.Controllers
 
 
         }
+        /// <summary>
+        /// 企业培训班发布
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult PCTrain()
 
@@ -253,6 +266,10 @@ namespace SECP.Controllers
                 return View();
             }
         }
+        /// <summary>
+        /// 学校实训
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult PSTrain()
         {
@@ -302,6 +319,10 @@ namespace SECP.Controllers
                 return View();
             }
         }
+        /// <summary>
+        /// 发布企业实训
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult PETrain()
         {
@@ -351,11 +372,16 @@ namespace SECP.Controllers
                 return View();
             }
         }
+
         public ActionResult PATrain()
         {
             Identity();
             return View();
         }
+        /// <summary>
+        /// 查看已发布资源
+        /// </summary>
+        /// <returns></returns>
         public ActionResult MOTrain()
         {
             try
@@ -376,11 +402,19 @@ namespace SECP.Controllers
                 return Redirect("../Login/Login");
             }
         }
+        /// <summary>
+        /// 实训/培训班发布后等待
+        /// </summary>
+        /// <returns></returns>
         public ActionResult TrainWait()
         {
             Identity();
             return View();
         }
+        /// <summary>
+        /// 权限失败
+        /// </summary>
+        /// <returns></returns>
         public ActionResult TrainWrong()
         {
             Identity();
@@ -391,6 +425,11 @@ namespace SECP.Controllers
             Identity();
             return View();
         }
+        /// <summary>
+        /// 查看已发布实训
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult MOtrainRelease(int? pageIndex)
         {
@@ -408,6 +447,10 @@ namespace SECP.Controllers
                     ViewData["Num"] = res.Count();
                     PagedList<Train> _res = res.ToPagedList(pageIndex, pagesize);
                     return View(_res);
+                }
+                else if(Type=="1")
+                {
+                    return Redirect("CheckTrain");
                 }
                 else
                 {
@@ -442,6 +485,10 @@ namespace SECP.Controllers
             PagedList<Train> _res = res.ToPagedList(pageIndex, pagesize);
             return View(_res);
         }
+        /// <summary>
+        /// 修改已发布实训
+        /// </summary>
+        /// <returns></returns>
        [HttpGet]
        public ActionResult MKTrain()
        {
@@ -488,13 +535,101 @@ namespace SECP.Controllers
                return View();
            }
        }
-
-        [HttpGet]
+        /// <summary>
+        /// 新增 重复加入提示
+        /// </summary>
+        /// <returns></returns>
         public ActionResult HADJOIN()
        {
            Identity();
            return View();
        }
+        /// <summary>
+        /// 新增 学生查看接受的实训
+        /// </summary>
+        /// <returns></returns>
+       [HttpGet]
+        public ActionResult CheckTrain(int?pageIndex)
+        {
+            Identity();
+            string name = Request.Cookies["UserName"].Value;
+            int pagesize = 10;
+            int r = db.Student.Where(x => x.student_UserName == Request.Cookies["UserName"].Value).Select(v => v.student_Id).First();
+            var res = db.JTrain.Where(x => x.Leader_ID == r).Select(x => x);
+            ViewData["Num"] = res.Count();
+            PagedList<JTrain> _res = res.ToPagedList(pageIndex, pagesize);
+            return View(_res);
+
+        }
+        [HttpPost]
+        public ActionResult CheckTrain(int?pageIndex,string a)
+       {
+           Identity();
+           //删除操作
+           string id = Request.Form["QX"];
+           var res1 = db.JTrain.Where(x => x.id == int.Parse(id)).Select(x => x);
+           db.JTrain.DeleteAllOnSubmit(res1);
+           db.SubmitChanges();
+           Response.Write("<script type='text/javascript'>alert('删除成功！');</script >");
+           //数据显示
+           string name = Request.Cookies["UserName"].Value;
+           int pagesize = 10;
+           int r = db.Student.Where(x => x.student_UserName == Request.Cookies["UserName"].Value).Select(v => v.student_Id).First();
+           var res = db.JTrain.Where(x => x.Leader_ID == r).Select(x => x);
+           ViewData["Num"] = res.Count();
+           PagedList<JTrain> _res = res.ToPagedList(pageIndex, pagesize);
+           return View(_res);
+       }
+        /// <summary>
+        /// 新增 修改加入的实训
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult ChangeJoin()
+        {
+            Identity();
+            var newone = db.Student.Where(x => x.student_UserName == Request.Cookies["UserName"].Value).Select(s => s.student_RealName);
+            foreach (var k in newone)
+            {
+                ViewData["User"] = k.ToString();
+            } 
+            string Id = Request.QueryString["joinid"];
+            string name = Request.Cookies["UserName"].Value;
+            string Type = Request.Cookies["Type"].Value;
+            if (Type == "1")
+            {
+                int r = db.Student.Where(x => x.student_UserName == Request.Cookies["UserName"].Value).Select(v => v.student_Id).First();
+                var res = db.JTrain.Where(x => x.Leader_ID == r).Select(x => x);
+                return View(res);
+            }
+            else
+                return Redirect("TrainWrong");
+        }
+        [HttpPost]
+        public ActionResult ChangeJoin(string a)
+        {
+            Identity();
+            try
+            {
+                int r = db.Student.Where(x => x.student_UserName == Request.Cookies["UserName"].Value).Select(v => v.student_Id).First();
+                var res = db.JTrain.Where(x => x.Leader_ID == r).Select(x => x);
+                string Id = Request.QueryString["Id"];
+                foreach (var jt in res)
+                {
+                    jt.Train_OurName = Request.Form["OurName"];
+                    jt.Team_Num = int.Parse(Request.Form["teamNum"]);
+                    jt.Member_Name = Request.Form["MemberID"];
+                }
+                db.SubmitChanges();
+                Response.Write("<script type='text/javascript'>alert('修改成功！');</script >");
+                return View(res);
+            }
+            catch
+            {
+                Response.Write("<script type='text/javascript'>alert('修改失败！');</script >");
+                return View();
+            }
+        }
 
     }
 }

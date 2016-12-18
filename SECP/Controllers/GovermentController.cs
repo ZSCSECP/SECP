@@ -37,39 +37,32 @@ namespace SECP.Controllers
                 ViewData["YState"] = "Cancel";
             }
         }
-        //public ActionResult Index()
-        //{
-        //    var contente = from a in db.SimpleInfo
-        //                   select new
-        //                   {
-        //                       a.Title
-        //                   };
-        //    ViewData["scroll"] = contente.First().ToString();
-        //    return View(contente);
-        //}
-        //    //
-        //    // GET: /News/
-
-        //    public ActionResult News()
-        //    {
-        //        return View();
-        //    }
-
-        //}
+        /// <summary>
+        /// 显示政府平台首页
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult TechHome()
         {
             Identity();
             return View();
         }
+        /// <summary>
+        /// 显示信息平台首页
+        /// </summary>
+        /// <returns></returns>
         public ActionResult GTechInfo()
         {
             Identity();
             ShowAll all = new ShowAll();
             return View(all);
         }
+        /// <summary>
+        /// 政府信息录入
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
-        public ActionResult GTechInfoEnter()//信息录入
+        public ActionResult GTechInfoEnter()
         {
             try
             {
@@ -99,11 +92,9 @@ namespace SECP.Controllers
             }
         }
         [HttpPost]
-        public ActionResult GTechInfoEnter(string a, HttpPostedFileBase submitImg)//信息录入
+        public ActionResult GTechInfoEnter(string a, HttpPostedFileBase submitImg)
         {
             Identity();
-            //   try
-            //   {
             SimpleInfo sp = new SimpleInfo();
             sp.Title = Request.Form["Title"];
             sp.BriefInfo = Request.Form["BriefInfo"];
@@ -123,12 +114,13 @@ namespace SECP.Controllers
             db.SubmitChanges();
             Response.Write("<script type='text/javascript'>alter('录入成功！');</script>");
             return View();
-            //}
-            //catch
-            //{
-            //    return Redirect("~/Login/Login");
-            //}
+
         }
+        /// <summary>
+        /// 科技信息 分类通过传回的type展示不同信息
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult GStatic(int? pageIndex)//科技动态
         {
@@ -170,6 +162,12 @@ namespace SECP.Controllers
             }
             return View(_pro);
         }
+        /// <summary>
+        /// 通过type展示不同信息
+        /// </summary>
+        /// <param name="pageIndex">页码</param>
+        /// <param name="tyoe">科技动态分类</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult GStatic(int? pageIndex, string tyoe)//科技动态
         {
@@ -236,14 +234,13 @@ namespace SECP.Controllers
             PagedList<SimpleInfo> _pro = content.ToPagedList(pageIndex, pagesize);
             return View(_pro);
         }
-        [HttpGet]
         public ActionResult Gwrong()//错误跳转
         {
             Identity();
             return View();
         }
         /// <summary>
-        /// 企业平台信息
+        /// 审核企业平台信息
         /// </summary>
         /// <param name="pageIndex"></param>
         /// <param name="a"></param>

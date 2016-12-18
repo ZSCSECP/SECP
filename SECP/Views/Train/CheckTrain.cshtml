@@ -1,6 +1,7 @@
-﻿@model IEnumerable<SECP.Models.Train>
+﻿@model IEnumerable<SECP.Models.JTrain>
+
 @{
-    ViewBag.Title = "MOtrainRelease";
+    ViewBag.Title = "CheckTrain";
     Layout = "~/Views/Train.cshtml";
 }
 
@@ -23,15 +24,15 @@
         </div>
     </div>
 </div>
-@using(Html.BeginForm())
+@using (Html.BeginForm())
 {
     <div class="MOAchievements-main2">
 
         <div class="container">
             <div class="bs-docs-example">
                 <div class="table-tittle">
-                    <h2>已发布实训</h2>
-                    <p>共 @ViewData["Q"]个</p>
+                    <h2>已接受实训</h2>
+                    <h3>共 @ViewData["Num"]个</h3>
                 </div>
                 <div class="table">
 
@@ -41,40 +42,42 @@
                                 <th></th>
                                 <th>实训id</th>
                                 <th>实训类型</th>
-                                <th>实训主题</th>
-                                <th>实训日期</th>
-                                <th>发布时间</th>
-                                <th>实训地点</th>
-                                <th>相关专业</th>
+                                <th>实训名称</th>
+                                <th>项目名称</th>
+                                <th>加入日期</th>
+                                <th>团队人数</th>
+                                <th>队长姓名</th>
+                                <th>成员姓名</th>
                                 <th>修改</th>
                                 <th>取消</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
                         <tfoot>
-                            @foreach (SECP.Models.Train k in Model)
-                    {
-                    <tr>
-                        <td></td>
-                        <td>@k.Train_Id</td>
-                        <td>@k.Train_Type</td>
-                        <td><a href="CKTrain?Id=@k.Train_Id">@k.Train_Name</a></td>
-                        <td>@k.Train_Date</td>
-                        <td>@k.Train_Time</td>
-                        <td>@k.Train_Place</td>
-                        <td>@k.Train_Major</td>
-                        <td><a href="MKTrain?Id=@k.Train_Id">修改</a></td>
-                        <td><button name='QX' type='submit' value="@k.Train_Id"></button></td>
-                    </tr>
-                    }
+                            @foreach (SECP.Models.JTrain k in Model)
+                            {
+                                <tr>
+                                    <td></td>
+                                    <td>@k.Train_Id</td>
+                                    <td>@k.Train_Type</td>
+                                    <td>@k.Train_Name</td>
+                                    <td>@k.Train_OurName</td>
+                                    <td>@k.Join_Time</td>
+                                    <td>@k.Team_Num</td>
+                                    <td>@k.Leader_Name</td>
+                                    <td>@k.Member_Name</td>
+                                    <td><a href="~/Train/ChangeJoin?joinid=@k.Train_Id">修改</a></td>
+                                    <td><button name='QX' type='submit' value="@k.id"></button></td>
+                                </tr>
+                            }
                         </tfoot>
                     </table>
 
                     <div class="paging">
-                        @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Train>)))
+                        @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.JTrain>)))
                     </div>
                 </div>
 
             </div>
         </div>
-        </div>}
+    </div>}

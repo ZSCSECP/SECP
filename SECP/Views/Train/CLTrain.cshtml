@@ -58,12 +58,12 @@
                 </tbody>
             </table>
 
-                <div class="paging">
-                    @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Train>)))
-                </div>
+            <div class="paging">
+                @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Train>)))
             </div>
         </div>
     </div>
+</div>
 
 
 <script src="~/js/jquery-1.8.2.min.js"></script>

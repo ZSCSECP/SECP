@@ -716,6 +716,8 @@
     <Content Include="Views\Train\JTrain.cshtml" />
     <Content Include="Views\MyTrain.cshtml" />
     <Content Include="Views\Train\HADJOIN.cshtml" />
+    <Content Include="Views\Train\CheckTrain.cshtml" />
+    <Content Include="Views\Train\ChangeJoin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
