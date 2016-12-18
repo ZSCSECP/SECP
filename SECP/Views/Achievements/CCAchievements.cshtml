@@ -24,29 +24,26 @@
 </div>
 <div class="main">
     
-    <div class="achievements_table">
-        <div class="achievements_table_main">
+    <div class="container">
+        <div class="bs-docs-example">
             <div class="table-tittle">
-                <h2>招聘查看</h2>
-                <p>共 @ViewData["num"] 个项目</p>
+                <h2>产品查看</h2>
+                <h3>共 @ViewData["num"] 个项目</h3>
             </div>
-            <div class="table">
-                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <thead>
-                        <tr>
-                            <th>@ViewData["a"]</th>
-                            <th>编号</th>
-                            <th>主题</th>
-                            <th>发布时间</th>
-                            <th>发布人</th>
-                            @*<th>工资</th>
-                            <th>招聘人数</th>*@
-                        </tr>
-                    </thead>
-                    <tbody>
-                         @foreach (SECP.Models.Achievements k in Model)
-                        {
-                            <tr>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>@ViewData["a"]</th>
+                        <th>编号</th>
+                        <th>主题</th>
+                        <th>发布时间</th>
+                        <th>发布人</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (SECP.Models.Achievements k in Model)
+                    {
+<tr>
                                 <td></td>
                                 <td>@k.Achievements_Id</td>
                                 <td><a href="CKAchievements?Id=@k.Achievements_Id">@k.Achievements_Theme</a></td>
@@ -55,15 +52,12 @@
                                 @*<td>@k.achievements_Money</td>
                                 <td>@k.achievements_Num</td>*@
                             </tr>
-                         }
-                    </tbody>
-                </table>
-                <div class="paging">
-                    @Html.Raw(HttpUtility.HtmlDecode(@Html.MikePager(Model as PagedList<SECP.Models.Achievements>)))
-                </div>
-            </div>
+                    }
+                </tbody>
+            </table>
         </div>
     </div>
+
 </div>
 
 <script src="~/js/jquery-1.8.2.min.js"></script>

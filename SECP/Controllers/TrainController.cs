@@ -13,6 +13,7 @@ namespace SECP.Controllers
         //
         // GET: /Train/
         SECPDataContext db = new SECPDataContext();
+        
         public void Identity()
         {
             if (Request.Cookies["UserName"] == null)
@@ -151,7 +152,7 @@ namespace SECP.Controllers
             {
                 if (int.Parse(Request.Cookies["Type"].Value) != 1)
                 {
-                    Response.Write("<script type='text/javascript'>alert('您没有接受实训的权限！');</script >");
+                    
                     return Redirect("Train/TrainWrong");
                 }
                 else
@@ -191,7 +192,7 @@ namespace SECP.Controllers
             if (i > 0)
             {
                 Response.Write("<script type='text/javascript'>alert('您已经接受该实训！');</script >");
-                return Redirect("~/Train/TrainHome");
+                return Redirect("~/Train/HADJOIN");
             }
             else
             {
@@ -204,6 +205,7 @@ namespace SECP.Controllers
         }
         [HttpGet]
         public ActionResult PCTrain()
+
         {
             try
             {
@@ -486,16 +488,13 @@ namespace SECP.Controllers
                return View();
            }
        }
-       public ActionResult MJoinJob()
+
+        [HttpGet]
+        public ActionResult HADJOIN()
        {
            Identity();
+           return View();
+       }
 
-           return View();
-       }
-        [HttpPost]
-       public ActionResult MJoinJOb(string a)
-       {
-           return View();
-       }
     }
 }

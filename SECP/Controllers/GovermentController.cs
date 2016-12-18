@@ -104,12 +104,11 @@ namespace SECP.Controllers
             Identity();
             //   try
             //   {
-
             SimpleInfo sp = new SimpleInfo();
             sp.Title = Request.Form["Title"];
             sp.BriefInfo = Request.Form["BriefInfo"];
             sp.LinkUrl = "Http://" + Request.Form["LinkUrl"];
-            sp.PublishDate = DateTime.Now;
+            sp.PublishDate = DateTime.Now.Date;
             if (submitImg.FileName != null)
             {
                 string file = System.IO.Path.GetFileName(submitImg.FileName);
@@ -165,7 +164,8 @@ namespace SECP.Controllers
             }
             else
             {
-                var content = db.SimpleInfo.Where(x => x.Category1 == 2 && x.Category2 == 0).Select(x => x);
+                ViewData["tle"] = "要闻";
+                var content = db.SimpleInfo.Where(x => x.Category1 == 2 && x.Category2 == 1).Select(x => x);
                 _pro = content.ToPagedList(pageIndex, pagesize);
             }
             return View(_pro);

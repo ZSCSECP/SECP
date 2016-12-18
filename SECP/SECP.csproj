@@ -298,8 +298,6 @@
     <Content Include="images\1.jpg" />
     <Content Include="images\11.png" />
     <Content Include="images\135JPEG.JPEG" />
-    <Content Include="images\2222.jpg" />
-    <Content Include="images\93b1OOOPICd5.jpg" />
     <Content Include="images\ava.jpg" />
     <Content Include="images\bg.jpg" />
     <Content Include="images\BingWallpaper-2015-07-17.jpg" />
@@ -481,9 +479,9 @@
     <Content Include="images\thumb-frame.png" />
     <Content Include="images\to-top1.png" />
     <Content Include="images\trans.png" />
-    <Content Include="images\TrrainImg\blueBtn.jpg" />
-    <Content Include="images\TrrainImg\ChMkJ1d7fOqITALcAAUN4lTls0cAATQoQPw6X8ABQ36753.jpg" />
-    <Content Include="images\TrrainImg\divbg.PNG" />
+    <Content Include="images\TrainImg\blueBtn.jpg" />
+    <Content Include="images\TrainImg\ChMkJ1d7fOqITALcAAUN4lTls0cAATQoQPw6X8ABQ36753.jpg" />
+    <Content Include="images\TrainImg\divbg.PNG" />
     <Content Include="images\wb-1.jpg" />
     <Content Include="images\wb-big.jpg" />
     <Content Include="images\wb.png" />
@@ -717,6 +715,7 @@
     <Content Include="Views\Goverment\AdminView.cshtml" />
     <Content Include="Views\Train\JTrain.cshtml" />
     <Content Include="Views\MyTrain.cshtml" />
+    <Content Include="Views\Train\HADJOIN.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
