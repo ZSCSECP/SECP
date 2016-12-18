@@ -687,7 +687,6 @@
     <Content Include="Views\Goverment\GStatic.cshtml" />
     <Content Include="Views\Goverment\GWrong.cshtml" />
     <Content Include="Views\Goverment\GTEPublish.cshtml" />
-    <Content Include="Views\Train\MJoinJob.cshtml" />
     <Content Include="Views\Train.cshtml" />
     <Content Include="Views\Train\CKTrain.cshtml" />
     <Content Include="Views\Train\CLTrain.cshtml" />
