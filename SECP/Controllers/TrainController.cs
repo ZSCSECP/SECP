@@ -191,13 +191,13 @@ namespace SECP.Controllers
             if (i > 0)
             {
                 Response.Write("<script type='text/javascript'>alert('您已经接受该实训！');</script >");
-                return View(res);
+                return Redirect("~/Train/TrainHome");
             }
             else
             {
             db.JTrain.InsertOnSubmit(jt);
             db.SubmitChanges();
-            return View(res);
+            return Redirect("~/Train/TrainHome");
             }
 
 
