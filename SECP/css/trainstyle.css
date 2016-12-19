@@ -118,7 +118,8 @@ section, footer, nav{
 +	Extras Menu (Cart, Language, Login) Style
 --------------------------------------------------------------------------*/
 .mainmenu-wrapper {
-  background-color: ##0fcf8c;
+  background-color: #0fcf8c;
+  background:rgba(15,207,140,0.5);
   padding-bottom:5px;
   padding-top:10px;
   z-index: 4;
