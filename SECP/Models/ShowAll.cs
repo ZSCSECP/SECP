@@ -23,7 +23,7 @@ namespace SECP.Models
             }
         }
 
-        private List<SimpleInfo> yw;
+        private List<SimpleInfo> yw;//要闻
         public List<SimpleInfo> Yw
         {
             get
@@ -76,19 +76,19 @@ namespace SECP.Models
         }
 
 
-        private List<SimpleInfo> kjgh;
+        private List<SimpleInfo> kjgh;//科技规划
         public List<SimpleInfo> Kjgh
         {
             get {return kjgh ;}
             set { kjgh = db.SimpleInfo.Where(s => s.Category1 == 1 && s.Category2 == 0).Select(s => s).Take(3).ToList(); }
         }
-        private List<SimpleInfo> zjgk;
+        private List<SimpleInfo> zjgk;//资金公开
         public List<SimpleInfo> Zjgk
         {
             get { return zjgk; }
             set { zjgk = db.SimpleInfo.Where(s => s.Category1 == 1 && s.Category2 == 1).Select(s => s).Take(3).ToList(); }
         }
-        private List<SimpleInfo> kjzc;
+        private List<SimpleInfo> kjzc;//科技政策
         public List<SimpleInfo> Kjzc
         {
             get { return kjzc; }
