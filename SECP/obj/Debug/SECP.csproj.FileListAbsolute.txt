@@ -1323,3 +1323,4 @@ C:\Users\Nimrod_SH\Desktop\web实训\NewSECP\SECP\SECP\bin\zh-Hans\System.Web.We
 C:\Users\Nimrod_SH\Desktop\web实训\NewSECP\SECP\SECP\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
 C:\Users\Nimrod_SH\Desktop\web实训\NewSECP\SECP\SECP\obj\Debug\SECP.dll
 C:\Users\Nimrod_SH\Desktop\web实训\NewSECP\SECP\SECP\obj\Debug\SECP.pdb
+C:\Users\Nimrod_SH\Desktop\web实训\NewSECP\SECP\SECP\obj\Debug\SECP.csprojResolveAssemblyReference.cache

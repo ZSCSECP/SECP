@@ -15,10 +15,9 @@
                function hideURLbar(){ window.scrollTo(0,1); } </script>
 
     <script src="~/js/jquery-1.11.1.min.js"></script>
-
 </head>
 <body>
-
+    
     <div class="mainmenu-wrapper">
         <div class="container">
             <div class="col-sm-1 logo-wrapper">
@@ -176,7 +175,7 @@
     <div>
         @RenderBody()
     </div>
-    <div id="footer" class="footer">
+    <footer class="footer">
         <div class="row">
             <div class="col-md-12">
                 <div class="footer-copyright">
@@ -184,7 +183,27 @@
                 </div>
             </div>
         </div>
-    </div><!-- footer -->
+    </footer>
+    <script>
+        $(function () {
+            function footerPosition() {
+                $("footer").removeClass("fixed-bottom");
+                var contentHeight = document.body.scrollHeight,//网页正文全文高度
+                    winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
+                if (!(contentHeight > winHeight)) {
+                    //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+                    $("footer").addClass("fixed-bottom");
+                } else {
+                    $("footer").removeClass("fixed-bottom");
+                }
+            }
+            footerPosition();
+            $(window).resize(footerPosition);
+        });
+    </script><!-- footer -->
 
 </body>
+@*让页脚可以固定在网页的底部*@
+
 </html>
+
